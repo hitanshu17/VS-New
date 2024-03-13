@@ -1549,13 +1549,13 @@ a.back-to-top2 {
 	width: 2.625rem;
 	height: 2.625rem;
 	border-radius: 1.875rem;
-	background: whitesmoke url("https://www.pngitem.com/pimgs/m/40-404856_transparent-whatsapp-icon-transparent-png-circle-logo-whatsapp.png") no-repeat center 47%;
+	background: orange url("https://i.pinimg.com/736x/41/3f/0f/413f0fbf04f03406711be8aaf595503c.jpg") no-repeat center 47%;
 	background-size: 4.125rem 4.125rem;
 	text-indent: -9999px;
 }
 
 a:hover.back-to-top2 {
-	background-color: #4332c5; 
+	background-color: yellowgreen; 
 }
 
 /**********************************/
