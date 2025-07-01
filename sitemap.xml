@@ -4,29 +4,94 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
 <url>
-	<loc>https://visualsoftech.com/</loc>
-	<lastmod>2022-06-26T08:33:13+00:00</lastmod>
-	<priority>1.00</priority>
+  <loc>https://visualsoftech.com/</loc>
+  <lastmod>2025-06-17T10:06:13+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 <url>
-	<loc>https://visualsoftech.com/index.html</loc>
-	<lastmod>2022-06-26T08:33:13+00:00</lastmod>
-	<priority>0.80</priority>
+  <loc>https://visualsoftech.com/index.html</loc>
+  <lastmod>2025-06-17T10:06:13+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://visualsoftech.com/about.html</loc>
-	<lastmod>2022-06-26T08:33:11+00:00</lastmod>
-	<priority>0.80</priority>
+  <loc>https://visualsoftech.com/about.html</loc>
+  <lastmod>2025-04-23T10:39:15+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://visualsoftech.com/Subproduct1.html</loc>
-	<lastmod>2022-06-26T08:33:14+00:00</lastmod>
-	<priority>0.80</priority>
+  <loc>https://visualsoftech.com/Subproduct2.html</loc>
+  <lastmod>2025-05-28T14:01:07+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://visualsoftech.com/terms-conditions.html</loc>
-	<lastmod>2022-06-26T08:33:52+00:00</lastmod>
-	<priority>0.80</priority>
+  <loc>https://visualsoftech.com/Subproduct1.html</loc>
+  <lastmod>2025-06-13T10:20:34+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
+<url>
+  <loc>https://visualsoftech.com/our-blogs.html</loc>
+  <lastmod>2025-06-28T06:53:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://visualsoftech.com/terms-conditions.html</loc>
+  <lastmod>2023-02-06T14:50:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://visualsoftech.com/cold-storage-warehouse-management-software-india.html</loc>
+  <lastmod>2025-06-17T10:05:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://visualsoftech.com/best-cold-storage-software-india-visual-softech.htm</loc>
+  <lastmod>2025-06-28T06:53:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://visualsoftech.com/cold-storage-tracking-software-india-visual-softech.html</loc>
+  <lastmod>2025-06-12T07:46:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://visualsoftech.com/cold-storage-software-india-visual-softech.html</loc>
+  <lastmod>2025-06-12T07:46:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://visualsoftech.com/cold-storage-software-india-visual-softech-wms.html</loc>
+  <lastmod>2025-06-12T07:46:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://visualsoftech.com/cold-storage-inventory-software-india-visual-softech-wms.html</loc>
+  <lastmod>2025-05-21T10:48:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://visualsoftech.com/affordable-inventory-management-software-india-small-warehouses-visual-softech.html</loc>
+  <lastmod>2025-05-21T10:48:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://visualsoftech.com/2025-cold-storage-software-india-warehouse-management-visualsoftech.html</loc>
+  <lastmod>2025-05-21T06:44:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://visualsoftech.com/visual-softech-cap-cold-storage-delhi.html</loc>
+  <lastmod>2025-05-21T06:46:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://visualsoftech.com/cold-storage-management-made-easy-in-delhi-india-visual-softechs-cap-software.html</loc>
+  <lastmod>2025-05-10T15:21:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
 </urlset>

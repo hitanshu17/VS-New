@@ -1,3 +1,5 @@
+
+
 /*****************************************
 Colors:
 - Backgrounds, buttons, bullets, icons - blue #5f4dee
@@ -160,6 +162,8 @@ a.white {
 	text-decoration: none;
 }
 
+
+
 .btn-outline-reg {
 	display: inline-block;
 	padding: 1.1875rem 2.125rem 1.1875rem 2.125rem;
@@ -195,6 +199,8 @@ a.white {
 	color: #fff;
 	text-decoration: none;
 }
+
+
 
 .btn-outline-sm {
 	display: inline-block;
@@ -1603,6 +1609,8 @@ a:hover.back-to-top3 {
 	margin-bottom: 1.125rem;
 }
 
+
+
 .ex-basic-1 .breadcrumbs .fa {
 	margin-right: 0.5rem;
 	margin-left: 0.625rem;
@@ -2242,3 +2250,17 @@ a:hover.back-to-top3 {
 	/* end of extra pages */
 }
 /* end of min-width width 1200px */
+
+.blog{
+
+  box-shadow: 6px 10px 10px #e3e3e3;
+  border: 1px solid;
+  border-color: yellowgreen; 
+  margin-bottom: 10px;
+
+
+}
+
+.blog1{
+	    margin-top: 10px;
+}
