@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="author" content="Visual Softech">
+    <meta name="keywords" content="cold storage software, WMS, ERP cold chain, arctic theme, 3D animations, interactive web design, grid animation, parallax effect" />
+    <meta name="description" content="The definitive interactive demo for a Cold Storage Software landing page, featuring advanced 3D animations, parallax effects, and a unique arctic & amber color theme. The ultimate WMS/ERP solution from Visual Softech." />
+    <meta name="Classification" content="Computer Software, Cold Store Software, Cold Storage Software" />
+
+   <!-- OG Meta Tags -->
+	<meta property="og:title" content="Cold Storage Software: The Ultimate Interactive Demo | Visual Softech"/>
+	<meta property="og:image" content="https://visualsoftech.com/images/cap-social.jpg" />
+	<meta property="og:url" content="http://visualsoftech.com/Subproduct2.html" />
+	<meta property="og:type" content="website" />
+
+    <!-- Website Title -->
+    <title>Cold Storage Software – The Ultimate Interactive Demo - Visual Softech</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	
+	<!-- Favicon -->
+    <link rel="icon" href="images/favicon.jpg">
+
+    <style>
+        :root {
+            --cool-dark: #0D2F3F;      
+            --cool-mid: #1E6572;       
+            --cool-light: #90DCD8;     
+            --warm-accent: #F28C28;    
+            --bg-light: #F7F9F9;       
+            --bg-mid: #E8F1F2;         
+            --text-dark: #0D2F3F;
+            --text-light: #F7F9F9;
+            --white: #ffffff;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; color: var(--text-dark); background-color: var(--white); }
+        .spinner-wrapper { position: fixed; z-index: 999999; top: 0; right: 0; bottom: 0; left: 0; background: #fff; }
+        .spinner { position: absolute; top: 50%; left: 50%; width: 3.75rem; height: 1.25rem; margin: -0.625rem 0 0 -1.875rem; text-align: center; }
+        .spinner > div { display: inline-block; width: 1rem; height: 1rem; border-radius: 100%; background-color: var(--cool-mid); -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both; animation: sk-bouncedelay 1.4s infinite ease-in-out both; }
+        .spinner .bounce1 { -webkit-animation-delay: -0.32s; }
+        .spinner .bounce2 { -webkit-animation-delay: -0.16s; }
+        @-webkit-keyframes sk-bouncedelay { 0%, 80%, 100% { -webkit-transform: scale(0); } 40% { -webkit-transform: scale(1.0); } }
+        @keyframes sk-bouncedelay { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1.0); } }
+
+        h1, h2, h3, h4, h5, h6 { font-weight: 700; color: var(--text-dark); font-family: 'Poppins', sans-serif; }
+        .section { padding: 100px 0; position: relative; overflow: hidden; }
+        .section-title { margin-bottom: 60px; text-align: center; }
+        .section-title h2 { font-size: 2.5rem; font-weight: 800; }
+        .section-title p { font-size: 1.1rem; color: #5a5a5a; max-width: 700px; margin: 0 auto; }
+        
+        .bg-light { background-color: var(--bg-light) !important; }
+        .bg-mid { background-color: var(--bg-mid) !important; }
+        .bg-dark { background-color: var(--cool-dark) !important; }
+        .bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4, .bg-dark h5, .bg-dark p, .bg-dark .text-light, .bg-dark li { color: var(--text-light) !important; }
+        .bg-dark .why-text p, .bg-dark .tilted-feature-box p { color: rgba(247, 249, 249, 0.8) !important; }
+
+        /* Section Dividers */
+        .section-divider { position: absolute; left: 0; width: 100%; overflow: hidden; line-height: 0; z-index: 2; }
+        .section-divider.top { top: -1px; transform: rotate(180deg); }
+        .section-divider.bottom { bottom: -1px; }
+        .section-divider svg { position: relative; display: block; width: calc(100% + 1.3px); height: 90px; }
+        .divider-fill-light { fill: var(--bg-light); }
+        .divider-fill-mid { fill: var(--bg-mid); }
+        .divider-fill-dark { fill: var(--cool-dark); }
+        .divider-fill-white { fill: var(--white); }
+        
+        /* Header Slider */
+        #header-slider { position: relative; width: 100%; height: 95vh; display: flex; align-items: center; justify-content: center; overflow: visible; background-color: var(--bg-light); }
+        .slider-container { width: 100%; height: 100%; position: relative; }
+        .slider-item { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; visibility: hidden; transition: opacity 1s ease, visibility 1s ease; display: flex; align-items: center; }
+        .slider-item.active { opacity: 1; visibility: visible; }
+        .slider-item::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(247, 249, 249, 0.98) 0%, rgba(247, 249, 249, 0.9) 50%, rgba(247, 249, 249, 0) 100%); }
+        .slide-content { position: relative; z-index: 2; padding-left: 8%; max-width: 60%; }
+        .slide-content h1 { font-size: 3.2rem; font-weight: 800; color: var(--text-dark); }
+        .slide-content p { margin: 20px 0 30px; font-size: 1.1rem; line-height: 1.7; color: #5a5a5a;}
+        .btn-hero { background: var(--warm-accent); color: var(--white); border: none; padding: 15px 40px; font-weight: 600; border-radius: 50px; transition: transform 0.3s, box-shadow 0.3s; }
+        .btn-hero:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(242, 140, 40, 0.3); color: var(--white); text-decoration: none;}
+        .slider-nav { position: absolute; right: 3%; top: 50%; transform: translateY(-50%); z-index: 10; }
+        .slider-nav button { display: block; width: 50px; height: 50px; background-color: rgba(13, 47, 63, 0.7); color: var(--white); border: none; margin-bottom: 10px; font-size: 1.5rem; cursor: pointer; transition: background-color 0.3s; border-radius: 5px; }
+        .slider-nav button:hover { background-color: var(--cool-dark); }
+        
+        /* ENHANCED: Industries Grid Animation */
+        #industries .industry-card-wrapper { perspective: 1000px; }
+        .industry-card, .blank-card {
+            width: 100%; height: 250px; border-radius: 15px;
+            background: var(--white); box-shadow: 0 10px 30px rgba(13, 47, 63, 0.05);
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            border-top: 4px solid var(--cool-mid);
+            opacity: 0; transform: translateY(80px) rotateY(90deg) scale(0.8);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        #industries.is-visible .industry-card,
+        #industries.is-visible .blank-card { opacity: 1; transform: none; }
+        
+        .industry-card .icon { font-size: 3rem; color: var(--cool-mid); margin-bottom: 20px; }
+        .industry-card h4 { font-weight: 600; font-size: 1.15rem; }
+        .blank-card { background: var(--cool-dark); border: none; }
+        /* Staggered animation delays */
+        #industries.is-visible .card-1 { transition-delay: 0.1s; } #industries.is-visible .card-2 { transition-delay: 0.2s; } #industries.is-visible .card-3 { transition-delay: 0.3s; }
+        #industries.is-visible .card-4 { transition-delay: 0.4s; } #industries.is-visible .card-5 { transition-delay: 0.5s; } #industries.is-visible .card-6 { transition-delay: 0.6s; }
+        @media (max-width: 768px) {
+            .industry-card, .blank-card { transform: translateY(50px); opacity: 0; } /* Simpler animation for mobile */
+            #industries.is-visible .industry-card, #industries.is-visible .blank-card { transform: none; opacity: 1; }
+        }
+
+        /* Features Wheel & Modal Section */
+        #features-wheel { padding: 120px 0; }
+        .feature-wheel-container { position: relative; width: 100%; max-width: 450px; height: 450px; margin: 0 auto; }
+        .feature-wheel-center { position: absolute; width: 150px; height: 150px; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--warm-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 15px rgba(242, 140, 40, 0.1), 0 0 50px rgba(242, 140, 40, 0.2); }
+        .feature-wheel-center .fa-snowflake { font-size: 4rem; color: var(--white); }
+        .feature-wheel { position: relative; width: 100%; height: 100%; animation: rotate-wheel 40s linear infinite; }
+        .feature-node { position: absolute; top: 50%; left: 50%; width: 100px; height: 100px; margin: -50px; background: var(--white); border: 2px solid var(--cool-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; cursor: pointer; transition: transform 0.3s, background-color 0.3s; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+        .feature-node .icon { font-size: 1.8rem; color: var(--cool-mid); transition: color 0.3s; }
+        .feature-node span { font-size: 0.75rem; font-weight: 600; margin-top: 5px; color: var(--text-dark); }
+        .feature-node:hover { transform: scale(1.1); background-color: var(--cool-mid); border-color: var(--cool-mid); }
+        .feature-node:hover .icon, .feature-node:hover span { color: var(--white); }
+        @keyframes rotate-wheel { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        
+        .tilted-feature-box { background: linear-gradient(135deg, #1E6572, #0D2F3F); padding: 40px; border-radius: 20px; transform: rotate(-2deg); transition: transform 0.4s ease; border: 1px solid rgba(144, 220, 216, 0.2); box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
+        .tilted-feature-box:hover { transform: rotate(0deg); }
+        .tilted-feature-box h2 { font-size: 2.8rem; font-weight: 700; margin-bottom: 20px; }
+        .feature-benefits-list { list-style: none; padding: 0; margin-top: 25px; }
+        .feature-benefits-list li { font-size: 1.05rem; margin-bottom: 15px; display: flex; align-items: center; }
+        .feature-benefits-list li i { color: var(--cool-light); font-size: 1.2rem; margin-right: 15px; }
+        @media (max-width: 991px) { #features-wheel .row { flex-direction: column-reverse; } .tilted-feature-box { text-align: center; transform: rotate(0deg); margin-bottom: 60px; } .feature-benefits-list { display: inline-block; text-align: left; } }
+
+        /* Feature Modal Styling */
+        .feature-modal .modal-content { border: none; border-radius: 15px; background-color: var(--bg-light); }
+        .feature-modal .modal-header { background-color: var(--cool-dark); color: var(--white); border-bottom: none; border-radius: 15px 15px 0 0; }
+        .feature-modal .modal-header .modal-title { font-weight: 600; }
+        .feature-modal .modal-header .close { color: var(--white); opacity: 0.9; }
+        .feature-modal .modal-body { padding: 30px; }
+        .feature-modal .modal-icon { font-size: 4rem; color: var(--warm-accent); margin-bottom: 20px; }
+        .feature-modal .modal-body p { font-size: 1.1rem; color: #5a5a5a; }
+
+        /* ENHANCED: Platform Features Section */
+        #platform-features { background-color: var(--bg-mid); z-index: 1; }
+        .platform-card { background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); border-radius: 15px; padding: 30px; text-align: center; height: 100%; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 8px 32px 0 rgba(13, 47, 63, 0.1); transition: transform 0.3s ease; transform-style: preserve-3d; }
+        .platform-card:hover { transform: translateY(-10px) rotateX(5deg); }
+        .platform-card .icon-circle { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(45deg, var(--warm-accent), #f5a623); color: var(--white); display: inline-flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 20px; box-shadow: 0 10px 20px rgba(242, 140, 40, 0.2); }
+        
+        @keyframes float { 0% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-20px) rotate(10deg); } 100% { transform: translateY(0px) rotate(0deg); } }
+        .floating-shape { position: absolute; z-index: -1; opacity: 0.07; animation: float 8s ease-in-out infinite; }
+        .floating-shape.shape-1 { width: 150px; height: 150px; top: 15%; left: 5%; background-color: var(--cool-mid); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; animation-duration: 10s; }
+        .floating-shape.shape-2 { width: 80px; height: 80px; top: 70%; right: 10%; background-color: var(--cool-light); border-radius: 50%; animation-duration: 7s; animation-delay: 1.5s; }
+        .floating-shape.shape-3 { width: 200px; height: 200px; bottom: 5%; left: 20%; background-color: var(--cool-mid); border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%; animation-duration: 12s; }
+
+        /* Why CAP Section */
+        #why-cap { position: relative; }
+        #particles-js { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 0; }
+        #why-cap .container { position: relative; z-index: 1; }
+        #why-cap .why-item { display: flex; align-items: flex-start; margin-bottom: 30px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(144, 220, 216, 0.1); padding: 25px; border-radius: 10px; transition: transform 0.4s, background 0.4s; backdrop-filter: blur(5px); perspective: 1000px; }
+        #why-cap .why-item:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-5px) rotateX(2deg); }
+        #why-cap .why-number { font-size: 3rem; font-weight: 800; color: var(--cool-light); line-height: 1; opacity: 0.5; margin-right: 20px; }
+        #why-cap .why-text h4 { margin-top: 5px; }
+
+        /* Reports Section */
+        #reports { background: var(--bg-mid); perspective: 2000px; }
+        .reports-wrapper { transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1); transform: rotateX(-90deg); opacity: 0; }
+        #reports.is-visible .reports-wrapper { transform: rotateX(0deg); opacity: 1; }
+        .reports-container { display: flex; flex-wrap: wrap; }
+        .reports-intro { padding: 30px; background: var(--white); border-radius: 15px; box-shadow: 0 15px 30px rgba(13, 47, 63, 0.05); }
+        #reports .accordion .card { margin-bottom: 1rem; border: none; border-radius: 10px; box-shadow: 0 5px 20px rgba(13, 47, 63, 0.05); }
+        #reports .accordion .card-header { background-color: var(--white); padding: 0; border: none; border-radius: 10px; }
+        #reports .accordion .btn-link { width: 100%; text-align: left; text-decoration: none; color: var(--text-dark); font-weight: 600; padding: 1rem 1.25rem; }
+        #reports .accordion .btn-link:hover { color: var(--cool-mid); }
+        #reports .accordion .btn-link .fa-chevron-down { float: right; transition: transform 0.3s; }
+        #reports .accordion .btn-link[aria-expanded="true"] .fa-chevron-down { transform: rotate(180deg); color: var(--warm-accent); }
+        #reports .accordion .card-body { padding: 0 1.25rem 1.25rem 1.25rem; }
+        #reports ul { list-style-type: none; padding-left: 0; margin-bottom: 0; }
+        #reports ul li { margin-bottom: 8px; font-size: 0.95rem; }
+        #reports ul li::before { content: "—"; margin-right: 10px; color: var(--cool-mid); }
+
+        /* Solutions Tabs Section */
+        #solutions { background-color: var(--white);}
+        #solutions .nav-tabs { border-bottom: 2px solid #dee2e6; }
+        #solutions .nav-tabs .nav-link { border: none; border-bottom: 3px solid transparent; color: #5a5a5a; font-weight: 600; padding: 15px 25px; transition: color 0.3s, border-color 0.3s; margin: 0 5px; }
+        #solutions .nav-tabs .nav-link.active, #solutions .nav-tabs .nav-link:hover { color: var(--cool-mid); border-bottom-color: var(--cool-mid); background: transparent; }
+        #solutions .tab-content { padding-top: 40px; }
+        #solutions ul { list-style-type: none; padding-left: 0; }
+        #solutions ul li { position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 0.95rem; }
+        #solutions ul li::before { content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--warm-accent); position: absolute; left: 0; top: 4px; }
+        
+        /* Navbar & Footer Styles */
+        .navbar-custom { background-color: var(--cool-dark); box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1); font: 500 0.875rem/1.375rem "Open Sans", sans-serif; }
+        .navbar-custom .navbar-brand.logo-text { font: 700 1.5rem "Poppins", sans-serif; color: #fff; text-decoration: none; }
+        .navbar-custom .nav-item .nav-link { text-decoration: none; color: #fff; font-weight: 500; }
+        .navbar-custom .nav-item .nav-link:hover, .navbar-custom .nav-item .nav-link.active { color: var(--cool-light); }
+        .navbar-custom .dropdown-menu { margin-top: 0.25rem; border-radius: 0.25rem; background-color: var(--cool-dark); border: 1px solid rgba(144, 220, 216, 0.2); }
+        .navbar-custom .dropdown-item { color: #fff; text-decoration: none; }
+        .navbar-custom .dropdown-item:hover { background-color: var(--cool-mid); }
+        .navbar-custom .dropdown-items-divide-hr { width: 100%; height: 1px; margin: 0.5rem auto; background-color: var(--cool-mid); }
+        .navbar-custom .nav-item .btn-outline-sm { border: 1px solid var(--warm-accent); color: var(--warm-accent); border-radius: 0.25rem; padding: 0.625rem 1.25rem; }
+        .navbar-custom .nav-item .btn-outline-sm:hover { background-color: var(--warm-accent); color: #fff; }
+        .navbar-custom .navbar-toggler { border: none; font-size: 1.25rem; color: #fff; }
+        
+        .footer { padding-top: 6.5rem; padding-bottom: 2rem; background-color: var(--cool-dark); }
+        .footer a { text-decoration: none; }
+        .footer .footer-col { margin-bottom: 2.25rem; }
+        .footer h4 { margin-bottom: 1rem; color: #fff; }
+        .footer .p-small, .footer .li-space-lg li, .footer .media-body, .footer .white { color: var(--text-light); }
+        .footer .white:hover { color: var(--cool-light); }
+        .footer .footer-col.last .fas { color: #fff; }
+        .footer-frame { width: 100%; height: auto; }
+        .footer-frame .cls-2 { fill: var(--cool-dark); }
+        .copyright { padding-top: 1rem; padding-bottom: 0.5rem; background-color: var(--cool-dark); text-align: center; border-top: 1px solid rgba(144, 220, 216, 0.2)}
+        .copyright .p-small, .copyright button { color: var(--text-light); border-color: transparent; background: transparent; }
+
+    </style>
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <div class="spinner-wrapper"><div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></div>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand logo-text page-scroll" href="index.html">Visual Softech</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"><span class="navbar-toggler-awesome fas fa-bars"></span><span class="navbar-toggler-awesome fas fa-times"></span></button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link page-scroll" href="#header-slider">HOME</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle page-scroll" href="#why-cap" id="navbarDropdownAbout" role="button" data-toggle="dropdown">ABOUT US</a><div class="dropdown-menu"> <a class="dropdown-item" href="#"><span class="item-text">WHAT WE DO</span></a><div class="dropdown-items-divide-hr"></div><a class="dropdown-item" href="#"><span class="item-text">OTHER PRODUCTS</span></a><div class="dropdown-items-divide-hr"></div><a class="dropdown-item page-scroll" href="#why-cap"><span class="item-text">WHY US?</span></a></div></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle page-scroll" href="#industries" id="navbarDropdownProducts" role="button" data-toggle="dropdown">PRODUCTS</a><div class="dropdown-menu"><a class="dropdown-item" href="#"><span class="item-text">Cold Store Accounting Package</span></a><div class="dropdown-items-divide-hr"></div><a class="dropdown-item" href="#"><span class="item-text">Mandi Accounting Package</span></a></div></li>
+                    <li class="nav-item"><a class="nav-link page-scroll" href="#contact">CONTACT US</a></li>
+                </ul>
+                <span class="nav-item"><a class="btn-outline-sm" href="http://coldstore.co.in">DEMO</a></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header id="header-slider">
+            <div class="slider-container">
+                <div class="slider-item active" style="background-image: url('https://images.unsplash.com/photo-1587061937533-b23724653863?auto=format&fit=crop&q=80&w=2070');">
+                    <div class="slide-content"><h1>Revolutionizing Cold Storage, the Indian Way</h1><p>Our Cold Storage Management System isn't just software; it's a strategic partner designed to turn your storage unit into a digitally-driven powerhouse.</p><a href="#industries" class="btn-hero page-scroll">Discover More</a></div>
+                </div>
+                <div class="slider-item" style="background-image: url('https://images.unsplash.com/photo-1627961019213-c8b53d5a4a5b?auto=format&fit=crop&q=80&w=2070');">
+                     <div class="slide-content"><h1>Smart Warehousing for a New Era</h1><p>In cold storage, timing is everything. And now, so is technology. Get complete control over chamber utilization, real-time alerts, and GST-ready billing.</p><a href="#solutions" class="btn-hero page-scroll">View Solutions</a></div>
+                </div>
+            </div>
+            <div class="slider-nav"><button id="prev-slide"><i class="fas fa-chevron-left"></i></button><button id="next-slide"><i class="fas fa-chevron-right"></i></button></div>
+            <div class="section-divider bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120"><path d="M1440,21.3V120H0V21.3C288,68.2,576,68.2,864,21.3S1440,21.3,1440,21.3Z" class="divider-fill-light"></path></svg></div>
+        </header>
+
+        <section id="industries" class="section bg-light">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up"><h2>Built for Industries</h2><p>Click on any card to see our software in action. We provide tailored solutions for every link in the cold chain.</p></div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4 industry-card-wrapper"><div class="industry-card card-1"><div class="icon"><i class="fas fa-leaf"></i></div><h4>Agriculture & Fresh Produce</h4></div></div>
+                    <div class="col-lg-4 col-md-6 mb-4 industry-card-wrapper"><div class="blank-card card-2"></div></div>
+                    <div class="col-lg-4 col-md-6 mb-4 industry-card-wrapper"><div class="industry-card card-3"><div class="icon"><i class="fas fa-fish"></i></div><h4>Seafood & Frozen Meat</h4></div></div>
+                    <div class="col-lg-4 col-md-6 mb-4 industry-card-wrapper"><div class="industry-card card-4"><div class="icon"><i class="fas fa-pills"></i></div><h4>Pharma & Vaccines</h4></div></div>
+                    <div class="col-lg-4 col-md-6 mb-4 industry-card-wrapper"><div class="industry-card card-5"><div class="icon"><i class="fas fa-shopping-basket"></i></div><h4>FMCG & Kirana</h4></div></div>
+                    <div class="col-lg-4 col-md-6 mb-4 industry-card-wrapper"><div class="industry-card card-6"><div class="icon"><i class="fas fa-truck"></i></div><h4>3PL & Logistics</h4></div></div>
+                </div>
+            </div>
+            <div class="section-divider bottom"><svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h1440v45.7L0 120V0z" class="divider-fill-dark"></path></svg></div>
+        </section>
+
+        <section id="features-wheel" class="section bg-dark">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <div class="feature-wheel-container">
+                            <div class="feature-wheel-center"><i class="fas fa-snowflake"></i></div>
+                            <div class="feature-wheel">
+                                <div class="feature-node" data-toggle="modal" data-target="#inventoryModal" style="transform: rotate(0deg) translate(225px) rotate(0deg);"><div class="icon"><i class="fas fa-boxes"></i></div><span>Inventory & Space</span></div>
+                                <div class="feature-node" data-toggle="modal" data-target="#billingModal" style="transform: rotate(60deg) translate(225px) rotate(-60deg);"><div class="icon"><i class="fas fa-file-invoice-dollar"></i></div><span>Automated Billing</span></div>
+                                <div class="feature-node" data-toggle="modal" data-target="#trackingModal" style="transform: rotate(120deg) translate(225px) rotate(-120deg);"><div class="icon"><i class="fas fa-thermometer-half"></i></div><span>Condition Tracking</span></div>
+                                <div class="feature-node" data-toggle="modal" data-target="#reportsModal" style="transform: rotate(180deg) translate(225px) rotate(-180deg);"><div class="icon"><i class="fas fa-chart-pie"></i></div><span>Reports & Analytics</span></div>
+                                <div class="feature-node" data-toggle="modal" data-target="#automationModal" style="transform: rotate(240deg) translate(225px) rotate(-240deg);"><div class="icon"><i class="fas fa-cogs"></i></div><span>Workflow Automation</span></div>
+                                <div class="feature-node" data-toggle="modal" data-target="#dashboardModal" style="transform: rotate(300deg) translate(225px) rotate(-300deg);"><div class="icon"><i class="fas fa-tachometer-alt"></i></div><span>Dashboard</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                        <div class="tilted-feature-box">
+                             <h2>Powerful Features. Practical Benefits.</h2>
+                             <p>Our software is built around six pillars of cold storage management. Each feature is designed to solve a specific challenge, from optimizing space to ensuring compliance. Click on any icon in the wheel to learn more.</p>
+                             <ul class="feature-benefits-list">
+                                 <li><i class="fas fa-check-circle"></i> Complete operational visibility.</li>
+                                 <li><i class="fas fa-check-circle"></i> Reduced manual errors and costs.</li>
+                                 <li><i class="fas fa-check-circle"></i> Improved compliance and reporting.</li>
+                                 <li><i class="fas fa-check-circle"></i> Enhanced customer satisfaction.</li>
+                             </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="platform-features" class="section">
+             <div class="section-divider top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120"><path d="M1440 120H0V21.3C288 68.2 576 68.2 864 21.3S1440 68.2 1440 21.3V120z" class="divider-fill-dark"></path></svg></div>
+             <div class="floating-shape shape-1"></div><div class="floating-shape shape-2"></div><div class="floating-shape shape-3"></div>
+            <div class="container">
+                 <div class="section-title" data-aos="fade-up"><h2>One Platform. Endless Possibilities.</h2></div>
+                <div class="row">
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100"><div class="platform-card"><div class="icon-circle"><i class="fas fa-sitemap"></i></div><h4>Multi-Company. Multi-User. Multi-Location.</h4><p>Run multiple facilities, teams, and clients all from one user friendly dashboard.</p></div></div>
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200"><div class="platform-card"><div class="icon-circle"><i class="fas fa-plug"></i></div><h4>Plug into What You Already Use</h4><p>Seamless sync with Tally, WhatsApp, SAP, Busy, and more. There are no technical headaches.</p></div></div>
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300"><div class="platform-card"><div class="icon-circle"><i class="fas fa-mobile-alt"></i></div><h4>Use It Anywhere, Anytime</h4><p>Windows? Mac? Android tablet? Yes to all. It even works on your iPad with zero setup which makes it accessible and effective.</p></div></div>
+                </div>
+            </div>
+             <div class="section-divider bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120"><path d="m1440 120-1440-45.7v45.7h1440z" class="divider-fill-dark"></path></svg></div>
+        </section>
+
+        <section id="why-cap" class="section bg-dark">
+            <div id="particles-js"></div>
+            <div class="container">
+                <div class="section-title text-center" data-aos="fade-up"><h2>Powering the Backbones of India’s Cold Chain</h2><p>Companies rely on our software to run smarter, faster, and more confidently. Here’s what sets us apart in the world of cold storage management:</p></div>
+                <div class="row align-items-center">
+                    <div class="col-lg-6" data-aos="fade-right"><div class="why-item"><div class="why-number">1</div><div class="why-text"><h4>Cold Chain-Ready by Design</h4><p>Purpose-built for perishables, our system handles everything from temperature-sensitive pharma goods to fresh produce — with real-time tracking, expiry alerts, and complete cold chain compliance.</p></div></div><div class="why-item"><div class="why-number">2</div><div class="why-text"><h4>Scalable for Growth at Any Stage</h4><p>Whether you're managing a single local warehouse or operating a multi-state logistics network, our platform scales with your business — effortlessly handling multi-company, multi-location, and multi-user environments.</p></div></div></div>
+                    <div class="col-lg-6" data-aos="fade-left"><div class="why-item"><div class="why-number">3</div><div class="why-text"><h4>Tailored, Not Templated</h4><p>No two operations are the same. That’s why we offer full customization — from billing formats and commodity types to workflow rules and user permissions. Your cold storage, your rules.</p></div></div><div class="why-item"><div class="why-number">4</div><div class="why-text"><h4>Support That Goes Beyond Setup</h4><p>From the first demo to daily operations, our dedicated support team is here with 360° onboarding, training, and real-time tech assistance. You’re never left in the cold.</p></div></div></div>
+                </div>
+                <div class="text-center mt-4 text-light" data-aos="fade-up"><p>Trusted by agro exporters, 3PL providers, pharma distributors, and food logistics teams across India.</p></div>
+            </div>
+             <div class="section-divider bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120"><path d="M1440,21.3V120H0V21.3C288,68.2,576,68.2,864,21.3S1440,21.3,1440,21.3Z" class="divider-fill-white"></path></svg></div>
+        </section>
+
+        <section id="solutions" class="section bg-white">
+            <div class="container">
+                 <div class="section-title text-center" data-aos="fade-up"><h2>How CAP Solves Real-World Cold Storage Challenges</h2></div>
+                <ul class="nav nav-tabs justify-content-center" id="solutionsTabs" role="tablist" data-aos="fade-up" data-aos-delay="100">
+                    <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#workflow">Workflow</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#billing">Billing</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#accounting">Accounting</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#crm">Analytics & CRM</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#platform">Platform</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#monitoring">Monitoring</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#made-in-india">Made in India</a></li>
+                </ul>
+                <div class="tab-content" id="solutionsTabsContent" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tab-pane fade show active" id="workflow" role="tabpanel"><div class="row align-items-center"><div class="col-md-6"><h3>Automating Manual Workflows</h3><p>Forget the hassle of spreadsheets and paperwork. CAP simplifies your entire inward and outward process with automated entries, intelligent lot tracking, and QR-based identification. Every product is mapped to a specific floor, chamber, and rack which ensures nothing is misplaced and stock flow is seamless.</p><ul><li>Automated Reminders</li><li>Multi-Commodity Management</li><li>Auto Labour Management & Assignment</li><li>Full MR to Dispatch Workflow in One System</li></ul></div><div class="col-md-6 text-center"><img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=80&w=800" class="img-fluid rounded shadow" alt="Workflow Automation"></div></div></div>
+                    <div class="tab-pane fade" id="billing" role="tabpanel"><div class="row align-items-center"><div class="col-md-6"><h3>Advanced Billing Modes & Dynamic Reporting</h3><p>CAP supports over 15 flexible billing methods tailored for cold storage use cases. Whether you bill by space, lot, time, or labor, the system handles it all by automatically generating GST-compliant invoices and detailed summaries.</p><ul><li>Proper Chamber Utilization</li><li>Real-time Stock Monitoring</li><li>GST, MCA, and ROC Compliance</li><li>Multi-filter Reporting</li><li>Auto Labour Management</li></ul></div><div class="col-md-6 text-center"><img src="https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80&w=800" class="img-fluid rounded shadow" alt="Billing"></div></div></div>
+                    <div class="tab-pane fade" id="accounting" role="tabpanel"><div class="row align-items-center"><div class="col-md-6"><h3>Built-In Accounting & Tax Compliance</h3><p>CAP doesn’t just track stock; it manages your books too. Easily record vouchers, reconcile balances, and generate critical reports like Trial Balance, General Ledger, Balance Sheet, and P&L. With automated GST filing and e-Invoicing, your financial operations remain audit-ready.</p><ul><li>Rental & Labour Cost Calculations</li><li>Client Credit Threshold Management</li><li>Direct GST Filing & E-Invoicing</li><li>Cash Book, Bank Book, and Ledgers</li></ul></div><div class="col-md-6 text-center"><img src="https://images.unsplash.com/photo-1631032643389-a2924727147b?auto=format&fit=crop&q=80&w=800" class="img-fluid rounded shadow" alt="Accounting"></div></div></div>
+                    <div class="tab-pane fade" id="crm" role="tabpanel"><div class="row align-items-center"><div class="col-md-6"><h3>Powerful Analytics & CRM Tools</h3><p>Get a 360° view of your operations with real-time stock analytics, chamber usage reports, and party-wise performance tracking. Monitor individual party stock, labor activities, and generate detailed IP-tracked activity logs.</p><ul><li>Real-Time Stock Analysis</li><li>Chamber Utilization Analytics</li><li>Billing Trend Analysis</li><li>Party-Wise Stock & Billing Insights</li></ul></div><div class="col-md-6 text-center"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" class="img-fluid rounded shadow" alt="Analytics"></div></div></div>
+                    <div class="tab-pane fade" id="platform" role="tabpanel"><div class="row align-items-center"><div class="col-md-6"><h3>Enterprise-Ready, Integrated & Secure</h3><p>Designed to scale, CAP supports multi-company, multi-user, and multi-commodity setups. It integrates with tools like Tally, WhatsApp, and SAP, while ensuring robust data protection and secure access for every user.</p><ul><li>QR-Based Stock Entry</li><li>Real-time Inventory Status</li><li>Simplicity, Scalability, and Security</li><li>360-degree Onboarding and Support</li></ul></div><div class="col-md-6 text-center"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800" class="img-fluid rounded shadow" alt="Platform"></div></div></div>
+                    <div class="tab-pane fade" id="monitoring" role="tabpanel"><div class="row align-items-center"><div class="col-md-6"><h3>Temperature & Expiry Monitoring</h3><p>Track live chamber temperatures and set intelligent alerts for expiry dates, threshold deviations, and chamber conditions, helping you protect perishables and avoid losses.</p><ul><li>Live Temperature Monitoring</li><li>Automated Expiry Alerts</li><li>Party-Wise Pricing and Rules</li><li>Labour Management & Costing</li></ul></div><div class="col-md-6 text-center"><img src="https://images.unsplash.com/photo-1627961019213-c8b53d5a4a5b?auto=format&fit=crop&q=80&w=800" class="img-fluid rounded shadow" alt="Monitoring"></div></div></div>
+                    <div class="tab-pane fade" id="made-in-india" role="tabpanel"><div class="row align-items-center"><div class="col-md-6"><h3>Made in India, for Indian Cold Chains</h3><p>CAP is proudly developed in India, designed to meet the real-world needs of Indian cold storages by supporting local tax structures, regional languages, and compliance with ROC, GST, and MCA norms.</p><ul><li>Support for Local Tax Structures</li><li>Regional Language Options</li><li>Full Compliance with Indian Regulations</li></ul></div><div class="col-md-6 text-center"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=800" class="img-fluid rounded shadow" alt="Made in India"></div></div></div>
+                </div>
+            </div>
+             <div class="section-divider bottom"><svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h1440v45.7L0 120V0z" class="divider-fill-mid"></path></svg></div>
+        </section>
+
+        <section id="reports" class="section bg-mid">
+            <div class="container reports-wrapper">
+                <div class="row reports-container">
+                    <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+                        <div class="reports-intro">
+                            <h2>All Your Data, Smarter & Faster</h2>
+                            <p class="lead">Gain full visibility into your cold storage operations with detailed registers, live tracking, and automated financial reporting.</p>
+                            <p>From the first scan to the final dispatch, it's all documented. Click to expand any category and see the reports you can generate.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
+                        <div class="accordion" id="reportsAccordion">
+                            <div class="card"><div class="card-header"><h2 class="mb-0"><button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne">Reports & Registers <i class="fas fa-chevron-down"></i></button></h2></div><div id="collapseOne" class="collapse show" data-parent="#reportsAccordion"><div class="card-body"><ul><li>Arrival Register</li><li>Dispatch Register</li><li>Lot Shifting Register</li><li>Demand Book</li><li>Chamber & Store Register</li><li>Stock Summary</li><li>Material Receipt Report</li></ul></div></div></div>
+                            <div class="card"><div class="card-header"><h2 class="mb-0"><button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo">Financial & Rent Reports <i class="fas fa-chevron-down"></i></button></h2></div><div id="collapseTwo" class="collapse" data-parent="#reportsAccordion"><div class="card-body"><ul><li>Accrued Rent Report</li><li>Revenue Sheet</li><li>Lot Statement</li><li>Contractor Labour Report</li><li>Bill Summary & Billed Lot Report</li><li>Party Ledger</li><li>Party Balance Report</li></ul></div></div></div>
+                            <div class="card"><div class="card-header"><h2 class="mb-0"><button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree">CRM & Analytics <i class="fas fa-chevron-down"></i></button></h2></div><div id="collapseThree" class="collapse" data-parent="#reportsAccordion"><div class="card-body"><ul><li>CRM Logs</li><li>Stock Analysis</li><li>Chamber Analysis</li><li>Billing Analysis</li><li>Party Analysis & Stock View</li><li>Real-Time Temp Tracking</li><li>User Activity Log (IP-Tracked)</li></ul></div></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <div class="modal fade feature-modal" id="inventoryModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Inventory & Space Management</h5><button type="button" class="close" data-dismiss="modal">×</button></div><div class="modal-body text-center"><div class="modal-icon"><i class="fas fa-boxes"></i></div><p>Maximize every inch with real-time inventory control and intelligent chamber utilization.</p></div></div></div></div>
+    <div class="modal fade feature-modal" id="billingModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Automated Billing & Invoicing</h5><button type="button" class="close" data-dismiss="modal">×</button></div><div class="modal-body text-center"><div class="modal-icon"><i class="fas fa-file-invoice-dollar"></i></div><p>Auto-generate GST-compliant invoices with flexible billing modes which means no manual errors, no delays.</p></div></div></div></div>
+    <div class="modal fade feature-modal" id="trackingModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Real-Time Temperature & Condition Tracking</h5><button type="button" class="close" data-dismiss="modal">×</button></div><div class="modal-body text-center"><div class="modal-icon"><i class="fas fa-thermometer-half"></i></div><p>Stay ahead of spoilage with live chamber monitoring and instant temperature alerts.</p></div></div></div></div>
+    <div class="modal fade feature-modal" id="reportsModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Powerful Reports & Analytics</h5><button type="button" class="close" data-dismiss="modal">×</button></div><div class="modal-body text-center"><div class="modal-icon"><i class="fas fa-chart-pie"></i></div><p>Make data-backed decisions with detailed, exportable reports across stock, billing, and usage.</p></div></div></div></div>
+    <div class="modal fade feature-modal" id="automationModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">360° Workflow Automation</h5><button type="button" class="close" data-dismiss="modal">×</button></div><div class="modal-body text-center"><div class="modal-icon"><i class="fas fa-cogs"></i></div><p>From lot allocation to customer reminders which will automate your cold storage, end to end.</p></div></div></div></div>
+    <div class="modal fade feature-modal" id="dashboardModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Centralized Dashboard</h5><button type="button" class="close" data-dismiss="modal">×</button></div><div class="modal-body text-center"><div class="modal-icon"><i class="fas fa-tachometer-alt"></i></div><p>Stay ahead with data-driven insights from a powerful, centralized dashboard.</p></div></div></div></div>
+
+    <div id="contact">
+        <svg class="footer-frame" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1920 79"><defs><style>.cls-2{fill:var(--cool-dark);}</style></defs><title>footer-frame</title><path class="cls-2" d="M0,72.427C143,12.138,255.5,4.577,328.644,7.943c147.721,6.8,183.881,60.242,320.83,53.737,143-6.793,167.826-68.128,293-60.9,109.095,6.3,115.68,54.364,225.251,57.319,113.58,3.064,138.8-47.711,251.189-41.8,104.012,5.474,109.713,50.4,197.369,46.572,89.549-3.91,124.375-52.563,227.622-50.155A338.646,338.646,0,0,1,1920,23.467V79.75H0V72.427Z" transform="translate(0 -0.188)"/></svg>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6"><div class="footer-col first"><h4>About Visual Softech</h4><p class="p-small">Visual Softech has gloriously spent 32 years of dedication and commitment to design various software that defines you. Our experience in the industry has made us wiser and sensitive towards the numerous needs and necessities of our diverse customers. Our customer service is indomitable and our customers are precious.</p></div></div>
+                    <div class="col-md-6"><div class="footer-col last"><h4>Contact Us</h4><ul class="list-unstyled li-space-lg p-small"><li class="media"><i class="fas fa-phone"></i><div class="media-body"><a class="white" href="tel:8920770888">8920770888</a></div></li><li class="media"><i class="fas fa-map-marker-alt"></i><div class="media-body">Shop No 44, Mangla Market, Kalkaji, New Delhi-19</div></li><li class="media"><i class="fas fa-envelope"></i><div class="media-body"><a class="white" href="mailto:mail@visualsoftech.com">mail@visualsoftech.com</a></li></ul></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="copyright"><div class="container"><div class="row"><div class="col-lg-12"><p class="p-small mb-0">Copyright © Visual Softech. All rights reserved.</p></div></div></div></div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <script>
+        $(window).on('load', function() {
+            $('.spinner-wrapper').fadeOut('slow');
+        });
+
+        $(document).ready(function() {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 50
+            });
+
+            // Header Slider Logic
+            const slides = document.querySelectorAll('.slider-item');
+            if (slides.length > 0) {
+                const nextBtn = document.getElementById('next-slide');
+                const prevBtn = document.getElementById('prev-slide');
+                let currentSlide = 0;
+                let slideInterval = setInterval(next, 7000); 
+                function showSlide(index) { slides.forEach((slide) => slide.classList.remove('active')); slides[index].classList.add('active'); }
+                function next() { currentSlide = (currentSlide + 1) % slides.length; showSlide(currentSlide); }
+                function prev() { currentSlide = (currentSlide - 1 + slides.length) % slides.length; showSlide(currentSlide); }
+                nextBtn.addEventListener('click', () => { next(); clearInterval(slideInterval); });
+                prevBtn.addEventListener('click', () => { prev(); clearInterval(slideInterval); });
+            }
+
+            // Intersection Observer for animations
+            const observerOptions = { root: null, threshold: 0.1 };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe sections
+            document.querySelectorAll('#industries, #reports').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Smooth Scrolling for page-scroll links
+            $('.page-scroll').on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    var navbarHeight = $('.navbar-custom').outerHeight() || 0;
+                    var targetOffset = $(hash).length ? $(hash).offset().top : 0;
+                    if(hash === '#header-slider' || hash === 'index.html') { targetOffset = 0; } 
+                    else if($(hash).length) { targetOffset = $(hash).offset().top - navbarHeight; }
+                    $('html, body').animate({ scrollTop: targetOffset }, 800);
+                } 
+            });
+
+            // Particles.js initialization
+            if (document.getElementById('particles-js')) {
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+                        "color": { "value": "#90DCD8" },
+                        "shape": { "type": "circle" },
+                        "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
+                        "size": { "value": 2, "random": true },
+                        "line_linked": { "enable": true, "distance": 150, "color": "#90DCD8", "opacity": 0.2, "width": 1 },
+                        "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true },
+                    }, "retina_detect": true
+                });
+            }
+        });
+    </script>
+</body>
+</html>
