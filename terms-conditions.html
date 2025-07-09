@@ -1,307 +1,1623 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Cold Store Accounting Package">
-    <meta name="author" content="Visual Softech">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions | Visual Softech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #7e57c2;
+            --primary-dark: #5e35b1;
+            --primary-light: #b39ddb;
+            --primary-extra-light: #d1c4e9;
+            --primary-pastel: #ede7f6;
+            --primary-ultra-light: #f5f2fa;
+            --text: #333;
+            --text-light: #666;
+            --text-lighter: #888;
+            --white: #ffffff;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
 
-    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-	<meta property="og:coldstore" content="" /> <!-- website name -->
-	<meta property="og:coldstore.co.in" content="" /> <!-- website link -->
-	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
-	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
-	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
-	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
-	<meta property="og:type" content="article" />
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Website Title -->
-    <title>Visual Softech | Best Cold Storage Software | Grading and Sorting | WMS</title>
-    
-    <!-- Styles -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/fontawesome-all.css" rel="stylesheet">
-    <link href="css/swiper.css" rel="stylesheet">
-	<link href="css/magnific-popup.css" rel="stylesheet">
-	<link href="css/styles.css" rel="stylesheet">
-	
-	<!-- Favicon  -->
-    <link rel="icon" href="images/favicon.jpg">
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--primary-pastel);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .last-updated {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .main-content {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 992px) {
+            .main-content {
+                flex-direction: column;
+            }
+        }
+
+        .toc-sidebar {
+            flex: 0 0 300px;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            height: fit-content;
+            position: sticky;
+            top: 2rem;
+        }
+
+        .toc-title {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--primary-extra-light);
+        }
+
+        .toc-title i {
+            font-size: 1.2rem;
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-item {
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .toc-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.65rem;
+            width: 6px;
+            height: 6px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+        }
+
+        .toc-item a {
+            text-decoration: none;
+            color: var(--text);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .toc-item a:hover {
+            background-color: var(--primary-pastel);
+            color: var(--primary-dark);
+        }
+
+        .toc-item a:hover .toc-page {
+            color: var(--primary-dark);
+        }
+
+        .toc-clause {
+            font-weight: 500;
+        }
+
+        .toc-page {
+            font-size: 0.85rem;
+            color: var(--text-lighter);
+            transition: var(--transition);
+        }
+
+        .content-area {
+            flex: 1;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+        }
+
+        .intro {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--primary-extra-light);
+        }
+
+        .intro p {
+            margin-bottom: 1rem;
+        }
+
+        .clause {
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid var(--primary-extra-light);
+            padding-bottom: 2rem;
+        }
+
+        .clause:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .clause-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            background-color: var(--primary-pastel);
+            padding: 1rem 1.5rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .clause-header:hover {
+            background-color: var(--primary-extra-light);
+        }
+
+        .clause-title {
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .clause-number {
+            background-color: var(--primary);
+            color: var(--white);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            color: var(--primary);
+            cursor: pointer;
+            transition: var(--transition);
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .toggle-btn:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .toggle-btn.collapsed {
+            transform: rotate(-90deg);
+        }
+
+        .clause-content {
+            padding: 0 1rem;
+        }
+
+        .clause-content p {
+            margin-bottom: 1.25rem;
+        }
+
+        .clause-content ol, .clause-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .clause-content li {
+            margin-bottom: 0.75rem;
+            position: relative;
+        }
+
+        .clause-content ol {
+            list-style-type: none;
+            counter-reset: item;
+        }
+
+        .clause-content ol > li {
+            counter-increment: item;
+        }
+
+        .clause-content ol > li::before {
+            content: counters(item, ".") ". ";
+            font-weight: bold;
+            color: var(--primary);
+            position: absolute;
+            left: -1.5rem;
+        }
+
+        .sub-clause {
+            margin-top: 1.5rem;
+        }
+
+        .sub-clause-title {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sub-clause-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+        }
+
+        .acceptance-box {
+            background-color: var(--primary-pastel);
+            border: 2px solid var(--primary-extra-light);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .acceptance-text {
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+        }
+
+        .accept-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: var(--transition);
+            box-shadow: 0 4px 8px rgba(126, 87, 194, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .accept-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(126, 87, 194, 0.3);
+        }
+
+        .accept-btn i {
+            font-size: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Print styles */
+        @media print {
+            .toc-sidebar, .toggle-btn, .acceptance-box {
+                display: none;
+            }
+            
+            .clause-content {
+                display: block !important;
+            }
+            
+            body {
+                background-color: white;
+                font-size: 12pt;
+                color: black;
+            }
+            
+            .container {
+                padding: 0;
+            }
+            
+            header, .content-area {
+                box-shadow: none;
+                padding: 0;
+                background: none;
+                color: black;
+            }
+            
+            .clause-header {
+                background: none !important;
+                padding: 0 !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .clause-title {
+                color: black !important;
+            }
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary-pastel);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-light);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+
+        /* Animation for scroll to top */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Highlight current section */
+        .toc-item a.active {
+            background-color: var(--primary-extra-light);
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .content-area {
+                padding: 1.5rem;
+            }
+            
+            .clause-header {
+                padding: 0.75rem 1rem;
+            }
+            
+            .clause-title {
+                font-size: 1.1rem;
+            }
+            
+            .clause-number {
+                width: 28px;
+                height: 28px;
+                font-size: 0.8rem;
+            }
+            
+            .acceptance-box {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
-<body data-spy="scroll" data-target=".fixed-top">
-    
-    <!-- Preloader -->
-	<div class="spinner-wrapper">
-        <div class="spinner">
-            <div class="bounce1"></div>
-            <div class="bounce2"></div>
-            <div class="bounce3"></div>
+<body>
+    <div class="container">
+        <header>
+            <h1>Terms and Conditions</h1>
+            <p class="subtitle">Legal Agreement Between Visual Softech and Users</p>
+            <p class="last-updated">Last updated: July 9, 2025</p>
+        </header>
+
+        <div class="main-content">
+            <aside class="toc-sidebar">
+                <h2 class="toc-title">
+                    <i class="fas fa-list-ul"></i>
+                    Table of Contents
+                </h2>
+                <ul class="toc-list" id="toc">
+                    <!-- Table of contents will be generated by JavaScript -->
+                </ul>
+            </aside>
+
+            <main class="content-area" id="content">
+                <div class="intro">
+                    <p>By clicking "I Agree" or similar confirmation below, you ("User" or "Client") hereby confirm and acknowledge that you have read, understood, and agree to be legally bound by the terms and conditions of this Clickwrap Agreement ("Agreement").</p>
+                    <p>This Agreement is entered into between Visual Softech, having its corporate office at ("Company," "we," "us," or "our"), and you, the User. By accepting, the user agrees to be bound by all the terms, conditions, obligations, and disclaimers set forth herein, including but not limited to those relating to licensing, support, payment, privacy, liability, third-party integrations, and jurisdiction.</p>
+                </div>
+
+                <!-- Clause 1 -->
+                <div class="clause" id="clause-1">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">1</span>
+                            <span>Definitions</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <p>For the purposes of this Agreement, the following terms shall have the meanings set forth below:</p>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">1.1 "Agreement"</div>
+                            <p>Refers to these Terms of Use, including but not limited to all policies, schedules, and documents referenced herein or made available by Visual Softech through the Services.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">1.2 "Client"</div>
+                            <p>Means the individual or legal entity (such as a company, organization, or institution) that accepts the terms and conditions of this Agreement with Visual Softech for the purpose of accessing and using the Services. The Client is responsible for compliance with this Agreement by all associated Users and for all payments due under the Agreement.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">1.3 "User"</div>
+                            <p>Means any individual who accesses or uses the Services, whether on their own behalf or as authorized or assigned by the Client. A User may include employees, contractors, agents, or other representatives of the Client.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">1.4 "Services"</div>
+                            <p>Means the software-as-a-service (SaaS) platform, tools, features, content, support, and related services provided by Visual Softech through its website, applications, or APIs.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">1.5 "Visual Softech" or "The Company"</div>
+                            <p>Refers to Visual Softech, the service provider offering the SaaS platform and entering into this Agreement with the Client.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">1.6 "Annual Maintenance Contract"</div>
+                            <p>Means the specific plan or package selected by the Client for access to the Services, including applicable usage limits, pricing, features, and term duration.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">1.7 "Account"</div>
+                            <p>Means the registered profile or access credentials created by or for the Client (and its authorized Users) to use the Services, including all associated data, configurations, and access privileges.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">1.8 "Confidential Information"</div>
+                            <p>Means all non-public information disclosed by either party to the other, whether orally, electronically, or in writing, that is designated as confidential or that a reasonable person would understand to be confidential under the circumstances. This includes but is not limited to business practices, customer data, software code, pricing information, and technical documentation.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">1.9 "Third-Party Services"</div>
+                            <p>Means any third-party software, services, platforms, or products that are integrated with, or used by the Provider to deliver, the Service. This includes cloud infrastructure and APIs provided by external providers such as Amazon Web Services (AWS) for hosting, WhatsApp or other messaging platforms for communications, Tally/Busy accounting software for integrations, AI services like OpenAI's ChatGPT or Blackbox AI, or any other third-party tool or service referenced in the Order or Service documentation. Third-Party Services are not part of the Provider's Service itself but may affect or be used in connection with the Service.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">1.10 "Effective Date"</div>
+                            <p>Means the date on which Visual Softech receives the advance fee from the Client. By clicking "I Agree," registering for the Services, or otherwise accessing or using the Services, the Client confirms their acceptance and execution of this Agreement. However, this Agreement shall come into effect only upon receipt of the advance fee by the Service Provider.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">1.11 "Quality & Training"</div>
+                            <p>Means the standards, procedures, and instructional measures adopted by the Service Provider to ensure that its personnel are adequately trained, qualified, and competent to perform the Services, in accordance with, the terms of this Agreement, industry best practices, and any applicable regulatory requirements, including but not limited to onboarding modules, technical instruction, process documentation, and periodic evaluations.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">1.12 "Customer Data"</div>
+                            <p>Means all data, content, or materials, including personal or business information, uploaded, submitted, stored, or transmitted by the Client or its Users while using the Services. The Client retains ownership of its Customer Data, subject to the rights and responsibilities outlined in the Privacy Policy (Clause 10).</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">1.13 "Order" or "Proposal" or "Quotation"</div>
+                            <p>Refers to a document executed by the Parties (or agreed through an online process) that outlines the specific services, subscription duration, user limits, pricing, and deliverables. Each such document is incorporated into this Agreement and forms part of the Fee Structure and Payment Terms under Section 7.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clause 2 -->
+                <div class="clause" id="clause-2">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">2</span>
+                            <span>Interpretation</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <p>a) The construction of terms in this Agreement such that, unless the context otherwise requires, the singular includes the plural and vice versa; references to any person include individuals, bodies corporate, and other legal entities; headings are for reference only and shall not affect interpretation; "including" shall mean "including without limitation"; and references to any statute or regulation shall include its amendments, re-enactments, or subordinate legislation.</p>
+                        <p>b) No Contra Proferentem: This Agreement has been negotiated by the Parties and their respective counsel, and shall be interpreted fairly in accordance with its terms and without any strict construction in favor of or against either Party. No rule of construction that ambiguities shall be interpreted against the drafter shall apply to this Agreement.</p>
+                        <p>c) Headings: The headings and titles in this Agreement are for convenience only and have no legal or contractual effect.</p>
+                    </div>
+                </div>
+
+                <!-- Clause 3 -->
+                <div class="clause" id="clause-3">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">3</span>
+                            <span>Eligibility</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <p>The User represents and warrants that they are legally competent to enter into a binding agreement in accordance with Section 11 of the Indian Contract Act, 1872, and are not disqualified from contracting by any law to which they are subject. Where the Services are accessed or used on behalf of a company, organization, or other legal entity, the User further affirms that they have the legal authority to bind such entity to this Agreement. Use of the Services shall constitute deemed confirmation of these representations. Any use of the Services in violation of this Clause shall be at the sole risk of the User, who shall be fully responsible for any resulting legal, financial, or operational consequences.</p>
+                    </div>
+                </div>
+
+                <!-- Clause 4 -->
+                <div class="clause" id="clause-4">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">4</span>
+                            <span>License to Use</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">4.1</div>
+                            <p>Visual Softech hereby grants the Client a limited, non-exclusive, non-transferable, non-sublicensable, and revocable license to access and use the Services, including the supplied software and related features, solely for the Client's internal business operations and in accordance with this Agreement, including but not limited to the restrictions specified in Clause 6 (Engagement Terms) and Clause 7.9 (Third-Party Integrations).</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">4.2</div>
+                            <p>The standard license includes access for the number of users and locations as set forth in the pricing schedule. Additional users or endpoints may be added subject to applicable fees.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">4.3</div>
+                            <p>All intellectual property rights in and to the Services remain the sole and exclusive property of Visual Softech and its licensors.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">4.4</div>
+                            <p>For software accessed on a trial basis, Visual Softech grants a limited, non-exclusive, non-transferable, and non-assignable license solely for evaluation purposes within the agreed trial period. All use shall be subject to the terms of this Agreement.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">4.5</div>
+                            <p>Promotional offers, free trials, or introductory discounts are extended at the sole discretion of Visual Softech and may be based on Client data such as contact details, billing history, or geographic location. Offers are non-transferable and may be revoked at any time without prior notice.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clause 5 -->
+                <div class="clause" id="clause-5">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">5</span>
+                            <span>Grant of Access</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">5.1</div>
+                            <p>The Client is solely responsible for maintaining the confidentiality and security of all login credentials and for all activity, authorised or unauthorised, that occurs under its Account. Visual Softech reserves the right to suspend or terminate access to the Services in the event of any breach of this Agreement, suspected misuse, or non-payment.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">5.2</div>
+                            <p>Any attempt by The Client to mask, alter, spoof, or falsify its geographic location or IP address may result in account migration, suspension, or termination.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">5.3</div>
+                            <p>Access to the Service is limited to online use only; the Client shall not download, store, or retain Service Data as local copies on any device or user account unless expressly authorized in writing or enabled by the Service's functionality.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clause 6 -->
+                <div class="clause" id="clause-6">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">6</span>
+                            <span>Engagement Terms and Software Use Restrictions</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">6.1</div>
+                            <p>The Client appoints Visual Softech as an independent contractor for the development, deployment, and maintenance of the software. The Client may elect to avail one or more of the related services offered by Visual Softech—including, but not limited to, website and mobile application development. In the event the Client elects to engage any third-party service provider for such ancillary services, the Client shall provide prior written notice to Visual Softech at least thirty (30) days in advance.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">6.2</div>
+                            <p>The Client may elect to be excluded from any marketing materials, branding displays, or promotional content by submitting a written request to Visual Softech. Upon receipt of such a request, Visual Softech shall cease to use the Client's name, logo, or any other identifying information in all public-facing materials and within the software interface, and shall refrain from further disclosure thereof.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">6.3 Intellectual Property and Licensing</div>
+                            <ol>
+                                <li>The Client acknowledges that the source code of the supplied software is the exclusive intellectual property of Visual Softech. No part of the source code shall be shared, transferred, or disclosed. Only the necessary executable files (e.g., DLLs or similar compiled components) required for deployment on a Client-procured or Company-provided server will be provided. These are licensed strictly for internal business use in accordance with this Agreement.</li>
+                                <li>The Services are provided solely on a subscription and executable-use basis. This Agreement does not grant the Client any right to access, possess, or receive the source code, nor does Visual Softech have any obligation to place it in escrow or disclose it under any circumstance.</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">6.4</div>
+                            <p>The Client agrees not to, without prior written consent from Visual Softech:</p>
+                            <ol type="a">
+                                <li>share, distribute, sell, sublicense, or provide access to any part of the software to third parties, vendors, service providers, or API providers;</li>
+                                <li>reverse engineer, decompile, disassemble, or otherwise attempt to derive the source code, algorithms, or underlying structure of the software, except to the limited extent permitted by applicable law.</li>
+                                <li>copy, modify, adapt, or create derivative works of the Services;</li>
+                                <li>sublicense, lease, rent, sell, assign, distribute, or otherwise make the Services available to any third party;</li>
+                                <li>use the Services to build or support a competitive product or service; or</li>
+                                <li>integrate, connect, or interoperate the Services with any third-party software, system, or application without prior written consent.</li>
+                            </ol>
+                            <p>Any such unauthorized integration or connection is strictly prohibited and shall constitute a material breach of this Agreement.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">6.5</div>
+                            <p>The Client is solely responsible for maintaining data integrity, performing regular backups, and ensuring the security of all data stored or processed through the Services. Visual Softech shall not be liable for any data loss, corruption, or unauthorized access occurring during or after the engagement. The Client agrees to indemnify and hold harmless Visual Softech from any claims, damages, or losses arising from the mishandling, loss, or corruption of Client data.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">6.6</div>
+                            <p>The Client shall not copy, replicate, white-label, or otherwise use the platform's user interface, design language, layouts, branding elements (including navigation, colors, icons, or typography) in any software or service. Any such use without prior written consent shall be deemed a material breach and may result in immediate termination.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">6.7</div>
+                            <p>The Client shall not solicit or hire any employee, contractor, or consultant of Visual Softech during the term of this Agreement and for twelve (12) months following its termination.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">6.9 Non-Incorporation and Domain Restrictions</div>
+                            <p>The Client shall not incorporate, combine, or use Visual Softech's brand assets, including trademarks, logos, names, website designs, or domains, within its own product or service names, company names, domain names, websites, or marketing materials, without prior written consent. The Client shall not register, use, or assist in registering any domain name that contains or resembles Visual Softech's brand assets.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clause 7 -->
+                <div class="clause" id="clause-7">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">7</span>
+                            <span>First Year Engagement</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">7.1 Duration</div>
+                            <p>The engagement shall be valid for a period of twelve (12) months, commencing from the date on which Visual Softech receives the advance fee from The Client (the "Effective Date").</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">7.2 Advance Fee</div>
+                            <p>The Client shall pay an advance fee equivalent to twenty-five percent (25%) of the total service fee, as mutually agreed between Visual Softech and The Client prior to the commencement of services. The total service fee applicable to each Client shall be communicated in writing (including by email, proposal, or invoice) and shall form part of this Agreement by reference. This Agreement shall become effective only upon Visual Softech's receipt of the advance fee in full. The advance fee, along with all other payments made under this Agreement, shall be non-refundable as expressly provided in Clause 9 and serves as a condition precedent to the initiation of any work under this Agreement.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">7.3 Fee Structure and Payment Terms</div>
+                            <ol>
+                                <li>The total service fee and applicable payment schedule—whether structured as a lump sum or milestone-based—shall be communicated to The Client by Visual Softech in writing (including via email, invoice, or onboarding communication) prior to the commencement of services. Such communicated terms shall be deemed binding and form an integral part of this Agreement without requiring further execution.</li>
+                                <li>Irrespective of the payment structure, The Client shall ensure that the entire service fee is paid in full within ninety (90) calendar days from the Effective Date, unless otherwise expressly agreed in writing by Visual Softech.</li>
+                                <li>For milestone-based structures, each payment shall be due within 15 business days from the date Visual Softech notifies The Client of the milestone's completion. For lump-sum payments, the full amount shall be due as per the communicated payment timeline.</li>
+                                <li>Visual Softech reserves the right to withhold deliverables, suspend services, or limit access to the software in the event of non-payment or delay beyond the stipulated period, without incurring any liability. Disputed Charges: If Customer disputes any invoiced amount in good faith, Customer shall notify Provider in writing before the invoice due date, specifying the nature of the dispute and the amount being withheld. The Parties will seek to resolve the dispute promptly and in good faith. Customer shall pay any undisputed portion by the due date. Provider will not exercise suspension or termination rights for amounts under reasonable dispute, provided Customer is cooperating diligently to resolve the dispute.</li>
+                                <li>All fee structures and payment timelines communicated by Visual Softech shall be deemed incorporated herein by reference and shall be enforceable under this Agreement.</li>
+                                <li>Payment Method: Customer shall make payments via the method agreed in the Order (e.g. bank transfer, credit card, UPI, etc.). If paying by credit card or electronic payment, Customer authorizes Provider (or its payment processor) to automatically charge the card or account for fees when due. Customer is responsible for providing complete and accurate billing and contact information and notifying Provider of any changes.</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">7.4 Currency and Tax Responsibilities</div>
+                            <p>All payments shall be made in Indian Rupees (INR), unless otherwise agreed. The Client shall bear all applicable taxes, currency conversion fees, bank transfer charges, remittance costs and compliance costs related to cross-border payments. The Client agrees to pay any government-imposed taxes, whether direct or indirect, applicable to the services provided. The Client is solely responsible for complying with all applicable tax regulations in their respective country or region, including but not limited to import duties, GST, and withholding taxes. Exempted categories will not be subject to tax.</p>
+                            <p>For international Customers, if any withholding or reverse-charge tax is required by local law, Customer may deduct it as mandated and shall provide Provider with the official tax receipt or certificate evidencing payment of such withholding tax so that Provider can claim credit or refund. Customer will coordinate with Provider on such matters to ensure compliance with tax laws.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">7.5 Withholding (International)</div>
+                            <p>Customer will provide official documentation to Provider evidencing the withheld amounts so that Provider can, if possible, claim a foreign tax credit. This provision does not apply to Indian domestic TDS which is covered in 7.4.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">7.6 Letter of Undertaking (LUT)</div>
+                            <p>Where the Client is located outside India, the Services may qualify as an "export of services" under the Integrated Goods and Services Tax Act, 2017. Visual Softech, at its sole discretion, may furnish a valid Letter of Undertaking (LUT) to export such services without charging Integrated GST (IGST). To enable GST-free invoicing, the Client must ensure that its billing address is outside India, that all payments are received in freely convertible foreign currency through approved banking channels, and that the transaction complies with applicable FEMA and RBI regulations. If these conditions are not fully met, or if the transaction is later held not to qualify as an export under Indian law, Visual Softech reserves the right to charge IGST on such invoices, and the Client shall remain fully liable for the applicable tax without offset, deduction, or dispute.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">7.7 Billing for Additional Features</div>
+                            <ol>
+                                <li>Unless expressly stated in the pricing section, the service fee does not include charges for customizations, third-party integrations (such as with Tally, Busy, SAP), party mobile applications, WhatsApp or SMS communication modules, e-Invoicing, e-Way billing, GST filing or retrieval, or any other additional features or modules.</li>
+                                <li>Visual Softech retains the right to charge separately for any such additions or enhancements, including new modules, custom developments, UI/UX changes, or design detailing, and reserves the discretion to determine whether a request constitutes a customization, enhancement, or a new feature. Prior to commencing any such additional work, Visual Softech will share a quotation for the proposed services, and such work shall begin only after The Client confirms and pays the quoted amount in full. Once full payment is received, the additional work shall be deemed completed, and no further revisions or obligations shall be assumed by Visual Softech unless separately agreed in writing. Visual Softech shall not be liable for any delays, disputes, or service disruptions resulting from non-payment, partial payment, or delayed approvals by The Client.</li>
+                                <li>Intellectual Property in Custom Features & Usage Data
+                                    <ol type="a">
+                                        <li>All intellectual property rights in and to any additional features, customizations, enhancements, or modifications developed by Visual Softech under this Agreement—whether requested by The Client or otherwise—shall remain the exclusive property of Visual Softech. Such developments shall be subject to the ownership and licensing terms outlined in Clause 6.3.1.</li>
+                                        <li>The Client is granted only a limited, non-exclusive, non-transferable license to use such developments solely for its internal business purposes, for the duration of this Agreement, and strictly in accordance with usage restrictions outlined herein.</li>
+                                        <li>License to Use Feedback & Usage Data: Subject to any conflicting provisions in Clause 10 (Privacy Policy), the Client agrees that Visual Softech may collect and use aggregated, de-identified usage data (e.g., transactional trends, performance metrics) for product improvement, analytics, and industry reporting. Such data shall not identify any individual or client and shall be anonymized in accordance with Clause 10.3.4.</li>
+                                        <li>Where the Parties agree to co-develop new deliverables:
+                                            <ol type="a">
+                                                <li>If the output constitutes a general improvement or platform-wide enhancement, Visual Softech shall retain IP rights.</li>
+                                                <li>If the output is a bespoke report or tool based solely on the Client's proprietary inputs, the Client shall retain rights over such content (but not the underlying software or platform).</li>
+                                                <li>These terms should be formalized in the applicable Order Form or Statement of Work (SOW).</li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>Visual Softech does not guarantee the availability of any specific content, feature, or module at any time and reserves the right to modify, suspend, or discontinue any part of the Service at its sole discretion without liability.</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">7.8 Support Availability</div>
+                            <ol>
+                                <li>Visual Softech strives to deliver software that is stable, functionally reliable and free from bugs. The Client acknowledges that it is responsible for reviewing the delivered functionality and reporting any issues for resolution.</li>
+                                <li>Visual Softech shall provide remote (offshore/online) support from Monday to Friday, 10:00 AM to 6:00 PM IST, excluding weekends, public holidays, gazetted holidays, national holidays, and religious holidays observed in India. This remote support is included in the initial project cost for the first year and is renewable under the Annual Maintenance Contract (AMC) for subsequent years.</li>
+                                <li>Any request for on-site, onshore, or offline support, defined as the physical presence of Visual Softech's personnel at the Client's premises or within the Client's country, shall be treated as a separate, chargeable service. Charges for such support shall be determined based on the Client's location, duration of the engagement, applicable local labor laws, wage regulations, government compliance requirements, and other jurisdictional constraints. All travel and incidental expenses, including airfare, visa costs, accommodation, local transport, per diem allowances, and applicable taxes or permits, shall be solely borne by The Client.</li>
+                                <li>Server Access and FTP Configuration: In cases where the Services are deployed on client-side or third-party servers as mutually agreed, the Client shall ensure a minimum hardware configuration as specified by Visual Softech to enable optimal performance. FTP access, if enabled, shall be strictly limited to the folder(s) containing the Client's own uploaded documents. The Client shall not have access to system directories, server-side logs, databases, or folders pertaining to other clients or platform components. Visual Softech reserves the right to audit and revoke FTP access if misuse or unauthorized access is detected.</li>
+                                <li>On-site support shall be subject to prior written agreement and the availability of Visual Softech's team. Support communication shall be conducted exclusively in Hindi or English. While Visual Softech will make reasonable efforts to accommodate Client's time zone preferences for urgent matters, such efforts shall be subject to mutual feasibility and availability. Turnaround times for issue resolution are dependent on the nature and complexity of the task and will be communicated at the time of reporting.</li>
+                                <li>Access to the Service's APIs is permitted only via documented endpoints and must be performed by technically skilled authorised personnel. Undocumented endpoint access or exploitation is prohibited.</li>
+                                <li>Visual Softech reserves the right to impose limits on API usage, including request rates and bandwidth. Breach of such limits may lead to throttling, denial of service, or suspension.</li>
+                                <li>Visual Softech may, at its discretion, grant access to beta or pre-release features, which shall be offered strictly "as-is," without any warranties of functionality, stability, or continued availability, and may be modified or withdrawn at any time without notice.</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">7.9 Third-Party Services and Management</div>
+                            <ol>
+                                <li>Communication via WhatsApp
+                                    <p>All communication via WhatsApp shall be conducted solely through the official number designated by Visual Softech. Should The Client request integration with their own WhatsApp number, such integration shall be subject to Meta's (Facebook) approval and may incur additional fees which shall be borne by The Client.</p>
+                                </li>
+                                <li>Third-party software integrations provided by Visual Softech are categorized as follows:
+                                    <ol type="a">
+                                        <li>One-Way Integration:
+                                            <p>Refers to the transmission of a single data point, including but not limited to rental bills, sales vouchers, purchase vouchers, cash or bank payment entries, or receipt vouchers— expressly excluding any master data such as party information, item lists, or units of measure, generated by Visual Softech's software, transmitted solely to The Client's procured third-party software.</p>
+                                        </li>
+                                        <li>One-Way Pro Integration:
+                                            <p>Multiple transactional data points, excluding master data, are transmitted in one direction from Visual Softech's software to The Client's procured third-party software. These data points include, but are not limited to, rental bills, sales vouchers, purchase vouchers, cash/bank payment entries, and receipt vouchers. Master data—such as party details, item lists, and units of measurement—is expressly excluded from this transmission.</p>
+                                        </li>
+                                        <li>Two-Way Integration:
+                                            <p>Refers to the transmission of multiple transactional data points—such as rental bills, sales vouchers, purchase vouchers, cash/bank payments, and receipt vouchers—excluding master data (e.g., party details, item records, unit definitions), from Visual Softech's software to The Client's third-party software (latest version). It also includes the reverse transmission of purchase vouchers, sales vouchers, and cash/bank payment entries (excluding master data) from The Client's third-party software back to Visual Softech's software.</p>
+                                        </li>
+                                        <li>Two-Way Pro Integration:
+                                            <p>Refers to the transmission of multiple data points, including rental bills, sale voucher, purchase voucher, cash/bank payments, and receipt vouchers, along with master data (e.g., party, item, unit), generated from Visual Softech's software to The Client's procured third-party software (latest version). It also includes the transfer of purchase, sale, cash, and bank payment vouchers, along with master data, from The Client's third-party software back to Visual Softech's software.</p>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>Server Services
+                                    <ol type="a">
+                                        <li>If The Client opts to use third-party server services provided by Visual Softech, Visual Softech shall offer shared server access with the following minimum hardware configurations: 2 CPU, 4GB RAM, and 50GB storage. FTP access will be granted to The Client as needed.</li>
+                                        <li>Any advanced server services, including but not limited to firewall traffic analysis, security solution deployment, network performance monitoring, encryption protocols, Cloudflare protection, multi-layer security architecture, vulnerability patching, or other cybersecurity measures, shall incur additional charges which shall be borne by The Client.</li>
+                                        <li>The Client acknowledges and agrees that the utilization of databases is an inherent and integral component of the service offering. Such databases may be hosted within shared, virtual private server, or dedicated server environments, and may, by nature of the service, include data pertaining to multiple clients utilizing the software. Visual Softech's liability with respect to such server environments, including but not limited to management, performance, security, or availability of data, as well as issues attributable to the shared nature of the infrastructure, is governed by the provisions set forth in Clause 12.6 of this Agreement.</li>
+                                        <li>In the event The Client requires server migration—whether to a server procured by The Client or by Visual Softech—The Client shall bear all associated costs for data transfer and configuration.</li>
+                                        <li>If The Client elects not to use third-party server services via Visual Softech, The Client shall be solely responsible for procuring, configuring, managing, and maintaining its own server infrastructure, whether in-house or through a third-party provider. This includes, without limitation, performance monitoring, security patching, uptime assurance, disaster recovery planning, and the deployment of software updates or releases provided by Visual Softech. In such cases, Visual Softech shall only be liable for issues directly related to the software it supplies.</li>
+                                        <li>There is currently no licensing fees associated with the coding languages, libraries, or packages used in the development of the supplied software. However, should such licensing fees become applicable in the future, The Client agrees to bear the cost.</li>
+                                        <li>No security audit shall be conducted by Visual Softech unless explicitly requested in writing by The Client. Any costs associated with such audits shall be borne solely by The Client.</li>
+                                        <li>Visual Softech shall access the Client's database only as necessary for deployment, support, or maintenance, and solely through authorized personnel. No access shall be made for analytics, product development, or any other purpose without prior written consent. Where the Services are hosted on shared or VPS infrastructure, system-level access may occur strictly for operational or compliance reasons. Visual Softech disclaims all responsibility for data content, accuracy, or regulatory compliance unless otherwise agreed in writing.</li>
+                                    </ol>
+                                </li>
+                                <li>Communication with Third-Party Vendors
+                                    <p>The Client agrees to facilitate seamless communication between Visual Softech and any third-party vendors, service providers, or API providers engaged by The Client, whether directly or indirectly. The Client consents to Visual Softech engaging with third-party services and sharing data with third parties as necessary, without the need for prior written consent from The Client.</p>
+                                </li>
+                            </ol>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">7.10 Post First Year Engagement</div>
+                            <p>After the completion of the initial 12-month period, The Client will be charged a standard fee for the continued use of the software as per the terms outlined in Section 8, Annual Maintenance Contract (AMC).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clause 8 -->
+                <div class="clause" id="clause-8">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">8</span>
+                            <span>Annual Maintenance Contract (AMC)</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">8.1</div>
+                            <p>The AMC fee shall be thirty percent (30%) of the total project cost, payable on or before the last day of the first year of engagement. This fee shall be subject to an annual escalation of ten percent (10%) or the prevailing industry standard, whichever is higher.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">8.2 Scope</div>
+                            <p>The AMC covers only those services and deliverables explicitly listed in the Pricing section of this Agreement and shall be applicable solely upon payment by The Client. Any services or items not specified therein shall be deemed outside the scope of this Agreement and shall be treated as additional services subject to separate billing and agreement.</p>
+                            <p>Unless expressly modified herein, all other terms and conditions under this Agreement shall remain in full force and effect.</p>
+                            
+                            <p>For clarity, the following categories of maintenance-related services are delineated:</p>
+                            <ol type="a">
+                                <li>New or Additional Features/Modules – Refer to Clause 7.7.2, Billing for Additional Features.</li>
+                                <li>Support – Refer to Clause 7.7.2, Support Availability.</li>
+                                <li>Third-Party Services – Refer to Clause 7.8, Third-Party Services and Management.</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">8.3</div>
+                            <p>The AMC shall remain valid for a period of twelve (12) months, commencing from the date of receipt of the full AMC payment by Visual Softech.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">8.4</div>
+                            <p>Visual Softech reserves the right to revise the AMC structure—including pricing, deliverables, and payment schedules—in line with business needs or industry trends. This may include transitioning to a subscription-based support model that continues the core intent of the AMC. Any such change will be communicated to THE Client in advance.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">8.5</div>
+                            <p>No additional charges shall apply for support services during the first year of AMC coverage. Visual Softech remains committed to providing consistent, high-quality service and support throughout the AMC term.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clause 9 -->
+                <div class="clause" id="clause-9">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">9</span>
+                            <span>No-Refund Clause</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <ol type="a">
+                            <li>All payments made towards the Services are strictly non-refundable and non-adjustable, irrespective of the grounds or circumstances. The User hereby irrevocably waives any and all rights to claim any refund, set-off, or restitution of fees paid.</li>
+                            <li>In the event of a pricing or typographical error due to human or technical mistake, Visual Softech reserves the right to cancel or refuse any order or subscription placed at the incorrect price. If payment has been processed, a full refund for the incorrect amount shall be issued.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Clause 10 -->
+                <div class="clause" id="clause-10">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">10</span>
+                            <span>Privacy Policy</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">10.1 Scope</div>
+                            <p>This Privacy Policy governs the collection, processing, storage, and transfer of personal data through the software and services provided by Visual Softech, in accordance with applicable laws including the General Data Protection Regulation (EU) 2016/679 (GDPR) and the Digital Personal Data Protection Act, 2023 (DPDP Act), India.</p>
+                            <p>Visual Softech adopts industry-standard and reasonable safeguards for protecting data. However, The Client is solely responsible for the data they upload, process, or store, and for ensuring lawful processing under applicable regulations.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">10.2</div>
+                            <p>The Client acknowledges and agrees that:</p>
+                            <ol type="a">
+                                <li>All data submitted to the software is provided voluntarily, and The Client is the data fiduciary (DPDP) and/or data controller as per GDPR provisions for such data.</li>
+                                <li>The Client shall ensure that all necessary consents, notices, or lawful bases for processing have been obtained from end users, employees, customers, or third parties whose personal data is processed.</li>
+                                <li>The Client is solely responsible for the accuracy, legality, and retention of such data, as well as for enforcing appropriate technical and organizational controls on their own systems or servers, whether hosted by The Client or through third-party infrastructure.</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">10.3 Liabilities</div>
+                            <ol>
+                                <li>Visual Softech shall not be held liable for:
+                                    <ol type="a">
+                                        <li>Any unauthorized access, breach, or loss of data caused by The Client, its personnel, third-party vendors, or improper system use.</li>
+                                        <li>Any legal or regulatory violations resulting from The Client's failure to comply with data protection laws.</li>
+                                        <li>The Client's failure to obtain valid consent or implement lawful data processing mechanisms.</li>
+                                    </ol>
+                                </li>
+                                <li>The Client agrees to fully indemnify and hold harmless Visual Softech against claims, fines, penalties, or damages arising from:
+                                    <ol type="a">
+                                        <li>Breach of GDPR, DPDP Act, or any other applicable data protection law.</li>
+                                        <li>Unlawful, negligent, or improper use of personal data.</li>
+                                        <li>Third-party claims related to data uploaded, shared, or processed by The Client.</li>
+                                    </ol>
+                                </li>
+                                <li>Data Hosting & International Transfers
+                                    <p>If Visual Softech's services are hosted on infrastructure involving cross-border data transfers (e.g., cloud hosting outside India or the EU), The Client consents to such transfers, subject to appropriate safeguards under GDPR Article 46 and DPDP Act Chapter VI, as applicable.</p>
+                                </li>
+                                <li>The Client acknowledges and agrees that Visual Softech may use de-identified, aggregated, or anonymized Customer Data for the purposes of service quality improvement, product feature enhancement, internal training, and support performance analysis. This data shall not include any personally identifiable information or business-sensitive content unless explicitly consented to in writing by the Client. By entering into this Agreement, the Client grants Visual Softech a limited, non-exclusive, royalty-free license to use such anonymized data solely for the purposes stated above.</p>
+                                </li>
+                                <li>Data Localization: If either Party requires specific data residency or localization commitments—whether due to applicable law, internal policy, or contractual obligations—such requirements shall be mutually agreed in writing and recorded in the applicable Order or Statement of Work. In the absence of such a requirement, the Parties agree that the Client's data may be processed or stored in jurisdictions permitted under applicable data protection laws. The non-inclusion of data localization obligations shall not affect the enforceability of any other clause in this Agreement.</li>
+                                <li>Upon request, and subject to technical feasibility, Visual Softech shall provide a copy of Client data in a standard machine-readable format, for a reasonable fee. Further, in case of termination of services, Visual Softech may retain Client data for a maximum of thirty (30) days for backup and legal compliance, after which the data shall be permanently deleted, unless required to be retained under applicable law.</li>
+                                <li>Visual Softech implements appropriate technical and organizational security measures consistent with industry standards (such as data encryption, access controls, and monitoring). However, The Client acknowledges that no system is entirely immune to risks and assumes responsibility for enforcing access controls, password policies, and user-level restrictions within their environment.</li>
+                                <li>Visual Softech disclaims liability for the acts, omissions, or compliance failures of third-party vendors such as:
+                                    <ol type="a">
+                                        <li>Payment gateways</li>
+                                        <li>Communication APIs (e.g., WhatsApp, SMS)</li>
+                                        <li>Cloud hosting providers</li>
+                                    </ol>
+                                </li>
+                                <li>The Client is solely responsible for managing third-party relationships and ensuring that data shared with such vendors complies with applicable privacy laws.</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">10.4</div>
+                            <p>In the event of lawful data requests (e.g., subpoena, court order), Visual Softech shall disclose only account-specific data and shall maintain data segregation and audit logs.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">10.5 Grievance Redressal</div>
+                            <p>All data privacy concerns should be directed to Visual Softech's grievance contact at mail@visualsoftech.com. All complaints, claims, or liabilities related to personal data must be resolved between The Client and the affected party. Visual Softech shall not be a party to such disputes unless it involves a direct breach of obligations by Visual Softech under this Agreement or applicable law.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">10.6 Multi-Tenant Data Segregation</div>
+                            <p>The Platform operates on a shared infrastructure using a multi-tenant architecture. Each Customer's data is logically and contractually isolated. The Provider shall ensure that no Customer shall have access to another Customer's data under any circumstances, except where:</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">10.7</div>
+                            <ol type="a">
+                                <li>Explicit prior written consent has been granted by the impacted Customer(s); or</li>
+                                <li>The Provider receives a legally binding order issued by a court or regulatory authority of competent jurisdiction in India, which explicitly identifies each Customer whose data is being requested.</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">10.8 Data Access Procedure</div>
+                            <p>In the event that the Provider is compelled to grant access to data under a legal order, the following procedure shall apply:</p>
+                            <ol type="a">
+                                <li>The Provider shall comply only to the extent strictly required by law.</li>
+                                <li>All affected Customers shall be notified in writing at the earliest legally permissible opportunity.</li>
+                                <li>The legal directive must clearly name each affected Customer. General or blanket orders shall not be deemed sufficient.</li>
+                                <li>Where legally permissible, the affected Customer shall be given a reasonable opportunity to challenge or intervene before compliance.</li>
+                                <li>Any access provided shall be strictly read-only, access-controlled, and logged. Logs shall be made available to affected Customers upon written request.</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">10.9 Audit Access and Limitations</div>
+                            <p>Audit access granted to a Customer or its authorized auditor shall:</p>
+                            <ol type="a">
+                                <li>Be limited to that Customer's own data only;</li>
+                                <li>Be provided through a secure, read-only interface;</li>
+                                <li>Exclude access to backend systems, administrative panels, or other Customers' data;</li>
+                                <li>Require that audit requests involving third-party data be supported by a binding legal order naming the relevant parties</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">10.10 Legal Review and Escalation Rights</div>
+                            <p>Before granting access under any legal directive, the Provider shall:</p>
+                            <ol type="a">
+                                <li>Conduct an internal legal review to assess the jurisdiction, scope, and enforceability of the order;</li>
+                                <li>Reject any non-specific or overbroad requests;</li>
+                                <li>Where necessary and legally permitted, escalate or contest the directive before competent legal forums.</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">10.11 Government or Regulator-Initiated Audits</div>
+                            <p>In the event of a legally binding audit demand issued by a competent government authority, regulator, or law enforcement body:</p>
+                            <ol type="a">
+                                <li>The Service Provider shall notify the Client in writing at the earliest legally permissible opportunity;</li>
+                                <li>The scope of access shall be limited strictly to what is required by law;</li>
+                                <li>Access shall be provided on a read-only and observer basis, unless otherwise required;</li>
+                                <li>No access shall be granted to other Clients' data or unrelated system components;</li>
+                                <li>The Service Provider shall maintain detailed logs of such access for review.</li>
+                                <li>All auditors (including private firms, internal audit teams, or public authorities) must sign a binding confidentiality agreement where legally allowed.</li>
+                                <li>Any findings, vulnerabilities, or system details discovered during an audit shall be treated as Confidential Information of the Service Provider.</li>
+                                <li>The Client shall ensure that no data or documentation is extracted, copied, or stored beyond the audit scope.</li>
+                                <li>The Client shall indemnify and hold harmless the Service Provider against any damages, liabilities, or claims arising from the actions or misconduct of its appointed auditors or third-party audit agents.</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">10.12 Acceptable Use Policy (AUP)</div>
+                            <p>Customer shall, and shall ensure that its Authorized Users, use the Service in a responsible manner and shall adhere to the following AUP. Prohibited Uses: Customer and its users shall NOT:</p>
+                            <ol type="a">
+                                <li>Violate Laws or Rights: Use the Service in any manner that violates any Applicable Law or regulation, or that infringes, misappropriates, or violates any third party's Intellectual Property Rights or other rights (such as privacy or personality rights). This includes not uploading or transmitting any content that Customer does not have the lawful right to use.</li>
+                                <li>Security Violations: Attempt to interfere with or disrupt the integrity, security, or performance of the Service or the data contained therein. This includes not attempting to gain unauthorized access to the Service or related systems (no hacking, scanning, or penetration testing without Provider's consent).</li>
+                                <li>Reverse Engineering: Modify, adapt, translate, or create derivative works of the Service, nor reverse engineer, disassemble, or decompile the software or any component of the Service, except to the limited extent (if any) such restrictions are expressly prohibited by law. Customer shall not remove any copyright, trademark, or proprietary notices from the Service or documentation.</li>
+                                <li>Circumvent Restrictions: Attempt to bypass or circumvent any usage limits, encryption, license keys, or access controls implemented in the Service. For example, Customer will not use the Service in excess of the user counts, storage quantities, or other limits in the Order, nor permit multiple individuals to share a single user account.</li>
+                                <li>Malicious Use: Use the Service to transmit or store any viruses, worms, malware, Trojan horses, or other malicious code, or to engage in activities that could damage, disrupt, or overload the Service's infrastructure (such as a denial-of-service attack, distributed-denial-of-service attack, Distributed Reflection Denial of Service attack etc).</li>
+                                <li>Harassment or Illegal Conduct: Use the Service to harass, defame, threaten, abuse, or violate the legal rights of others, or to publish or share any content that is unlawful, obscene, indecent, libelous, hateful, or discriminatory (including on the basis of race, religion, ethnicity, gender, etc.). The Service shall not be used for stalking, impersonation, or fraud.</li>
+                                <li>Spam and Unsolicited Messages: Use the Service to transmit any unsolicited or unauthorized advertising, promotional materials, junk mail, spam, chain letters, or pyramid schemes. Customer must follow applicable anti-spam laws.</li>
+                                <li>Unauthorized Data Collection: Use any automated means (such as bots, scrapers or crawlers) to collect data from the Service or its users, or to probe or scan the system, except as explicitly allowed by Provider.</li>
+                                <li>Competitive Use: Use the Service for the purpose of building a competitive product or service, or copying its features or user interface, or for any benchmarking or competitive analysis (except with Provider's prior written consent). Customer shall not allow access to the Service by Provider's direct competitors unless agreed in writing.</li>
+                                <li>Resale or Time-sharing: Resell, distribute, or otherwise make the Service available to any third party as part of a commercial offering (e.g. as a service bureau, or by renting, leasing, or providing the Service on a timeshare or service bureau basis), unless expressly authorized in writing (such as an approved SaaS reseller agreement or white-label arrangement).</li>
+                                <li>Use the Service to harass, defame, threaten, impersonate, stalk, abuse, or otherwise violate the legal rights of others; or to upload, publish, or transmit any content that is unlawful, obscene, defamatory, libelous, hateful, discriminatory (including on the basis of race, religion, ethnicity, gender, etc.), or otherwise objectionable. The Service shall not be used to engage in fraud, send unsolicited or unauthorized advertisements, spam, chain letters, pyramid schemes, or any similar form of solicitation, and the Customer shall comply with all applicable anti-spam and communications laws.</li>
+                                <li>Any breach of this Acceptable Use Policy shall constitute a material breach of this Agreement and may result in immediate suspension or termination of Services in accordance with Clause 17.2 (Termination for Cause)</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">10.13 Misuse and Unlawful Use Disclaimer</div>
+                            <p>Visual Softech shall not be held liable for any misuse, unlawful use, or prohibited activity undertaken by the Client or its Authorized Users through the Services. This includes, but is not limited to, activities that violate applicable laws, infringe third-party rights, or contravene the terms of this Agreement. The Client acknowledges and agrees that it is solely responsible for all actions performed through its account and for ensuring compliance with all legal and regulatory obligations applicable to its use of the Services. Visual Softech disclaims any liability, whether direct or indirect, arising from the Client's use of the Services for purposes not permitted under this Agreement, including reputational harm, regulatory penalties, business loss, or third-party claims. The Client agrees to indemnify and hold harmless Visual Softech against any such claims or consequences.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">10.14 No Blanket Compliance Clause</div>
+                            <p>The Provider shall not act on any legal request or directive that: Is generic in nature; Does not explicitly name the impacted Customer(s); or Requests unrestricted or broad-scope access beyond the principles of necessity and proportionality under Indian law.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clause 11 -->
+                <div class="clause" id="clause-11">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">11</span>
+                            <span>Acknowledgment of Terms</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <ol type="a">
+                            <li>The provisions of this Agreement reflect the mutual understanding between the Parties prior to the commencement of work and supersede all prior or contemporaneous oral or written agreements, communications, or representations, including any earlier versions of this Agreement.</li>
+                            <li>The Client acknowledges and agrees that Visual Softech may, from time to time, unilaterally amend or update the terms of this Agreement to reflect changes in applicable laws, regulations, technological advancements, or industry practices. It is the Client's responsibility to review the most recent version of the Agreement prior to any renewal, continued use, or request for Services.</li>
+                            <li>If the Client objects to any updated terms, they must notify Visual Softech in writing prior to the commencement of new work; continued use of the Services shall constitute deemed acceptance of the revised Agreement.</li>
+                            <li>If any provision of this Agreement is found to be invalid or unenforceable, such provision shall be interpreted in a manner that best reflects the intent of the Parties and remains enforceable to the fullest extent permitted by law. The remaining provisions shall remain in full force and effect.</li>
+                            <li>The Client agrees to receive all system notifications, invoices, legal notices, and policy updates electronically. Such delivery shall constitute valid notice under this Agreement.</li>
+                            <li>Each Party acknowledges that it has had the opportunity to review this Agreement with independent legal counsel and has voluntarily agreed to its terms. The Parties further agree that any ambiguity shall not be interpreted against the drafter, and the rule of contra proferentem shall not apply.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Clause 12 -->
+                <div class="clause" id="clause-12">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">12</span>
+                            <span>Payment Obligations & Consequences of Default</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">12.1</div>
+                            <p>This agreement shall remain in effect indefinitely unless either party provides written notice of termination, or in case The Client fails to make timely payments despite continued efforts. Visual Softech reserves the right to suspend or terminate its services without prior notice if payment timelines are not met.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">12.3</div>
+                            <p>The Client is obligated to pay the agreed compensation, even if they discontinue the use of the software or cease operations. No refunds or adjustments will be made for payments already received.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">12.4</div>
+                            <p>Either party may terminate this agreement with 30 days' prior written notice. Upon termination, all outstanding payments shall become immediately due. The Client shall cease all use of the software and return or destroy any materials provided by Visual Softech. No refunds will be issued for unused service periods.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">12.5</div>
+                            <p>This Agreement, including its terms and obligations, shall apply to and be deemed incorporated by reference into all Proforma Invoices, Commercial Invoices, Tax Invoices, and related transactional documentation issued by Visual Softech to The Client. Such documents shall reflect specific pricing, timelines, deliverables, and scope under the framework of this Agreement and shall be construed as part of this Agreement in the event of any commercial or legal dispute.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">12.6</div>
+                            <p>Payments not received within 15 days of the due date may incur a late fee of 2% per month (or the maximum permitted by law), after the lapse of any applicable cure period provided under Clause 17.2.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clause 13 -->
+                <div class="clause" id="clause-13">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">13</span>
+                            <span>Limitation of Liabilities & Indemnities</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">13.1</div>
+                            <p>Visual Softech agrees to use commercially reasonable efforts to deliver the services promptly upon receipt of payment. The Client acknowledges that timely cooperation and provision of accurate information are essential for such delivery and agrees to provide all necessary assistance and data promptly.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">13.2</div>
+                            <p>In the event of delays or difficulties caused solely by factors within Visual Softech's control, The Client's exclusive remedy shall be limited to a maximum of ten percent (10%) of the total fees paid by the Client under this Agreement, inclusive of all associated expenses.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">13.3</div>
+                            <p>Under no circumstances shall Visual Softech be liable for any consequential, incidental, indirect, or punitive damages.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">13.4</div>
+                            <p>The Client shall:</p>
+                            <ol type="a">
+                                <li>Provide accurate, complete, and timely data, information, and instructions necessary for Visual Softech's performance;</li>
+                                <li>Maintain and manage appropriate infrastructure, hardware, software, and third-party services used in connection with the software;</li>
+                                <li>Implement and maintain reasonable security measures, including password controls and access restrictions;</li>
+                                <li>Ensure compliance with all applicable laws, including data protection and intellectual property laws, and obtain all required consents and authorizations.</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">13.5</div>
+                            <p>Failure by The Client to fulfill these obligations shall relieve Visual Softech of liability for any resulting issues or failures.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">13.6 Exclusion of Liability for External Factors</div>
+                            <p>Visual Softech shall not be liable for any failure or delay in performance resulting from causes beyond its reasonable control, including but not limited to actions or omissions of The Client, its personnel, third-party vendors or service providers, hardware failures, internet or telecommunications outages, or acts of God.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">13.7 Indemnification</div>
+                            <p>The Client agrees to indemnify, defend, and hold harmless Visual Softech, its affiliates, officers, directors, employees, and agents from and against any and all claims, losses, liabilities, damages, costs, or expenses (including reasonable attorneys' fees) arising out of or related to:</p>
+                            <ol type="a">
+                                <li>The Client's breach of this Agreement;</li>
+                                <li>The Client's misuse or unauthorized use of the software;</li>
+                                <li>The Client's violation of applicable laws, including intellectual property rights and data protection regulations;</li>
+                                <li>Acts or omissions of The Client's personnel or third-party vendors engaged by The Client.</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">13.8</div>
+                            <p>Except for liability arising from gross negligence, willful misconduct, or fraud, Visual Softech's total aggregate liability under or in connection with this Agreement shall not exceed the total amount paid by The Client to Visual Softech for the services rendered in the one (1) month immediately preceding the claim. Visual Softech expressly disclaims liability for lost profits, loss of business, loss of data, or any indirect, special, consequential, or punitive damages.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">13.9 No Warranty</div>
+                            <p>Visual Softech provides the software and services "as is" and does not warrant uninterrupted or error-free operation. The Client assumes all risks of use and is responsible for backups and security. Visual Softech shall not be liable for any damages resulting from service interruptions or errors, except for gross negligence or willful misconduct.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">13.10 Mitigation</div>
+                            <p>THE PARTIES agree to promptly notify each other of any disputes or issues and to cooperate in good faith to mitigate damages and resolve such matters amicably prior to initiating formal dispute resolution procedures.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">13.11 Good Faith Disclaimer</div>
+                            <p>The Services, software, and website are provided by Visual Softech in good faith for legitimate, lawful, and commercially reasonable use by the Client. If the Client or its Authorized Users misuse the Services or use them for unlawful, deceptive, exploitative, or abusive purposes, Visual Softech shall bear no liability for any resulting consequences, losses, claims, or third-party disputes. The Company shall not be held responsible for outcomes arising from actions taken in breach of this Agreement, and the Client expressly waives any claims arising from such misuse.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clause 14 -->
+                <div class="clause" id="clause-14">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">14</span>
+                            <span>Dispute Resolution, Governing Law, and Jurisdiction</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">14.1 Amicable Resolution</div>
+                            <p>In the event of any dispute, controversy, or disagreement arising out of or in connection with this Agreement, including any question regarding its existence, validity, interpretation, performance, or termination (a "Dispute"), the Parties shall first attempt to resolve such Dispute amicably through good-faith negotiations.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">14.2 Mediation</div>
+                            <p>If the Dispute is not resolved within thirty (30) days of initiation of negotiations, the Parties agree to submit the matter to non-binding mediation. The mediation shall be conducted in New Delhi, India, in English, and each Party shall bear its own costs.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">14.3 Arbitration</div>
+                            <p>If the Dispute remains unresolved following mediation, it shall be referred to and finally resolved by arbitration in accordance with the provisions of the Arbitration and Conciliation Act, 1996 (as amended). The arbitration shall be conducted by a sole arbitrator mutually appointed by the Parties. The seat and venue of arbitration shall be New Delhi, India, and the proceedings shall be conducted in English. The award of the arbitrator shall be final, conclusive, and binding on both Parties.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">14.3.1</div>
+                            <p>During the pendency of any dispute, the Parties shall continue performing all non-disputed obligations under this Agreement.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">14.4 Interim and Injunctive Relief</div>
+                            <p>Notwithstanding anything to the contrary, either Party may seek interim, injunctive, or equitable relief, including for breach of confidentiality or intellectual property rights, from a court of competent jurisdiction in New Delhi, India. Such action shall not waive the requirement to arbitrate any remaining or underlying Dispute.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">14.5 Governing Law</div>
+                            <p>This Agreement shall be governed by, construed, and enforced in accordance with the laws of the National Capital Territory of Delhi, India, without reference to any conflict of law principles.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">14.6 Class Action Waiver</div>
+                            <p>To the fullest extent permitted by applicable law, each party agrees that any disputes or claims shall be brought solely in their individual capacity and not as a plaintiff or class member in any purported class, collective, or representative proceeding.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">14.7 Jurisdiction</div>
+                            <p>Subject to Clause 14.3 above, the courts located in New Delhi, India shall have exclusive jurisdiction over any legal action or proceeding arising out of or relating to this Agreement. The Parties expressly waive the jurisdiction of any other court or tribunal, whether in India or elsewhere.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clause 15 -->
+                <div class="clause" id="clause-15">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">15</span>
+                            <span>Force Majeure</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <p>Neither party shall be liable for any failure or delay in performing its obligations under this Agreement if such failure or delay is caused by events beyond its reasonable control, including but not limited to acts of God, natural disasters (such as earthquakes, floods, fires, or hurricanes), war, terrorism, civil unrest, pandemics or epidemics, government actions or regulations, labor disputes or strikes, power outages, internet or telecommunications failures, or any other unforeseeable events or circumstances beyond the affected party's reasonable control ("Force Majeure Events").</p>
+                        
+                        <p>The party affected by a Force Majeure Event shall promptly notify the other party in writing, specifying the nature, expected duration, and anticipated impact of the event. The affected party shall use commercially reasonable efforts to mitigate the impact and resume performance as soon as reasonably practicable.</p>
+                        
+                        <p>If a Force Majeure Event continues for more than thirty (30) consecutive days, either party may terminate this Agreement upon written notice, without liability, except for payment obligations accrued prior to the commencement of the Force Majeure Event.</p>
+                    </div>
+                </div>
+
+                <!-- Clause 16 -->
+                <div class="clause" id="clause-16">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">16</span>
+                            <span>Changes</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <p>Visual Softech reserves the right to modify this Agreement at any time. Any such modifications shall become effective upon posting the updated Agreement on its website or through the Services, or upon notifying the Client by reasonable means, including email or system notification.</p>
+                        
+                        <p>In the case of material changes (e.g., changes to fees, indemnity, IP rights, or privacy obligations), Visual Softech shall provide at least 7 days' notice. If the Client objects to any such change, it may terminate the Agreement by providing written notice prior to the effective date of the change. Continued access or use of the Services following any update shall constitute the Client's acceptance of the revised terms.</p>
+                    </div>
+                </div>
+
+                <!-- Clause 17 -->
+                <div class="clause" id="clause-17">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">17</span>
+                            <span>Termination</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">17.1</div>
+                            <p>Either party may terminate this Agreement by providing thirty (30) days' prior written notice to the other party, with a relevant cause.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">17.2</div>
+                            <p>This Agreement may be terminated immediately by either party if the other party commits a material breach of any of its obligations under this Agreement and fails to cure such breach within fifteen (15) days of receiving written notice of such breach.</p>
+                            <p>Visual Softech reserves the right to suspend or terminate the services without prior notice if the Client fails to make timely payments in accordance with the agreed payment terms.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">17.3 Consequences of Termination</div>
+                            <p>Upon termination:</p>
+                            <ol type="a">
+                                <li>All outstanding dues and charges shall become immediately payable.</li>
+                                <li>The Client shall cease all use of the software and delete or return any proprietary materials of Visual Softech.</li>
+                                <li>Visual Softech shall retain Client data for a maximum of 15 days post-termination for backup or regulatory purposes, after which it shall be permanently deleted, unless otherwise required by law.</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">17.4</div>
+                            <p>Accounts that remain inactive for more than sixty (60) consecutive days may be suspended, disabled, or restricted, at the sole discretion of the Service Provider, to uphold system integrity and data security.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">17.5</div>
+                            <p>No refunds shall be issued for any unused period of service, except in cases of proven deficiency of service.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">17.6 Survival of Obligations</div>
+                            <p>Clauses relating to intellectual property, confidentiality, indemnity, limitation of liability, and dispute resolution shall survive the termination or expiry of this Agreement.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">17.7 Assignment and Subcontracting</div>
+                            <ol type="a">
+                                <li>By the Service Provider: Visual Softech may assign or delegate its rights and obligations under this Agreement to any affiliate, successor entity, or subcontractor without the prior consent of the Client.</li>
+                                <li>By the Client: The Client shall not assign this Agreement or any of its rights or obligations without the prior written consent of the Service Provider. Unauthorized assignments shall be deemed null and void.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clause 18 -->
+                <div class="clause" id="clause-18">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">18</span>
+                            <span>Confidential Information</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">18.1</div>
+                            <p>For the purposes of this Agreement "Disclosing Party" refers to the Party that discloses or provides Confidential Information to the other Party under or in connection with this Agreement, whereas "Receiving Party" refers to the Party that receives Confidential Information from the Disclosing Party under or in connection with this Agreement.</p>
+                        </div>
+                        
+                        <div class="sub-clause">
+                            <div class="sub-clause-title">18.2</div>
+                            <p>The term "Confidential Information" shall have the meaning ascribed to it in Clause 1.9 of this Agreement and includes all non-public, proprietary, technical, financial, operational, or strategic information relating to the Disclosing Party, whether in written, oral, or other form, which is disclosed to the Receiving Party under or in connection with this Agreement, including, without limitation, information regarding business operations, technical data, know-how, and proprietary information. Such Confidential Information includes, but is not limited to:</p>
+                            <ol type="a">
+                                <li>Inventions, ideas, processes, research, designs, formulas, object code, data, programs, specifications, developments, discoveries, improvements, techniques, and works of authorship, whether patentable or not;</li>
+                                <li>Product plans, products, services, customers, markets, software, hardware configurations, engineering, and related designs;</li>
+                                <li>Non-public market information, product plans, pricing, financial information, and strategies;</li>
+                                <li>Customer information, business plans, marketing strategies, contracts, client databases, employee information, and any other proprietary information relating to the Disclosing Party's business that is not in the public domain.</li>
+                            </ol>
+                        </div>
+                        
+                        <p>The Receiving Party hereby agrees to maintain the confidentiality of all Confidential Information disclosed by the Disclosing Party and to use such information solely for the purpose for which it was provided. The Receiving Party shall not disclose, divulge, or otherwise make available any Confidential Information to any third party without the prior written consent of the Disclosing Party. The Receiving Party shall implement and maintain all reasonable safeguards to prevent any unauthorized access, use, or disclosure of such information. In the event of any unauthorized or inadvertent disclosure, the Receiving Party shall promptly notify the Disclosing Party in writing and shall cooperate fully with the Disclosing Party to mitigate any harm and recover the disclosed information. Under no circumstances shall the Confidential Information be used for the Receiving Party's personal benefit or for the benefit of any third party without express authorization.</p>
+                        
+                        <p>The obligations of confidentiality shall not apply to information that: (a) is publicly available without breach of this Agreement; (b) is disclosed pursuant to legal or regulatory requirements, with prior notice to the Disclosing Party where permitted; (c) is shared with the Receiving Party's personnel or advisors bound by similar confidentiality obligations; (d) was lawfully in the Receiving Party's possession before disclosure; or (e) is lawfully obtained from a third party not under a duty of confidentiality.</p>
+                        
+                        <p>The Receiving Party shall not, except as expressly required under this Agreement, make any copies of the Confidential Information, nor shall it reproduce the Confidential Information in any form. Any such copies or reproductions shall be subject to the terms and conditions of this Agreement, and the Receiving Party shall take all reasonable measures to restrict access to and protect the confidentiality of such copies.</p>
+                        
+                        <p>The Service Provider acknowledges that it may be provided with or otherwise have access to Confidential Information concerning the client, and agrees to treat such information in accordance with the terms of this Clause 16.</p>
+                        
+                        <p>Upon the expiration or termination of this Agreement, the Parties shall return or destroy all Confidential Information in their possession, and shall retain no copies thereof unless otherwise mutually agreed in writing. Any destruction of Confidential Information shall be done in a manner that ensures complete confidentiality. These confidentiality obligations shall survive indefinitely following the termination of this Agreement for trade secret protection.</p>
+                    </div>
+                </div>
+
+                <!-- Clause 19 -->
+                <div class="clause" id="clause-19">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">19</span>
+                            <span>Severability</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <p>If any provision of this Agreement is found to be invalid, illegal, or unenforceable under applicable law by a court of competent jurisdiction, such provision shall be deemed to be severed from the Agreement, and the remaining provisions shall remain valid and enforceable to the fullest extent permitted by law. The Parties shall endeavor to replace the invalid or unenforceable provision with a new provision that reflects the original intent and commercial purpose of the severed provision.</p>
+                    </div>
+                </div>
+
+                <!-- Clause 20 -->
+                <div class="clause" id="clause-20">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">20</span>
+                            <span>Waiver</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <p>No delay or failure by either party in exercising any right, power, or remedy under this Agreement shall constitute a waiver thereof. Any waiver must be expressly made in writing and signed by an authorized representative of the waiving party. A waiver of one breach shall not constitute a waiver of any other or subsequent breach, whether of a similar or different nature.</p>
+                    </div>
+                </div>
+
+                <!-- Clause 21 -->
+                <div class="clause" id="clause-21">
+                    <div class="clause-header">
+                        <div class="clause-title">
+                            <span class="clause-number">21</span>
+                            <span>Entire Agreement</span>
+                        </div>
+                        <button class="toggle-btn">›</button>
+                    </div>
+                    <div class="clause-content">
+                        <p>This Agreement constitutes the entire understanding between the parties and supersedes all prior oral or written agreements, understandings, or representations relating to the subject matter hereof. No modification shall be binding unless made in writing and signed by both parties, unless otherwise specified in Clause 16. No modification shall be binding unless executed in writing by both Parties, except as permitted under Clause 16.</p>
+                    </div>
+                </div>
+
+                <div class="acceptance-box">
+                    <p class="acceptance-text">By clicking below, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.</p>
+                    <button class="accept-btn">
+                        <i class="fas fa-check-circle"></i>
+                        I Agree
+                    </button>
+                </div>
+            </main>
         </div>
     </div>
-    <!-- end of preloader -->
-    
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-        <div class="container">
+    <footer>
+        <p>&copy; 2025 Visual Softech. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a></p>
+    </footer>
 
-            <!-- Text Logo - Use this if you don't have a graphic logo -->
-            <a class="navbar-brand logo-text page-scroll" href="index.html">Visual Softech</a>
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 
-            <!-- Image Logo -->
-            <!-- <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="Visual Softech"></a>  -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Generate table of contents
+            const tocContainer = document.getElementById('toc');
+            const clauses = document.querySelectorAll('.clause');
             
-            <!-- Mobile Menu Toggle Button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-awesome fas fa-bars"></span>
-                <span class="navbar-toggler-awesome fas fa-times"></span>
-            </button>
-            <!-- end of mobile menu toggle button -->
-
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.html">HOME </a>
-                    </li>
-                    <!-- Dropdown Menu -->          
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle page-scroll" href="index.html#details" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT US</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="about.html#what_we_do"><span class="item-text">WHAT WE DO</span></a>
-                            <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="about.html#portfolio"><span class="item-text">OTHER PRODUCTS</span></a>
-                            <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="about.html"><span class="item-text">WHY US?</span></a>
-                            <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="about.html#portfolio"><span class="item-text">OUR CLIENTS</span></a>
-                            <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="about.html#faq"><span class="item-text">FAQ</span></a>
-                        </div>
-                    </li>
-                    <!-- end of dropdown menu -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle page-scroll" href="index.html#details" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">PRODUCTS</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="Subproduct2.html"><span class="item-text">Cold Store Accounting Package </span></a>
-                            <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="Subproduct1.html"><span class="item-text">Mandi Accounting Package </span></a>
-                            <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="#"><span class="item-text">E-Commerce Portal </span></a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.html#contactUs">CONTACT US</a>
-                    </li>
-
-                </ul>
-                <span class="nav-item">
-                    <a class="btn-outline-sm" href="http://coldstore.co.in">DEMO</a>
-                </span>
-            </div>
-        </div> <!-- end of container -->
-    </nav> <!-- end of navbar -->
-    <!-- end of navigation -->
-
-
-    <!-- Header -->
-    <header id="header" class="ex-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Term of Agreement <p style="color: white;">(E & OE)</p></h1>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </header> <!-- end of ex-header -->
-    <!-- end of header -->
-
-
-    <!-- Breadcrumbs -->
-    <div class="ex-basic-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumbs">
-                        <a href="index.html">Home</a><i class="fa fa-angle-double-right"></i><span>Terms & Conditions</span>
-                    </div> <!-- end of breadcrumbs -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of ex-basic-1 -->
-    <!-- end of breadcrumbs -->
-
-
-    <!-- Terms Content -->
-    <div class="ex-basic-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="text-container">
-                        <h3>Authorization, Data and Privacy</h3>
-                        <p>The client is engaging the company, Visual Softech, as an independent contractor for the software development, deployment and maintenance for client. Thus, the client, is only allowed to avail software development, deployment and maintenance services provided by the company, Visual Softech. The company, Visual Softech reserves the right to assign subcontractors to this project to ensure the right ﬁt for the job to ensure on time completion.</p>
-                        <p>The source code of the software developed/provided will remain the sole property of the company, Visual Softech. The client will not be allowed to share the source code or DLL with any staff, 3rd party vendors or service provider. The company, Visual Softech collects your information and data for training and quality testing. The company, Visual Softech will not knowingly disclose any information to any 3rd party vendor or services provider unless permitted by the company’s privacy policy or otherwise required by law or with the client written or verbal consent.</p>
-                    </div> <!-- end of text-container -->
+            clauses.forEach(clause => {
+                const clauseId = clause.id;
+                const clauseNumber = clause.querySelector('.clause-number').textContent;
+                const clauseTitle = clause.querySelector('.clause-title span:last-child').textContent;
+                
+                const tocItem = document.createElement('li');
+                tocItem.className = 'toc-item';
+                tocItem.innerHTML = `
+                    <a href="#${clauseId}">
+                        <span class="toc-clause">${clauseNumber}. ${clauseTitle}</span>
+                    </a>
+                `;
+                
+                tocContainer.appendChild(tocItem);
+            });
+            
+            // Toggle clause content
+            const toggleButtons = document.querySelectorAll('.toggle-btn');
+            
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const clauseContent = this.closest('.clause-header').nextElementSibling;
+                    this.classList.toggle('collapsed');
                     
-                    <div class="text-container">
-                        <h3>Liabilities and Indemnities </h3>
-                        <p>The Company, Visual Softech will not be liable for any loss or damage  suffered by the client or any other person howsoever arising whether in negligence or otherwise. The company will not be responsible for any direct, indirect or consequential loss or damage of any kind under any statute or otherwise. The company, Visual Softech will not be liable for any issue caused in the software by 3rd party services or vendors appointed by whosoever, staff, data entry work or hardware.</p>
-                    </div> <!-- end of text-container -->
-
-                    <div class="text-container">
-                        <h3>Maintenance</h3>
-                        <p>Maintenance charges includes only maintenance of the delivered software for 11 months* from date of receipt of payment. Any additional work, 3rd party services / vendor payments, data entry work, graphic designing, Ad words, blog writing, content writing, social media marketing, bulk Emailing, WhatsApp or SMS, additional reports or features will be subject to additional charges.</p>
-                    </div> <!-- end of text-container -->
-
-                    <div class="text-container">
-                        <h3>Project Cost, Revision during Execution, TA / DA, Taxes and Payment</h3>
-                        <p>Project cost includes all the charges of features showed mentioned in proposal / remarks only. Any additional work, 3rd party services, vendor payments, data entry work, mobile app, graphic designing, Ad words, PPC, blog writing, content writing, social media marketing, bulk Email / WhatsApp / SMS, additional Reports / Features will be subject to additional charges. </p>
-                        <p>Only support required in terms of development will be provided by us.</p>
-                        <p>The client may be charged additional fees if any point or features requires major changes or the client wishes to add a new feature, entry, module or point beyond the agreed objectives, features or points other than the mentioned objectives, features or points in the 
-                            proposal. </p>
-                        <p>The client will be charged Travel Allowance / Dearness Allowance extra if any work or service requires site visits outside Delhi NCR.</p>
-                        <p>The company, Visual Softech reserves the right to withdraw their services anytime if the client fails to pay the mutually agreed amount on or before the decided date mentioned in the payment plan. The client will be liable to pay the mutually agreed amount during the contract period of 1 year even if the client discontinues the use of the software or shut down company.</p>
-                        <p>Taxes, as applicable by the govt., will be charged extra. </p>
-                    </div> <!-- end of text-container -->
+                    if (this.classList.contains('collapsed')) {
+                        clauseContent.style.display = 'none';
+                    } else {
+                        clauseContent.style.display = 'block';
+                    }
+                });
+                
+                // Initialize all clauses as expanded
+                const clauseContent = button.closest('.clause-header').nextElementSibling;
+                clauseContent.style.display = 'block';
+            });
+            
+            // Smooth scrolling for TOC links
+            document.querySelectorAll('.toc-item a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
                     
-                    <div class="text-container last">
-                        <h3>3rd Party Assets</h3>
-                        <p>If the client wishes to avail any 3rd party Services required directly, then, it would be the client.’s responsibility to ensure smooth communication between both the parties that is., the company, Visual Softech and 3rd Party vendor / service providers. The client can only avail 3rd party Services or hire 3rd party vendors or service providers that doesn’t require sharing of source code, data or dll will only be allowed. The company, Visual Softech will not be liable for any issue caused in the software due to 3rd party services / vendors appointed by whosoever, staff, data entry work or hardware.</p>
-                        <p>After 1 year, if the client wishes to continue the use of software but do not want assistance, maintenance or troubleshooting by the company, Visual Softech for any type of issue major or minor, they can do so only and only if the client informs the company, Visual Softech 2 months prior. 3rd party / Vendor services will still be charged on behalf of client by the company, Visual Softech. Subject to availability. Charges as applicable by 3rd Party / Vendor.</p>
-                        <ul class="list-unstyled li-space-lg">
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Domain</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Server</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">SSL</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">SMS, E-Mail & WhatsApp </div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">For Temperature, Barcode, Content (such as images, photos, written material etc.), live streaming or any other 3rd party / vendor software / device. API / Input data file will be provided by the client.</div>
-                            </li>
-                        </ul>
-                    </div> <!-- end of text-container -->
-
-                    <div class="text-container">
-                        <h3>Arbitration and Jurisdiction</h3>
-                        <p>In the event of any dispute or difference between the parties arising howsoever unless amicably settled, be referred to the sole arbitrator, to be appointed by the company, Visual Softech. The decision of the arbitrator shall be final and binding to both the parties that is., Visual Softech and client. The arbitration proceedings shall take place in Delhi Only. This is an arrangement for arbitration within the meaning of Indian Arbitration Act 1996 including any statutory re-enactment or modification thereof. All suits arising out of the contract shall be instituted in a court of competent jurisdiction situated in Delhi and in no other court. This contract shall be governed, interpreted and  constructed in accordance with the laws of New Delhi, India. All Disputes are subject to Delhi jurisdiction only.</p>
-                        <a class="btn-outline-reg" href="index.html">BACK</a>
-                    </div> <!-- end of text-container -->
-                </div>
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of ex-basic -->
-    <!-- end of terms content -->
-
-    
-    <!-- Breadcrumbs -->
-    <div class="ex-basic-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumbs">
-                        <a href="index.html">Home</a><i class="fa fa-angle-double-right"></i><span>Terms & Conditions</span>
-                    </div> <!-- end of breadcrumbs -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of ex-basic-1 -->
-    <!-- end of breadcrumbs -->
-
-
-        <!-- Footer -->
-        <svg class="footer-frame" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1920 79"><defs><style>.cls-2{fill:#5f4def;}</style></defs><title>footer-frame</title><path class="cls-2" d="M0,72.427C143,12.138,255.5,4.577,328.644,7.943c147.721,6.8,183.881,60.242,320.83,53.737,143-6.793,167.826-68.128,293-60.9,109.095,6.3,115.68,54.364,225.251,57.319,113.58,3.064,138.8-47.711,251.189-41.8,104.012,5.474,109.713,50.4,197.369,46.572,89.549-3.91,124.375-52.563,227.622-50.155A338.646,338.646,0,0,1,1920,23.467V79.75H0V72.427Z" transform="translate(0 -0.188)"/></svg>
-        <div class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="footer-col first">
-                            <h4>About Visual Softech</h4>
-                            <p class="p-small">
-                                Visual Softech has gloriously spent 32 years of dedication and commitment to design various software that defines you. 
-                                Our experience in the industry has made us wiser and sensitive towards the numerous needs and necessities of our diverse customers. 
-                                Our customer service is indomitable and our customers are precious.
-                            </p>
-                        </div>
-                    </div> <!-- end of col -->
-                    <!-- <div class="col-md-3">
-                        <div class="footer-col middle">
-                            <h4>Important Links</h4>
-                            <ul class="list-unstyled li-space-lg p-small">
-                                <li class="media">
-                                    <i class="fas fa-square"></i>
-                                    <div class="media-body"><a class="white" href="terms-conditions.html">Terms & Conditions</a></div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-square"></i>
-                                    <div class="media-body"> <a class="white" href="privacy-policy.html">Privacy Policy</a></div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>  -->
-                    <!-- end of col -->
-                    <div class="col-md-6">
-                        <div class="footer-col last">
-                            <h4>Contact Us</h4>
-                            <ul class="list-unstyled li-space-lg p-small">
-                                <li class="media">
-                                    <i class="fas fa-phone"></i>
-                                    <div class="media-body"><a class="white" href="tel:8920770888"></a>8920770888</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <div class="media-body">Shop No 44, Mangla Market, Kalkaji, New Delhi-19</div>
-                                </li>
-                                <li class="media">
-                                    <i class="fas fa-envelope"></i>
-                                    <div class="media-body"><a class="white" href="mailto:mail@visualsoftech.com">mail@visualsoftech.com</a>
-                                </li>
-                            </ul>
-                        </div> 
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of footer -->  
-        <!-- end of footer -->
-    
-    
-        <!-- Copyright -->
-        <div class="copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- <p class="p-small">Copyright © <a href="https://www.visualsoftech.com">Visual Softech</a></p> -->
-                        <button type="button" class="btn btn-outline-default" data-toggle="collapse" data-target="#faq1">Copyright © Visual Softech</button>
-                        <div id="faq1" class="collapse" style="color: whitesmoke;">
-                            SEO Keywords
-                        </div>
-                    </div> <!-- end of col -->
-                </div> <!-- enf of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of copyright --> 
-        <!-- end of copyright -->
-    
-    	
-    <!-- Scripts -->
-    <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-    <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
-    <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Highlight the clicked clause
+                    clauses.forEach(c => c.style.backgroundColor = '');
+                    targetElement.style.backgroundColor = 'rgba(237, 231, 246, 0.5)';
+                    setTimeout(() => {
+                        targetElement.style.backgroundColor = '';
+                    }, 2000);
+                });
+            });
+            
+            // Accept button functionality
+            const acceptBtn = document.querySelector('.accept-btn');
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', function() {
+                    // In a real implementation, you would record this acceptance
+                    this.innerHTML = '<i class="fas fa-check-circle"></i> Accepted';
+                    this.style.backgroundColor = '#4caf50';
+                    this.style.backgroundImage = 'none';
+                    
+                    // Show confirmation
+                    const acceptanceText = document.querySelector('.acceptance-text');
+                    acceptanceText.innerHTML = '<i class="fas fa-check-circle"></i> Thank you for accepting our Terms and Conditions.';
+                    acceptanceText.style.color = '#4caf50';
+                });
+            }
+            
+            // Scroll to top button
+            const scrollTopBtn = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            });
+            
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Highlight current clause in TOC while scrolling
+            window.addEventListener('scroll', function() {
+                const fromTop = window.scrollY + 150;
+                
+                document.querySelectorAll('.toc-item a').forEach(link => {
+                    const section = document.querySelector(link.getAttribute('href'));
+                    
+                    if (
+                        section.offsetTop <= fromTop &&
+                        section.offsetTop + section.offsetHeight > fromTop
+                    ) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
