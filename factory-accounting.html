@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Softech | Factory Accounting Package</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* --- Enhanced Pastel Theme --- */
+            --pastel-mint: #a7e9af;
+            --pastel-yellow: #fff1a0;
+            --pastel-orange: #ffd6a5;
+            --accent-green: #4caf50;
+            --accent-dark-green: #2e7d32;
+            --accent-highlight-orange: #fdba74;
+
+            /* --- Base Colors --- */
+            --dark-bg: #1a202c;
+            --dark-card-bg: #2d3748;
+            --dark-text: #e2e8f0;
+            --text-dark: #2c3e50;
+            --text-light: #555;
+            --bg-soft-green: #f0fff4; /* Honeydew */
+            --bg-soft-yellow: #fffbeb; /* Light Yellow */
+            --border-color: rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Quicksand', sans-serif; background-color: var(--bg-soft-green); color: var(--text-dark); overflow-x: hidden; }
+
+        /* --- Global Styles --- */
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 6rem 0; }
+        h2 { font-size: 2.8rem; text-align: center; margin-bottom: 1rem; color: var(--accent-dark-green); }
+        .section-subtitle { text-align: center; font-size: 1.2rem; max-width: 700px; margin: 0 auto 4rem auto; color: var(--text-light); }
+        .highlight-underline { position: relative; display: inline-block; }
+        .highlight-underline::after { content: ''; position: absolute; bottom: -5px; left: 0; height: 4px; width: 50px; background-color: var(--accent-highlight-orange); border-radius: 2px; }
+
+        /* --- HERO SECTION --- */
+        .hero { min-height: 100vh; display: flex; align-items: center; position: relative; background: linear-gradient(135deg, var(--bg-soft-yellow), var(--bg-soft-green)); padding: 0 5%; overflow: hidden; }
+        .hero-content { flex: 1; max-width: 50%; z-index: 2; animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .hero h1 { font-size: 4rem; line-height: 1.2; margin-bottom: 1.5rem; background: linear-gradient(to right, var(--accent-dark-green), var(--accent-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 2px 2px 10px rgba(0,0,0,0.05); }
+        .hero p { font-size: 1.1rem; color: var(--text-light); line-height: 1.6; }
+        .hero-cta { display: inline-block; margin-top: 2rem; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--accent-highlight-orange), var(--accent-green)); color: white; font-weight: 600; border-radius: 50px; text-decoration: none; box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4); transition: all 0.3s ease; }
+        .hero-cta:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 12px 30px rgba(76, 175, 80, 0.5); }
+        .data-sphere-container { position: absolute; right: 5%; top: 50%; transform: translateY(-50%); width: 500px; height: 500px; perspective: 1000px; }
+        .data-sphere { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; animation: rotate-sphere 30s infinite linear; }
+        @keyframes rotate-sphere { from { transform: rotateY(0deg) rotateX(10deg); } to { transform: rotateY(360deg) rotateX(10deg); } }
+        .sphere-icon { position: absolute; top: 50%; left: 50%; width: 60px; height: 60px; background: rgba(255,255,255,0.7); backdrop-filter: blur(5px); border-radius: 50%; display: grid; place-items: center; font-size: 1.8rem; color: var(--accent-green); border: 1px solid rgba(255,255,255,0.2); transform-origin: center; }
+        .sphere-icon:nth-child(1) { transform: rotateY(0deg) translateZ(250px); } .sphere-icon:nth-child(2) { transform: rotateY(60deg) translateZ(250px); } .sphere-icon:nth-child(3) { transform: rotateY(120deg) translateZ(250px); } .sphere-icon:nth-child(4) { transform: rotateY(180deg) translateZ(250px); } .sphere-icon:nth-child(5) { transform: rotateY(240deg) translateZ(250px); } .sphere-icon:nth-child(6) { transform: rotateY(300deg) translateZ(250px); }
+
+        /* --- GUIDING YOUR GROWTH SECTION --- */
+        .guiding-growth-section { background-color: white; }
+        .growth-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; }
+        .growth-content h2 { text-align: left; }
+        .growth-content ul { list-style: none; padding: 0; margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .growth-content li { display: flex; align-items: flex-start; }
+        .growth-content li i { color: var(--accent-green); margin-right: 0.8rem; margin-top: 5px; }
+        .growth-buttons { margin-top: 2rem; }
+        .growth-buttons .btn { display: inline-block; padding: 0.8rem 1.8rem; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; }
+        .growth-buttons .btn-primary { background: var(--accent-green); color: white; margin-right: 1rem; }
+        .growth-buttons .btn-secondary { background: transparent; color: var(--accent-green); border: 2px solid var(--accent-green); }
+        .growth-graphics { position: relative; }
+        .growth-graphics .main-img { width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+        .stat-card { position: absolute; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border-radius: 15px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 250px; border: 1px solid rgba(255,255,255,0.2); }
+        .stat-card-1 { top: 10%; left: -15%; } .stat-card-2 { bottom: 10%; right: -15%; }
+        .stat-card h4 { font-size: 1rem; color: var(--text-light); margin-bottom: 0.5rem; }
+        .stat-card .percentage { font-size: 2.5rem; font-weight: 700; color: var(--accent-dark-green); margin-bottom: 1rem; }
+        .progress-bar { height: 8px; background-color: var(--border-color); border-radius: 4px; overflow: hidden; }
+        .progress-bar-inner { height: 100%; width: 0; background: linear-gradient(to right, var(--accent-green), var(--pastel-yellow)); border-radius: 4px; }
+
+        /* --- DARK PROCESS FLOW SECTION --- */
+        .dark-process-section { background-color: var(--dark-bg); color: var(--dark-text); background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232d3748' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .dark-process-section h2 { color: white; }
+        .dark-process-section .section-subtitle { color: #a0aec0; }
+        .process-timeline { position: relative; margin-top: 5rem; }
+        .process-step { display: flex; align-items: flex-start; gap: 2rem; position: relative; padding: 2rem 0; }
+        .process-step:not(:last-child)::after { content: ''; position: absolute; left: 40px; top: 100px; bottom: -2rem; width: 2px; background: linear-gradient(to bottom, var(--dark-card-bg), var(--accent-green)); z-index: 1; }
+        .step-icon-wrapper { flex-shrink: 0; width: 80px; height: 80px; background-color: var(--dark-card-bg); border-radius: 50%; display: grid; place-items: center; border: 2px solid #4a5568; z-index: 2; }
+        .step-icon-wrapper i { font-size: 2rem; color: var(--pastel-mint); }
+        .step-content h3 { font-size: 1.8rem; color: white; margin-bottom: 0.5rem; }
+        .step-content p { color: #a0aec0; line-height: 1.6; max-width: 500px; }
+        .step-number { position: absolute; right: 10%; top: 50%; transform: translateY(-50%); font-size: 8rem; font-weight: 700; color: rgba(74, 85, 104, 0.2); z-index: 0; }
+        
+        /* --- ALL-IN-ONE TOOLS 3D CAROUSEL --- */
+        .feature-carousel-section { background-color: var(--bg-soft-yellow); padding-bottom: 8rem;}
+        .carousel-container-3d { margin-top: 2rem; height: 450px; perspective: 1500px; position: relative; }
+        .feature-carousel { width: 100%; height: 100%; position: absolute; transform-style: preserve-3d; transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1); }
+        .carousel-slide { position: absolute; width: 60%; height: 400px; left: 20%; top: 25px; background: white; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; border: 1px solid var(--border-color); transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1); backface-visibility: hidden; }
+        .carousel-slide i { font-size: 3rem; color: var(--accent-green); margin-bottom: 1rem; }
+        .carousel-slide h3 { font-size: 1.8rem; color: var(--accent-dark-green); margin-bottom: 1rem; }
+        .carousel-slide ul { list-style: none; padding: 0; }
+        .carousel-slide li { margin-bottom: 0.5rem; }
+        .carousel-nav { text-align: center; margin-top: 2rem; position: absolute; bottom: -4rem; left: 50%; transform: translateX(-50%); }
+        .nav-btn { background: white; border: 1px solid var(--border-color); width: 50px; height: 50px; border-radius: 50%; font-size: 1.5rem; cursor: pointer; margin: 0 1rem; transition: all 0.3s ease; }
+        .nav-btn:hover { background: var(--accent-green); color: white; border-color: var(--accent-green); }
+
+        /* --- SMART INVENTORY SPOTLIGHT --- */
+        .inventory-spotlight-section { background-color: var(--bg-soft-green); }
+        .inventory-container { display: grid; grid-template-columns: 1fr 1.2fr; align-items: center; gap: 4rem; }
+        .inventory-content h2 { text-align: left; }
+        .inventory-content ul { list-style: none; margin-top: 2rem; }
+        .inventory-content li { display: flex; align-items: center; margin-bottom: 1rem; }
+        .inventory-content li i { color: var(--accent-green); margin-right: 1rem; }
+        .inventory-graphic { position: relative; }
+        .inventory-graphic .base-img { width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+        .hotspot { position: absolute; width: 30px; height: 30px; border-radius: 50%; background-color: rgba(76, 175, 80, 0.7); cursor: pointer; animation: pulse 2s infinite; }
+        .hotspot:hover .hotspot-tooltip { opacity: 1; transform: translate(-50%, -110%) scale(1); visibility: visible; }
+        .hotspot-tooltip { position: absolute; left: 50%; top: 0; transform: translate(-50%, -130%) scale(0.8); width: 220px; background: white; padding: 1rem; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.15); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 10; }
+        .hotspot-tooltip h4 { font-size: 1rem; color: var(--accent-dark-green); margin-bottom: 0.5rem; }
+        .hotspot-1 { top: 30%; left: 25%; } .hotspot-2 { top: 60%; left: 70%; } .hotspot-3 { top: 75%; left: 40%; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(76, 175, 80, 0); } 100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); } }
+        
+        /* --- BILLS OF MATERIAL (3D GLASSMORPHISM) --- */
+        .bom-section-v2 { background-color: var(--bg-soft-yellow); perspective: 2000px; }
+        .bom-container-3d { position: relative; min-height: 400px; transform-style: preserve-3d; }
+        .bom-card { position: absolute; left: 50%; background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 15px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.5s ease; }
+        #bom-main { top: 0; transform: translate(-50%, 0) translateZ(50px); width: 300px; text-align: center; }
+        #bom-comp1 { top: 200px; transform: translate(-170%, 0) translateZ(-20px); width: 200px; }
+        #bom-comp2 { top: 200px; transform: translate(-50%, 0) translateZ(-20px); width: 200px; }
+        #bom-comp3 { top: 200px; transform: translate(70%, 0) translateZ(-20px); width: 200px; }
+        .bom-card:hover { transform: var(--original-transform) scale(1.05) !important; z-index: 10; }
+        .bom-svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+        .bom-svg path { stroke: var(--accent-green); stroke-width: 2; fill: none; }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .hero, .growth-grid, .inventory-container, .bom-container { flex-direction: column; text-align: center; }
+            .hero-content { max-width: 100%; animation: none; }
+            .data-sphere-container { display: none; }
+            .growth-content h2, .inventory-content h2 { text-align: center; }
+            .growth-graphics { margin-top: 4rem; }
+            .stat-card-1 { left: 5%; } .stat-card-2 { right: 5%; }
+            .carousel-slide { width: 80%; left: 10%; }
+            .inventory-container { grid-template-columns: 1fr; }
+            .inventory-graphic { margin-top: 3rem; }
+            .bom-container-3d { min-height: 600px; }
+            #bom-comp1 { transform: translate(-50%, 0) translateZ(-20px); top: 150px; }
+            #bom-comp2 { transform: translate(-50%, 0) translateZ(-20px); top: 300px; }
+            #bom-comp3 { transform: translate(-50%, 0) translateZ(-20px); top: 450px; }
+        }
+        @media (max-width: 768px) {
+            .stat-card { position: relative; width: 100%; left: auto; right: auto; top: auto; bottom: auto; margin-top: 2rem; }
+            .process-step { flex-direction: column; align-items: center; text-align: center; }
+            .process-step::after { left: 50%; transform: translateX(-50%); }
+            .step-number { display: none; }
+            .growth-content ul { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Factory Accounting, Reimagined.</h1>
+                <p>Unify production, inventory, and finance into one intelligent platform. Drive growth with unparalleled control and real-time insights.</p>
+                <a href="#guiding-growth" class="hero-cta">Discover How</a>
+            </div>
+            <div class="data-sphere-container">
+                <div class="data-sphere">
+                    <div class="sphere-icon"><i class="fas fa-industry"></i></div>
+                    <div class="sphere-icon"><i class="fas fa-boxes-stacked"></i></div>
+                    <div class="sphere-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="sphere-icon"><i class="fas fa-truck"></i></div>
+                    <div class="sphere-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <div class="sphere-icon"><i class="fas fa-cogs"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GUIDING YOUR GROWTH SECTION -->
+        <section id="guiding-growth" class="guiding-growth-section">
+            <div class="container">
+                <div class="growth-grid">
+                    <div class="growth-content">
+                        <h2><span class="highlight-underline">Guiding Your Business Growth</span></h2>
+                        <p>We're more than accountants — we're growth partners. Our strategic software is designed to scale with you and support every stage of your manufacturing journey.</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> <div><strong>Precision Control</strong><br>For accurate decision-making.</div></li>
+                            <li><i class="fas fa-check-circle"></i> <div><strong>Professional Team</strong><br>Support from certified experts.</div></li>
+                            <li><i class="fas fa-check-circle"></i> <div><strong>Real-time Data</strong><br>For instant business insights.</div></li>
+                            <li><i class="fas fa-check-circle"></i> <div><strong>Quick Services</strong><br>Fast turnaround without compromise.</div></li>
+                        </ul>
+                        <div class="growth-buttons">
+                            <a href="#features" class="btn btn-primary">More About Us</a>
+                            <a href="#contact" class="btn btn-secondary">Book a Call</a>
+                        </div>
+                    </div>
+                    <div class="growth-graphics">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1469" alt="Business team collaborating" class="main-img">
+                        <div class="stat-card stat-card-1">
+                            <h4>Data Accuracy</h4>
+                            <div class="percentage">99.8%</div>
+                            <div class="progress-bar"><div class="progress-bar-inner" data-width="99.8%"></div></div>
+                        </div>
+                        <div class="stat-card stat-card-2">
+                            <h4>Client Satisfaction</h4>
+                            <div class="percentage">95%</div>
+                            <div class="progress-bar"><div class="progress-bar-inner" data-width="95%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DARK PROCESS FLOW SECTION -->
+        <section class="dark-process-section">
+             <div class="container">
+                <h2>End-to-End Process Flow</h2>
+                <p class="section-subtitle">Track every movement from raw input to revenue output. Our system connects every step so you stay in complete control.</p>
+                <div class="process-timeline">
+                    <div class="process-step"> <div class="step-icon-wrapper"><i class="fas fa-shopping-cart"></i></div> <div class="step-content"> <h3>1. Purchase Made Simple</h3> <p>Log every entry from vendors, with or without a bill, and sync it with your Item Master (MST) which holds all material specs.</p> </div> <div class="step-number">01</div> </div>
+                    <div class="process-step"> <div class="step-icon-wrapper"><i class="fas fa-cogs"></i></div> <div class="step-content"> <h3>2. Seamless Production</h3> <p>Material moves to Production for grading, processing, and packing, controlled by the Factory MST to ensure quality standards.</p> </div> <div class="step-number">02</div> </div>
+                    <div class="process-step"> <div class="step-icon-wrapper"><i class="fas fa-boxes-stacked"></i></div> <div class="step-content"> <h3>3. Real-Time Stock Management</h3> <p>Finished goods are added to stock. The system tracks quantities and locations in real-time, ready for sale or dispatch.</p> </div> <div class="step-number">03</div> </div>
+                    <div class="process-step"> <div class="step-icon-wrapper"><i class="fas fa-truck"></i></div> <div class="step-content"> <h3>4. Smart Gate Pass System</h3> <p>A digitally logged Gate Pass is issued when products move, defining if they are for sale or for further processing.</p> </div> <div class="step-number">04</div> </div>
+                    <div class="process-step"> <div class="step-icon-wrapper"><i class="fas fa-file-invoice-dollar"></i></div> <div class="step-content"> <h3>5. Instant Billing</h3> <p>Based on demand and linked to the Buyer MST, the system auto-generates bills with taxes, discounts, and shipment details.</p> </div> <div class="step-number">05</div> </div>
+                    <div class="process-step"> <div class="step-icon-wrapper"><i class="fas fa-book-open"></i></div> <div class="step-content"> <h3>6. Auto Ledger Updates</h3> <p>Every bill is posted directly to the ledger, creating necessary vouchers and giving you a complete, traceable financial trail in real time.</p> </div> <div class="step-number">06</div> </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ALL-IN-ONE TOOLS 3D CAROUSEL -->
+        <section id="features" class="feature-carousel-section">
+            <div class="container">
+                <h2><span class="highlight-underline">All-in-One Tools</span> for Smarter Management</h2>
+                <p class="section-subtitle">Every module is powerful on its own, but they work best together. Explore our core features.</p>
+                <div class="carousel-container-3d">
+                    <div class="feature-carousel">
+                        <article class="carousel-slide"> <i class="fas fa-shopping-cart"></i> <h3>Purchase & Vendors</h3> <ul><li>GRN & Purchase Orders</li><li>Vendor Master & History</li><li>Tax-compliant Invoicing</li></ul> </article>
+                        <article class="carousel-slide"> <i class="fas fa-cogs"></i> <h3>Production & Process</h3> <ul><li>Batch-wise Tracking</li><li>Cost & Wastage Calculation</li><li>Real-time WIP Status</li></ul> </article>
+                        <article class="carousel-slide"> <i class="fas fa-boxes-stacked"></i> <h3>Inventory & Stock</h3> <ul><li>Multi-location Godowns</li><li>Expiry & Aging Reports</li><li>Minimum Stock Alerts</li></ul> </article>
+                        <article class="carousel-slide"> <i class="fas fa-handshake"></i> <h3>Sales & Customers</h3> <ul><li>Buyer Master with Credit Limits</li><li>Sales Order vs. Delivery</li><li>Customer-wise Ledgers</li></ul> </article>
+                        <article class="carousel-slide"> <i class="fas fa-file-invoice-dollar"></i> <h3>Billing & Invoicing</h3> <ul><li>Auto-invoice Generation</li><li>GST-compliant Invoices</li><li>Discount & Schemes</li></ul> </article>
+                        <article class="carousel-slide"> <i class="fas fa-book-open"></i> <h3>Financial Accounting</h3> <ul><li>Automatic Ledger Updates</li><li>P&L and Balance Sheet</li><li>Audit Trail & Access Logs</li></ul> </article>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="nav-btn" id="prev-btn"><i class="fas fa-arrow-left"></i></button>
+                    <button class="nav-btn" id="next-btn"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SMART INVENTORY SPOTLIGHT -->
+        <section class="inventory-spotlight-section">
+            <div class="container inventory-container">
+                <div class="inventory-content">
+                    <h2><span class="highlight-underline">Smart Inventory,</span> Zero Guesswork.</h2>
+                    <p class="section-subtitle" style="text-align: left; margin-left: 0;">Go beyond simple stock counts. Our system gives you a live, intelligent view of your entire inventory ecosystem.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Track stock across multiple godowns in real-time.</li>
+                        <li><i class="fas fa-check-circle"></i> Prevent spoilage with batch, expiry, and aging reports.</li>
+                        <li><i class="fas fa-check-circle"></i> Automate reorder reminders with minimum stock alerts.</li>
+                    </ul>
+                </div>
+                <div class="inventory-graphic">
+                    <img src="https://images.unsplash.com/photo-1576185250398-4c17c2444a32?auto=format&fit=crop&q=80&w=1470" alt="Warehouse interior" class="base-img">
+                    <div class="hotspot hotspot-1">
+                        <div class="hotspot-tooltip"><h4>Real-time Tracking</h4><p>Every item movement is instantly recorded.</p></div>
+                    </div>
+                    <div class="hotspot hotspot-2">
+                        <div class="hotspot-tooltip"><h4>Low Stock Alerts</h4><p>Automated notifications when levels are critical.</p></div>
+                    </div>
+                    <div class="hotspot hotspot-3">
+                        <div class="hotspot-tooltip"><h4>Batch & Expiry</h4><p>Prioritize stock with FIFO and expiry date tracking.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BILLS OF MATERIAL (3D GLASSMORPHISM) -->
+        <section class="bom-section-v2">
+            <div class="container">
+                <h2><span class="highlight-underline">Bills of Material,</span> Redefined.</h2>
+                <p class="section-subtitle">Build your product recipes in a clear, interactive, and visually structured way. This is the blueprint for your production.</p>
+                <div class="bom-container-3d">
+                    <div class="bom-card" id="bom-main"><h3>Finished Product: Chair</h3><p>Assembled & Ready</p></div>
+                    <div class="bom-card" id="bom-comp1"><h4>Component: Legs</h4><p>Quantity: 4 Units</p></div>
+                    <div class="bom-card" id="bom-comp2"><h4>Component: Seat</h4><p>Quantity: 1 Unit</p></div>
+                    <div class="bom-card" id="bom-comp3"><h4>Component: Screws</h4><p>Quantity: 8 Units</p></div>
+                    <svg class="bom-svg"></svg>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // --- General Fade-in Animations ---
+        gsap.utils.toArray('h2, .section-subtitle, .hero p, .growth-content p, .growth-content ul').forEach(el => {
+            gsap.from(el, { scrollTrigger: { trigger: el, start: "top 85%" }, y: 50, opacity: 0, duration: 1, ease: "power3.out" });
+        });
+
+        // --- Hero Animation ---
+        gsap.from(".hero h1", { duration: 1, y: 50, opacity: 0, ease: "power3.out", delay: 0.2 });
+        gsap.from(".hero-cta", { duration: 1, scale: 0.8, opacity: 0, ease: "back.out(1.7)", delay: 0.8 });
+        gsap.from(".data-sphere-container", { duration: 2, scale: 0.5, opacity: 0, ease: "power3.out", delay: 0.5 });
+        
+        // --- Guiding Growth Section Animation ---
+        gsap.timeline({
+            scrollTrigger: { trigger: '.growth-graphics', start: "top 70%" }
+        })
+        .from('.growth-graphics .main-img', { scale: 0.8, opacity: 0, duration: 1, ease: 'power3.out' })
+        .from('.stat-card', { opacity: 0, y: 50, stagger: 0.2, duration: 0.8, ease: 'back.out(1.7)' }, "-=0.5")
+        .to('.progress-bar-inner', { 
+            width: (i, target) => target.dataset.width, 
+            duration: 1.5, 
+            stagger: 0.2, 
+            ease: 'power3.inOut' 
+        }, "-=0.5");
+
+        // --- Dark Process Flow Section Animation ---
+        gsap.utils.toArray('.process-step').forEach(step => {
+            gsap.from(step, {
+                scrollTrigger: { trigger: step, start: 'top 80%', toggleActions: 'play none none none' },
+                opacity: 0, x: -50, duration: 1, ease: 'power3.out'
+            });
+        });
+
+        // --- 3D Carousel Logic ---
+        const carousel = document.querySelector('.feature-carousel');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        let slideCount = slides.length;
+        let slideIndex = 0;
+        const angle = 360 / slideCount;
+
+        function updateCarousel() {
+            carousel.style.transform = `rotateY(${slideIndex * -angle}deg)`;
+        }
+
+        slides.forEach((slide, i) => {
+            slide.style.transform = `rotateY(${i * angle}deg) translateZ(350px)`;
+        });
+
+        nextBtn.addEventListener('click', () => { slideIndex++; updateCarousel(); });
+        prevBtn.addEventListener('click', () => { slideIndex--; updateCarousel(); });
+        gsap.from('.carousel-container-3d', { scrollTrigger: { trigger: '.carousel-container-3d', start: 'top 80%' }, scale: 0.8, opacity: 0, duration: 1 });
+
+        // --- Smart Inventory Animation ---
+        gsap.timeline({ scrollTrigger: { trigger: '.inventory-graphic', start: 'top 70%' } })
+            .from('.inventory-graphic .base-img', { scale: 0.8, opacity: 0, duration: 1, ease: 'power3.out' })
+            .from('.hotspot', { scale: 0, opacity: 0, stagger: 0.2, duration: 0.8, ease: 'back.out(1.7)' }, "-=0.5");
+
+        // --- 3D BOM Section Animation ---
+        const bomContainer = document.querySelector('.bom-container-3d');
+        const bomCards = gsap.utils.toArray('.bom-card');
+
+        bomCards.forEach(card => {
+            card.style.setProperty('--original-transform', getComputedStyle(card).transform);
+        });
+        
+        function getCardCenter(el) {
+            const rect = el.getBoundingClientRect();
+            const containerRect = bomContainer.getBoundingClientRect();
+            return {
+                x: rect.left - containerRect.left + rect.width / 2,
+                y: rect.top - containerRect.top + rect.height / 2
+            };
+        }
+
+        ScrollTrigger.create({
+            trigger: bomContainer,
+            start: 'top 60%',
+            once: true,
+            onEnter: () => {
+                gsap.from(bomCards, { scale: 0.5, opacity: 0, stagger: 0.15, duration: 1, ease: 'power3.out' });
+
+                setTimeout(() => {
+                    const svg = document.querySelector('.bom-svg');
+                    const mainCard = document.getElementById('bom-main');
+                    const connections = [document.getElementById('bom-comp1'), document.getElementById('bom-comp2'), document.getElementById('bom-comp3')];
+                    
+                    const from = getCardCenter(mainCard);
+                    const paths = connections.map(comp => {
+                        const to = getCardCenter(comp);
+                        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                        path.setAttribute('d', `M ${from.x} ${from.y + 50} C ${from.x} ${to.y - 50}, ${to.x} ${from.y + 50}, ${to.x} ${to.y - 20}`);
+                        svg.appendChild(path);
+                        return path;
+                    });
+                    
+                    gsap.from(paths, {
+                         strokeDashoffset: (i, target) => {
+                             const length = target.getTotalLength();
+                             target.style.strokeDasharray = length;
+                             return length;
+                         },
+                         duration: 1.5,
+                         ease: 'power2.inOut',
+                         stagger: 0.2,
+                         delay: 0.5
+                    });
+                }, 500);
+            }
+        });
+    </script>
+</body>
+</html>
