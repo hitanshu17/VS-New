@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Softech - Intelligent Delivery Software</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2a5bd7;
+            --secondary: #ff6b35;
+            --accent: #00c896;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f7ff;
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .handwritten {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), #1a3a8f);
+            color: white;
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            z-index: 10;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--accent);
+            margin-left: 8px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .header-bg-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.1;
+        }
+        
+        .header-bg-elements img {
+            position: absolute;
+            animation: float 6s infinite ease-in-out;
+        }
+        
+        .header-bg-elements img:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            width: 80px;
+        }
+        
+        .header-bg-elements img:nth-child(2) {
+            top: 60%;
+            left: 80%;
+            width: 100px;
+            animation-delay: 1s;
+        }
+        
+        .header-bg-elements img:nth-child(3) {
+            top: 30%;
+            left: 70%;
+            width: 60px;
+            animation-delay: 2s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 100px 0;
+            background: url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+            opacity: 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
+            animation: fadeInUp 1s ease-out 0.6s forwards;
+            opacity: 0;
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
+        
+        .cta-button:hover {
+            background-color: #e05a2b;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.6);
+        }
+        
+        .hero-image {
+            margin-top: 50px;
+            position: relative;
+            animation: float 6s infinite ease-in-out;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        /* Why Section */
+        .why-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .benefit-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(42, 91, 215, 0.1), rgba(0, 200, 150, 0.1));
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .benefit-card:hover::before {
+            opacity: 1;
+        }
+        
+        .benefit-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .benefit-card p {
+            color: #555;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .benefit-icon {
+            font-size: 40px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 80px 0;
+            background-color: #f5f7ff;
+        }
+        
+        .features-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tab-button {
+            padding: 12px 25px;
+            background-color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--dark);
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tab-button:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .tab-button.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .features-content {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .features-content.active {
+            display: block;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .feature-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-item h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .feature-item ul {
+            list-style-type: none;
+        }
+        
+        .feature-item li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .feature-item li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        /* 3D Demo Section */
+        .demo-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary), #1a3a8f);
+            color: white;
+            text-align: center;
+        }
+        
+        .demo-container {
+            position: relative;
+            height: 500px;
+            margin-top: 50px;
+            perspective: 1000px;
+        }
+        
+        .demo-cube {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-style: preserve-3d;
+            transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg);
+            animation: rotateCube 20s infinite linear;
+        }
+        
+        .demo-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--primary);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .demo-face img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+        
+        .demo-face:nth-child(1) { transform: rotateY(0deg) translateZ(100px); }
+        .demo-face:nth-child(2) { transform: rotateY(90deg) translateZ(100px); }
+        .demo-face:nth-child(3) { transform: rotateY(180deg) translateZ(100px); }
+        .demo-face:nth-child(4) { transform: rotateY(270deg) translateZ(100px); }
+        .demo-face:nth-child(5) { transform: rotateX(90deg) translateZ(100px); }
+        .demo-face:nth-child(6) { transform: rotateX(-90deg) translateZ(100px); }
+        
+        @keyframes rotateCube {
+            from { transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg); }
+            to { transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg); }
+        }
+        
+        /* Impact Section */
+        .impact-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            background-color: #f5f7ff;
+            transition: all 0.3s;
+        }
+        
+        .stat-card:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-10px);
+        }
+        
+        .stat-card:hover .stat-value {
+            color: white;
+        }
+        
+        .stat-card:hover .stat-label {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .stat-value {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            transition: all 0.3s;
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            color: #666;
+            transition: all 0.3s;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary), #1a3a8f);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background-size: cover;
+            opacity: 0.2;
+            z-index: 1;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style-type: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+        
+        /* Handwritten Note */
+        .handwritten-note {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            max-width: 300px;
+            transform: rotate(5deg);
+            z-index: 100;
+            animation: floatNote 8s infinite ease-in-out;
+            display: none;
+        }
+        
+        .handwritten-note::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/notebook.png');
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        
+        .handwritten-note p {
+            font-family: 'Dancing Script', cursive;
+            font-size: 18px;
+            color: #555;
+        }
+        
+        .note-close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            color: #999;
+        }
+        
+        @keyframes floatNote {
+            0%, 100% {
+                transform: rotate(5deg) translateY(0);
+            }
+            50% {
+                transform: rotate(5deg) translateY(-10px);
+            }
+        }
+        
+        /* Floating Elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .floating-element {
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.1;
+            animation: floatAround 15s infinite linear;
+        }
+        
+        @keyframes floatAround {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(50px, 50px) rotate(90deg);
+            }
+            50% {
+                transform: translate(100px, 0) rotate(180deg);
+            }
+            75% {
+                transform: translate(50px, -50px) rotate(270deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+        
+        /* Parallax Scrolling */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Background Elements -->
+    <div class="floating-elements" id="floatingElements"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="header-bg-elements">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909553.png" alt="Package">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909492.png" alt="Truck">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909518.png" alt="Delivery">
+        </div>
+        <div class="container header-content">
+            <div class="logo">
+                Visual<span>Softech</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#demo">Demo</a>
+                <a href="#impact">Impact</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Transform Your Courier Operations with Intelligent Delivery Software</h1>
+            <p>Revolutionize your delivery business with our cutting-edge technology that automates, optimizes, and accelerates your operations.</p>
+            <a href="#contact" class="cta-button">Request a Demo</a>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Delivery Dashboard">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Section -->
+    <section class="why-section" id="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Your Courier Business Needs Our Solution</h2>
+                <p>Discover how our revolutionary software can transform your delivery operations and give you a competitive edge</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>End the Chaos of Manual Operations</h3>
+                    <p>Transform scattered paperwork, missed deliveries, and customer complaints into a streamlined digital powerhouse that runs like clockwork.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚔️</div>
+                    <h3>Outpace Industry Giants</h3>
+                    <p>Compete head-to-head with major courier companies using enterprise-grade technology that levels the playing field.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Turn Every Package into Profit</h3>
+                    <p>Smart routing, automated processes, and predictive analytics that squeeze maximum profitability from every delivery.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">❤️</div>
+                    <h3>Customer Trust Revolution</h3>
+                    <p>Build unshakeable customer loyalty through transparency, reliability, and communication that exceeds expectations.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔮</div>
+                    <h3>Future-Proof Your Business</h3>
+                    <p>Stay ahead of industry evolution with adaptable technology that grows with changing market demands.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Core Features That Redefine Courier Excellence</h2>
+                <p>Our comprehensive suite of tools is designed to optimize every aspect of your delivery operations</p>
+            </div>
+            
+            <div class="features-tabs">
+                <button class="tab-button active" data-tab="tod">TOD Management</button>
+                <button class="tab-button" data-tab="bilty">BILTY & Bulk Orders</button>
+                <button class="tab-button" data-tab="architecture">Custom Architecture</button>
+                <button class="tab-button" data-tab="routing">Smart Routing</button>
+                <button class="tab-button" data-tab="analytics">Advanced Analytics</button>
+            </div>
+            
+            <div class="features-content active" id="tod-content">
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h4>Advanced TOD Management</h4>
+                        <ul>
+                            <li>Real-Time Package Status Tracking</li>
+                            <li>Automated TOD Notifications</li>
+                            <li>Digital Delivery Confirmations</li>
+                            <li>Failed Delivery Management</li>
+                            <li>Multi-Attempt Delivery Optimization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h4>Customer Communication</h4>
+                        <ul>
+                            <li>Proactive Delivery Notifications</li>
+                            <li>Customer Preference Management</li>
+                            <li>Two-Way Communication Platform</li>
+                            <li>Complaint Resolution System</li>
+                            <li>Feedback Collection Tools</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h4>Specialized Services</h4>
+                        <ul>
+                            <li>Same-Day Delivery Optimization</li>
+                            <li>Scheduled Delivery Coordination</li>
+                            <li>Cash-on-Delivery Processing</li>
+                            <li>Return Pickup Integration</li>
+                            <li>Fragile Item Handling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="features-content" id="bilty-content">
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h4>Bulk Order Management</h4>
+                        <ul>
+                            <li>Intelligent Bulk Processing</li>
+                            <li>Digital BILTY Generation</li>
+                            <li>Consolidated Shipment Tracking</li>
+                            <li>Automated Weight & Dimension Capture</li>
+                            <li>Bulk Delivery Sequencing</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h4>Order Management</h4>
+                        <ul>
+                            <li>Automated Order Processing</li>
+                            <li>Priority-Based Scheduling</li>
+                            <li>Customer Portal Integration</li>
+                            <li>Bulk Order Optimization</li>
+                            <li>Dynamic Pricing Engine</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="features-content" id="architecture-content">
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h4>Customized Architecture</h4>
+                        <ul>
+                            <li>Tailored Business Logic</li>
+                            <li>Scalable Modular Design</li>
+                            <li>Brand-Specific Interface</li>
+                            <li>Integration-Ready Framework</li>
+                            <li>Custom Reporting Dashboards</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h4>Exclusive Advantages</h4>
+                        <ul>
+                            <li>Lightning-Fast Implementation</li>
+                            <li>Zero-Disruption Transition</li>
+                            <li>Mobile-First Design</li>
+                            <li>Scalable Cloud Infrastructure</li>
+                            <li>24/7 Technical Support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="features-content" id="routing-content">
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h4>Smart Route Optimization</h4>
+                        <ul>
+                            <li>AI-Powered Route Planning</li>
+                            <li>Real-Time GPS Tracking</li>
+                            <li>Driver Performance Analytics</li>
+                            <li>Vehicle Maintenance Scheduling</li>
+                            <li>Load Balancing Intelligence</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h4>Fleet Management</h4>
+                        <ul>
+                            <li>Live Vehicle Monitoring</li>
+                            <li>Accurate ETAs</li>
+                            <li>Location Sharing</li>
+                            <li>Fuel Efficiency Tracking</li>
+                            <li>Delivery Time Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="features-content" id="analytics-content">
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h4>Analytics & Reporting</h4>
+                        <ul>
+                            <li>Operational Dashboard</li>
+                            <li>Predictive Analytics Engine</li>
+                            <li>Custom Report Generation</li>
+                            <li>Profitability Analysis Tools</li>
+                            <li>Performance Benchmarking</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h4>Business Intelligence</h4>
+                        <ul>
+                            <li>Customer Behavior Analytics</li>
+                            <li>Market Expansion Planning</li>
+                            <li>Competitor Analysis Dashboard</li>
+                            <li>Seasonal Demand Forecasting</li>
+                            <li>Revenue Optimization Strategies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 3D Demo Section -->
+    <section class="demo-section" id="demo">
+        <div class="container">
+            <div class="section-title">
+                <h2>Interactive 3D Demo</h2>
+                <p>Explore our software features in this interactive 3D demonstration</p>
+            </div>
+            
+            <div class="demo-container">
+                <div class="demo-cube">
+                    <div class="demo-face"><img src="https://cdn-icons-png.flaticon.com/512/2909/2909553.png" alt="Tracking"></div>
+                    <div class="demo-face"><img src="https://cdn-icons-png.flaticon.com/512/2909/2909492.png" alt="Routing"></div>
+                    <div class="demo-face"><img src="https://cdn-icons-png.flaticon.com/512/2909/2909518.png" alt="Delivery"></div>
+                    <div class="demo-face"><img src="https://cdn-icons-png.flaticon.com/512/2909/2909503.png" alt="Analytics"></div>
+                    <div class="demo-face"><img src="https://cdn-icons-png.flaticon.com/512/2909/2909538.png" alt="Management"></div>
+                    <div class="demo-face"><img src="https://cdn-icons-png.flaticon.com/512/2909/2909548.png" alt="Customer"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Impact Section -->
+    <section class="impact-section" id="impact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Measurable Business Impact</h2>
+                <p>Our clients experience significant improvements across all key metrics</p>
+            </div>
+            
+            <div class="impact-stats">
+                <div class="stat-card">
+                    <div class="stat-value">40-60%</div>
+                    <div class="stat-label">Operational Efficiency Gain</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value">98%+</div>
+                    <div class="stat-label">Delivery Success Rate</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value">50%+</div>
+                    <div class="stat-label">Customer Satisfaction Boost</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value">25-40%</div>
+                    <div class="stat-label">Cost Reduction</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value">30-50%</div>
+                    <div class="stat-label">Revenue Growth</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value">70%</div>
+                    <div class="stat-label">Admin Time Savings</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container cta-content">
+            <h2>Ready to Revolutionize Your Courier Operations?</h2>
+            <p>Every package your competitors deliver more efficiently is market share slipping away. Every customer frustrated by poor communication is a relationship you could have won. Every manual process you maintain is profit you're leaving on the table.</p>
+            <p>Stop competing on price alone. Start competing on excellence.</p>
+            <a href="#contact" class="cta-button">Contact Us Today</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Visual Softech</h3>
+                    <p>Where Innovation Meets Delivery Excellence</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="#">TOD Management</a></li>
+                        <li><a href="#">BILTY Processing</a></li>
+                        <li><a href="#">Route Optimization</a></li>
+                        <li><a href="#">Customer Portal</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Industries</h3>
+                    <ul>
+                        <li><a href="#">E-Commerce</a></li>
+                        <li><a href="#">B2B Services</a></li>
+                        <li><a href="#">Medical Delivery</a></li>
+                        <li><a href="#">Pharmaceutical</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="#">Request Demo</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Partnerships</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Visual Softech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Handwritten Note -->
+    <div class="handwritten-note" id="handwrittenNote">
+        <button class="note-close" id="noteClose">×</button>
+        <p>"Our software helped ACME Couriers increase delivery efficiency by 58% in just 3 months!"</p>
+    </div>
+    
+    <script>
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.features-content');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(`${tabId}-content`).classList.add('active');
+            });
+        });
+        
+        // Create floating elements
+        const floatingElements = document.getElementById('floatingElements');
+        const icons = [
+            '📦', '🚚', '📱', '🛒', '📊', '🔍', '⏱️', '📈', '📍', '💳'
+        ];
+        
+        for (let i = 0; i < 15; i++) {
+            const element = document.createElement('div');
+            element.className = 'floating-element';
+            element.textContent = icons[Math.floor(Math.random() * icons.length)];
+            element.style.fontSize = `${Math.random() * 20 + 10}px`;
+            element.style.top = `${Math.random() * 100}%`;
+            element.style.left = `${Math.random() * 100}%`;
+            element.style.animationDuration = `${Math.random() * 20 + 10}s`;
+            element.style.animationDelay = `${Math.random() * 5}s`;
+            floatingElements.appendChild(element);
+        }
+        
+        // Show handwritten note after delay
+        setTimeout(() => {
+            document.getElementById('handwrittenNote').style.display = 'block';
+        }, 5000);
+        
+        // Close handwritten note
+        document.getElementById('noteClose').addEventListener('click', () => {
+            document.getElementById('handwrittenNote').style.display = 'none';
+        });
+        
+        // Animate stats on scroll
+        const statCards = document.querySelectorAll('.stat-card');
+        
+        const animateStats = () => {
+            statCards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (cardTop < windowHeight - 100) {
+                    const valueElement = card.querySelector('.stat-value');
+                    const targetValue = valueElement.textContent;
+                    const suffix = targetValue.includes('%') ? '%' : '';
+                    const numericValue = parseFloat(targetValue);
+                    
+                    let current = 0;
+                    const increment = numericValue / 30;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= numericValue) {
+                            clearInterval(timer);
+                            valueElement.textContent = targetValue;
+                        } else {
+                            valueElement.textContent = `${Math.round(current)}${suffix}`;
+                        }
+                    }, 30);
+                    
+                    // Remove event listener after animation
+                    window.removeEventListener('scroll', animateStats);
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateStats);
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
