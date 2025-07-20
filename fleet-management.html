@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Transportation Software | Visual Softech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #00c4cc;
+            --accent: #ff6b35;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            background-color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .handwritten {
+            font-family: 'Pacifico', cursive;
+            color: var(--accent);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #003366 100%);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        header.scrolled {
+            padding: 15px 0;
+            background: rgba(0, 86, 179, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+            font-size: 15px;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 86, 179, 0.8)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+            line-height: 1.2;
+        }
+        
+        .hero h1 span {
+            color: var(--secondary);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            animation: pulse 2s infinite;
+            margin: 10px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
+            background: #ff5a1f;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            box-shadow: none;
+            animation: none;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: none;
+            color: white;
+        }
+        
+        .hero-image {
+            margin-top: 50px;
+            position: relative;
+            height: 400px;
+        }
+        
+        .dashboard-img {
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            transform: perspective(1000px) rotateX(10deg);
+            transition: all 0.5s;
+            animation: floatDashboard 6s ease-in-out infinite;
+        }
+        
+        /* Why Section */
+        .why {
+            padding: 100px 0;
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 20%;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .benefit-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+            transform: translateY(0);
+            text-align: center;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--secondary);
+        }
+        
+        .benefit-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--secondary);
+            transition: height 0.3s;
+        }
+        
+        .benefit-card:hover:before {
+            height: 10px;
+        }
+        
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 196, 204, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--secondary);
+            font-size: 30px;
+            transition: all 0.3s;
+        }
+        
+        .benefit-card:hover .benefit-icon {
+            transform: rotateY(180deg);
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .benefit-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .benefit-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+        }
+        
+        .features-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            padding: 12px 25px;
+            background: white;
+            border: none;
+            border-radius: 50px;
+            margin: 0 10px 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .feature-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 40px;
+        }
+        
+        .feature-text h3 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .feature-text ul {
+            list-style: none;
+        }
+        
+        .feature-text ul li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .feature-text ul li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--success);
+        }
+        
+        .feature-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s;
+        }
+        
+        .feature-image:hover .feature-img {
+            transform: scale(1.05);
+        }
+        
+        /* 3D Fleet Visualization */
+        .fleet-visualization {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #003366 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .visualization-container {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .visualization-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 40px;
+        }
+        
+        .visualization-text h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .visualization-text p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .visualization-3d {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            position: relative;
+            perspective: 1000px;
+        }
+        
+        .fleet {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateFleet 20s infinite linear;
+            margin: 50px auto;
+        }
+        
+        .vehicle {
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            transition: all 0.5s;
+            backface-visibility: visible;
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+        }
+        
+        .vehicle-1 {
+            transform: translateZ(150px);
+            background-image: url('https://cdn-icons-png.flaticon.com/512/3079/3079017.png');
+        }
+        
+        .vehicle-2 {
+            transform: rotateY(90deg) translateZ(150px);
+            background-image: url('https://cdn-icons-png.flaticon.com/512/3079/3079033.png');
+        }
+        
+        .vehicle-3 {
+            transform: rotateY(180deg) translateZ(150px);
+            background-image: url('https://cdn-icons-png.flaticon.com/512/3079/3079150.png');
+        }
+        
+        .vehicle-4 {
+            transform: rotateY(-90deg) translateZ(150px);
+            background-image: url('https://cdn-icons-png.flaticon.com/512/3079/3079162.png');
+        }
+        
+        .vehicle-5 {
+            transform: rotateX(90deg) translateZ(150px);
+            background-image: url('https://cdn-icons-png.flaticon.com/512/3079/3079122.png');
+        }
+        
+        .vehicle-6 {
+            transform: rotateX(-90deg) translateZ(150px);
+            background-image: url('https://cdn-icons-png.flaticon.com/512/3079/3079135.png');
+        }
+        
+        /* Advantages Section */
+        .advantages {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .advantage-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .advantage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
+        }
+        
+        .advantage-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .advantage-card h3 i {
+            margin-right: 15px;
+            color: var(--accent);
+        }
+        
+        .advantage-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Impact Section */
+        .impact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+        }
+        
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            border-top: 5px solid var(--secondary);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-value {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        /* Industries Section */
+        .industries {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .industry-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .industry-btn {
+            padding: 12px 25px;
+            background: white;
+            border: none;
+            border-radius: 50px;
+            margin: 0 10px 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+        }
+        
+        .industry-btn i {
+            margin-right: 10px;
+        }
+        
+        .industry-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
+        }
+        
+        .industry-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .industry-content.active {
+            display: block;
+        }
+        
+        .industry-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .industry-feature {
+            background: rgba(0, 196, 204, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .industry-feature h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        /* Journey Section */
+        .journey {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #003366 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .journey-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            position: relative;
+        }
+        
+        .journey-steps:before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 1;
+        }
+        
+        .journey-step {
+            width: calc(20% - 20px);
+            min-width: 200px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 40px;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+        
+        .step-content h3 {
+            margin-bottom: 15px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(rgba(0, 86, 179, 0.9), rgba(0, 86, 179, 0.9)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: white;
+            position: relative;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .footer-column p {
+            color: #bbb;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 14px;
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(255, 107, 53, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
+            }
+        }
+        
+        @keyframes floatDashboard {
+            0%, 100% {
+                transform: perspective(1000px) rotateX(10deg) translateY(0);
+            }
+            50% {
+                transform: perspective(1000px) rotateX(10deg) translateY(-20px);
+            }
+        }
+        
+        @keyframes rotateFleet {
+            from {
+                transform: rotateX(0) rotateY(0);
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* Floating Elements */
+        .floating-vehicle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: floatVehicle 8s ease-in-out infinite;
+            opacity: 0.7;
+            z-index: 0;
+        }
+        
+        .vehicle-float-1 {
+            top: 20%;
+            left: 5%;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/3079/3079017.png');
+            animation-delay: 0s;
+        }
+        
+        .vehicle-float-2 {
+            top: 60%;
+            left: 10%;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/3079/3079033.png');
+            animation-delay: 1s;
+        }
+        
+        .vehicle-float-3 {
+            top: 30%;
+            right: 8%;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/3079/3079150.png');
+            animation-delay: 2s;
+        }
+        
+        .vehicle-float-4 {
+            top: 70%;
+            right: 5%;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/3079/3079162.png');
+            animation-delay: 3s;
+        }
+        
+        @keyframes floatVehicle {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-30px) rotate(5deg);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .journey-step {
+                width: calc(33.33% - 20px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--primary);
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: all 0.3s;
+                z-index: 999;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 0 0 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .feature-content {
+                flex-direction: column;
+            }
+            
+            .feature-text {
+                order: 2;
+            }
+            
+            .feature-image {
+                order: 1;
+                height: 300px;
+            }
+            
+            .journey-step {
+                width: calc(50% - 20px);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 30px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            .journey-step {
+                width: 100%;
+            }
+            
+            .journey-steps:before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/2455/2455304.png" alt="Visual Softech">
+                Visual <span>Softech</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#why">Why Choose Us</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#advantages">Advantages</a></li>
+                    <li><a href="#impact">Impact</a></li>
+                    <li><a href="#industries">Industries</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Master Your Fleet Operations with <span>Smart Transportation Software</span></h1>
+            <p>Transform chaotic fleet management into precision-driven operations where every decision is backed by real-time data and intelligent predictions</p>
+            <a href="#contact" class="btn">Request Demo</a>
+            <a href="#features" class="btn btn-secondary">Explore Features</a>
+            
+            <div class="hero-image">
+                <img src="https://cdn.dribbble.com/users/59947/screenshots/15571965/media/3c1c5656609d59c1f0e75d0d0a8e7750.png" alt="Transportation Dashboard" class="dashboard-img">
+            </div>
+        </div>
+    </section>
+    
+    <section class="why" id="why">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Your Transportation Business Needs Our <span class="handwritten">Intelligent Solution</span></h2>
+                <p>Outpace your competition with military-grade precision that customers notice and competitors envy</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>End the Guesswork Era</h3>
+                    <p>Transform chaotic fleet management into precision-driven operations where every decision is backed by real-time data and intelligent predictions</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Outpace Your Competition</h3>
+                    <p>While others fumble with outdated systems, you'll operate with military-grade precision that customers notice and competitors envy</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Maximize Every Dollar</h3>
+                    <p>Turn your biggest expense (fuel and maintenance) into your smartest investment through AI-powered optimization</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>Customer Satisfaction</h3>
+                    <p>Deliver experiences so exceptional that customers become your biggest marketing advocates</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Core Features That <span class="handwritten">Redefine Excellence</span></h2>
+                <p>Advanced technology designed specifically for transportation businesses</p>
+            </div>
+            
+            <div class="features-tabs">
+                <button class="tab-btn active" data-tab="geofencing">Geofencing</button>
+                <button class="tab-btn" data-tab="routing">Routing</button>
+                <button class="tab-btn" data-tab="booking">Booking</button>
+                <button class="tab-btn" data-tab="driver">Driver Logs</button>
+                <button class="tab-btn" data-tab="analytics">Analytics</button>
+            </div>
+            
+            <div class="tab-content active" id="geofencing">
+                <div class="feature-content">
+                    <div class="feature-text">
+                        <h3>Advanced Geofencing Technology</h3>
+                        <ul>
+                            <li>Smart Boundary Intelligence - Create virtual perimeters that automatically trigger actions</li>
+                            <li>Instant Alert Systems - Real-time notifications for unauthorized area access</li>
+                            <li>Customer Notification Automation - Automatic "driver approaching" messages</li>
+                            <li>Compliance Zone Monitoring - Ensure vehicles avoid restricted areas</li>
+                        </ul>
+                    </div>
+                    <div class="feature-image">
+                        <img src="https://cdn.dribbble.com/users/59947/screenshots/15571965/media/3c1c5656609d59c1f0e75d0d0a8e7750.png" alt="Geofencing" class="feature-img">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="routing">
+                <div class="feature-content">
+                    <div class="feature-text">
+                        <h3>Intelligent Route Scheduling</h3>
+                        <ul>
+                            <li>AI-Powered Route Optimization - Machine learning algorithms analyze traffic patterns</li>
+                            <li>Dynamic Re-routing Capabilities - Instant adjustments based on real-time conditions</li>
+                            <li>Multi-Stop Efficiency Planning - Optimize complex delivery sequences</li>
+                            <li>Driver Skill-Based Assignments - Match routes to driver expertise</li>
+                        </ul>
+                    </div>
+                    <div class="feature-image">
+                        <img src="https://cdn.dribbble.com/users/59947/screenshots/15571965/media/3c1c5656609d59c1f0e75d0d0a8e7750.png" alt="Routing" class="feature-img">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="booking">
+                <div class="feature-content">
+                    <div class="feature-text">
+                        <h3>Comprehensive Booking Management</h3>
+                        <ul>
+                            <li>Seamless Integration Hub - Connect with major booking platforms</li>
+                            <li>Real-Time Availability Sync - Prevent overbooking with instant updates</li>
+                            <li>Automated Booking Confirmations - Eliminate manual processes</li>
+                            <li>Flight Status Integration - Automatic schedule adjustments</li>
+                        </ul>
+                    </div>
+                    <div class="feature-image">
+                        <img src="https://cdn.dribbble.com/users/59947/screenshots/15571965/media/3c1c5656609d59c1f0e75d0d0a8e7750.png" alt="Booking" class="feature-img">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="driver">
+                <div class="feature-content">
+                    <div class="feature-text">
+                        <h3>Detailed Driver Logs & Tracking</h3>
+                        <ul>
+                            <li>Comprehensive Activity Monitoring - Track driving hours and behaviors</li>
+                            <li>Performance Score Analytics - Data-driven driver evaluations</li>
+                            <li>Safety Incident Reporting - Instant alerts for critical behaviors</li>
+                            <li>Automated Compliance Tracking - Ensure adherence to regulations</li>
+                        </ul>
+                    </div>
+                    <div class="feature-image">
+                        <img src="https://cdn.dribbble.com/users/59947/screenshots/15571965/media/3c1c5656609d59c1f0e75d0d0a8e7750.png" alt="Driver Logs" class="feature-img">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="analytics">
+                <div class="feature-content">
+                    <div class="feature-text">
+                        <h3>Revolutionary Data Analytics</h3>
+                        <ul>
+                            <li>Interactive Dashboard Command Center - Transform data into insights</li>
+                            <li>Predictive Analytics Engine - Forecast needs before they impact you</li>
+                            <li>Custom Report Generation - Tailored to your specific KPIs</li>
+                            <li>Visual Performance Trends - Reveal patterns and opportunities</li>
+                        </ul>
+                    </div>
+                    <div class="feature-image">
+                        <img src="https://cdn.dribbble.com/users/59947/screenshots/15571965/media/3c1c5656609d59c1f0e75d0d0a8e7750.png" alt="Analytics" class="feature-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="fleet-visualization">
+        <div class="floating-vehicle vehicle-float-1"></div>
+        <div class="floating-vehicle vehicle-float-2"></div>
+        <div class="floating-vehicle vehicle-float-3"></div>
+        <div class="floating-vehicle vehicle-float-4"></div>
+        
+        <div class="container visualization-container">
+            <div class="visualization-text">
+                <h2>Seamless Third-Party System Integration</h2>
+                <p>Universal platform connectivity with Booking.com, Viator, flight tracking systems, and 200+ other business platforms. Our API-first architecture future-proofs your investment with easy integration capabilities for new technologies.</p>
+                <p>Ensure all systems stay updated simultaneously for consistent information across your operations with real-time data synchronization.</p>
+                <a href="#contact" class="btn">Learn About Integration</a>
+            </div>
+            
+            <div class="visualization-3d">
+                <div class="fleet">
+                    <div class="vehicle vehicle-1"></div>
+                    <div class="vehicle vehicle-2"></div>
+                    <div class="vehicle vehicle-3"></div>
+                    <div class="vehicle vehicle-4"></div>
+                    <div class="vehicle vehicle-5"></div>
+                    <div class="vehicle vehicle-6"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="advantages" id="advantages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Exclusive <span class="handwritten">Visual Softech</span> Advantages</h2>
+                <p>Why our solution stands above the competition</p>
+            </div>
+            
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <h3><i class="fas fa-bolt"></i> Lightning-Fast Implementation</h3>
+                    <p>Get operational within 72 hours with our rapid deployment process and expert migration team.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <h3><i class="fas fa-clock"></i> Zero Downtime Guarantee</h3>
+                    <p>Seamless transition from your current system without disrupting ongoing operations.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <h3><i class="fas fa-mobile-alt"></i> Mobile-First Design</h3>
+                    <p>Complete functionality on smartphones and tablets for drivers and managers on the go.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <h3><i class="fas fa-shield-alt"></i> Bank-Grade Security</h3>
+                    <p>Protect sensitive data with enterprise-level encryption and security protocols.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <h3><i class="fas fa-cloud"></i> Scalable Cloud Infrastructure</h3>
+                    <p>Handle seasonal traffic spikes and business growth without performance degradation.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <h3><i class="fas fa-headset"></i> 24/7 Technical Support</h3>
+                    <p>Round-the-clock assistance from transportation software specialists.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="impact" id="impact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Measurable <span class="handwritten">Business Impact</span></h2>
+                <p>Real results you can expect from our solution</p>
+            </div>
+            
+            <div class="impact-stats">
+                <div class="stat-card">
+                    <div class="stat-value">20-35%</div>
+                    <div class="stat-label">Fuel Cost Reduction</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value">40%+</div>
+                    <div class="stat-label">Customer Satisfaction Boost</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value">25-45%</div>
+                    <div class="stat-label">Fleet Utilization Increase</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value">30%</div>
+                    <div class="stat-label">Maintenance Cost Savings</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value">60%</div>
+                    <div class="stat-label">Admin Time Reduction</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value">95%+</div>
+                    <div class="stat-label">On-Time Delivery Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="industries" id="industries">
+        <div class="container">
+            <div class="section-title">
+                <h2>Industry-Specific <span class="handwritten">Solutions</span></h2>
+                <p>Tailored functionality for different transportation sectors</p>
+            </div>
+            
+            <div class="industry-tabs">
+                <button class="industry-btn active" data-industry="tourism">
+                    <i class="fas fa-umbrella-beach"></i> Tourism
+                </button>
+                <button class="industry-btn" data-industry="ecommerce">
+                    <i class="fas fa-shopping-cart"></i> E-Commerce
+                </button>
+                <button class="industry-btn" data-industry="corporate">
+                    <i class="fas fa-building"></i> Corporate
+                </button>
+            </div>
+            
+            <div class="industry-content active" id="tourism-content">
+                <div class="industry-features">
+                    <div class="industry-feature">
+                        <h4>Seamless Booking Platform Integration</h4>
+                        <p>Connect with major travel booking sites for automatic ride assignments and real-time updates.</p>
+                    </div>
+                    <div class="industry-feature">
+                        <h4>Tourist Route Optimization</h4>
+                        <p>Scenic route planning with points of interest integration for enhanced guest experiences.</p>
+                    </div>
+                    <div class="industry-feature">
+                        <h4>Multi-Language Support</h4>
+                        <p>Communicate with international travelers in their preferred language through the driver app.</p>
+                    </div>
+                    <div class="industry-feature">
+                        <h4>Airport Transfer Specialization</h4>
+                        <p>Automatic flight delay integration and passenger communication for stress-free transfers.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="industry-content" id="ecommerce-content">
+                <div class="industry-features">
+                    <div class="industry-feature">
+                        <h4>Last-Mile Delivery Excellence</h4>
+                        <p>Precision timing for residential and commercial deliveries with real-time customer updates.</p>
+                    </div>
+                    <div class="industry-feature">
+                        <h4>Package Tracking Integration</h4>
+                        <p>End-to-end visibility from warehouse pickup to final delivery confirmation.</p>
+                    </div>
+                    <div class="industry-feature">
+                        <h4>Return Trip Optimization</h4>
+                        <p>Efficient handling of return pickups and exchanges with automated routing.</p>
+                    </div>
+                    <div class="industry-feature">
+                        <h4>Peak Season Scaling</h4>
+                        <p>Intelligent capacity management to handle holiday rushes and promotional events.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="industry-content" id="corporate-content">
+                <div class="industry-features">
+                    <div class="industry-feature">
+                        <h4>Executive Service Management</h4>
+                        <p>VIP routing and premium service delivery protocols for corporate clients.</p>
+                    </div>
+                    <div class="industry-feature">
+                        <h4>Event Transportation Coordination</h4>
+                        <p>Large-scale event logistics with precise timing and attendee management.</p>
+                    </div>
+                    <div class="industry-feature">
+                        <h4>Employee Shuttle Optimization</h4>
+                        <p>Efficient corporate campus and airport transportation for staff.</p>
+                    </div>
+                    <div class="industry-feature">
+                        <h4>Billing Integration Systems</h4>
+                        <p>Seamless corporate account management and automated invoicing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="journey">
+        <div class="container">
+            <div class="section-title">
+                <h2>Your Success <span class="handwritten">Transformation Journey</span></h2>
+                <p>We guide you through every step of implementation and beyond</p>
+            </div>
+            
+            <div class="journey-steps">
+                <div class="journey-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Strategic Discovery</h3>
+                        <p>Deep-dive analysis of your current operations and growth objectives</p>
+                    </div>
+                </div>
+                
+                <div class="journey-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Custom Solution Design</h3>
+                        <p>Tailored software configuration matching your requirements</p>
+                    </div>
+                </div>
+                
+                <div class="journey-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Rapid Implementation</h3>
+                        <p>Expert setup and migration with comprehensive training</p>
+                    </div>
+                </div>
+                
+                <div class="journey-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Performance Optimization</h3>
+                        <p>Fine-tuning based on real operational data</p>
+                    </div>
+                </div>
+                
+                <div class="journey-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Ongoing Partnership</h3>
+                        <p>Continuous support and strategic recommendations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Ready to Revolutionize Your Transportation Operations?</h2>
+            <p>Every minute your fleet operates without intelligent software is money left on the table. Your competitors are already gaining advantages with smarter technology.</p>
+            <a href="#" class="btn">Schedule Demo</a>
+            <a href="#" class="btn btn-secondary">Contact Sales</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Visual Softech</h3>
+                    <p>Smart transportation solutions that transform fleet operations through cutting-edge technology and data-driven insights.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#why">Why Choose Us</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#advantages">Advantages</a></li>
+                        <li><a href="#impact">Business Impact</a></li>
+                        <li><a href="#industries">Industries</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="#">Geofencing Technology</a></li>
+                        <li><a href="#">Route Optimization</a></li>
+                        <li><a href="#">Booking Management</a></li>
+                        <li><a href="#">Driver Performance</a></li>
+                        <li><a href="#">Advanced Analytics</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +1 (800) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@visualsoftech.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Tech Park, Silicon Valley, CA</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Visual Softech. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            this.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Tab Functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and contents
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                this.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Industry Tab Functionality
+        const industryBtns = document.querySelectorAll('.industry-btn');
+        industryBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const industryId = this.getAttribute('data-industry');
+                
+                // Remove active class from all buttons and contents
+                document.querySelectorAll('.industry-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.industry-content').forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                this.classList.add('active');
+                document.getElementById(industryId + '-content').classList.add('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animate elements when scrolling
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.benefit-card, .section-title, .feature-content, .advantage-card, .stat-card, .industry-feature, .journey-step');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.benefit-card, .section-title, .feature-content, .advantage-card, .stat-card, .industry-feature, .journey-step').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'all 0.6s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+        
+        // Auto rotate the 3D fleet
+        const fleet = document.querySelector('.fleet');
+        let rotateX = 0;
+        let rotateY = 0;
+        
+        fleet.addEventListener('mouseover', () => {
+            fleet.style.animationPlayState = 'paused';
+        });
+        
+        fleet.addEventListener('mouseout', () => {
+            fleet.style.animationPlayState = 'running';
+        });
+        
+        fleet.addEventListener('mousemove', (e) => {
+            const rect = fleet.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            rotateX = (y - centerY) / 20;
+            rotateY = -(x - centerX) / 20;
+            
+            fleet.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+    </script>
+</body>
+</html>
