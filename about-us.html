@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Softech - The Digital Blueprint</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&family=Marck+Script&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* New Light Color Theme */
+            --primary-bg: #f4f7f9;
+            --prism-face-bg: rgba(255, 255, 255, 0.85);
+            --accent-color: #0057ff; /* A strong, professional blue */
+            --text-color: #333e48; /* Dark slate grey for readability */
+            --heading-color: #0d2c54; /* Deep, rich blue for headings */
+            --border-color: #dfe7ef;
+
+            /* New Font Scheme */
+            --heading-font: 'Playfair Display', serif;
+            --body-font: 'Roboto', sans-serif;
+            --handwriting-font: 'Marck Script', cursive;
+            
+            --face-width: 320; /* Prism face width in pixels */
+            --face-count: 6; /* Number of faces on the prism */
+        }
+
+        /* --- BASIC SETUP --- */
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            font-family: var(--body-font);
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 2000px;
+        }
+
+        /* --- AMBIENT BACKGROUND --- */
+        #ambient-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* --- MAIN SCENE & PRISM STRUCTURE --- */
+        .scene {
+            width: calc(var(--face-width) * 1px);
+            height: 480px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: translateZ(-500px);
+        }
+
+        .prism {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1);
+        }
+
+        .prism-face {
+            position: absolute;
+            width: calc(var(--face-width) * 1px);
+            height: 480px;
+            background: var(--prism-face-bg);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            box-sizing: border-box;
+            backface-visibility: hidden;
+        }
+
+        /* Positioning each face of the prism */
+        .prism-face-front  { transform: rotateY(  0deg) translateZ(calc(var(--face-width) * 0.866 * 1px)); }
+        .prism-face-right  { transform: rotateY( 60deg) translateZ(calc(var(--face-width) * 0.866 * 1px)); }
+        .prism-face-back   { transform: rotateY(120deg) translateZ(calc(var(--face-width) * 0.866 * 1px)); }
+        .prism-face-left   { transform: rotateY(180deg) translateZ(calc(var(--face-width) * 0.866 * 1px)); }
+        .prism-face-top    { transform: rotateY(240deg) translateZ(calc(var(--face-width) * 0.866 * 1px)); }
+        .prism-face-bottom { transform: rotateY(300deg) translateZ(calc(var(--face-width) * 0.866 * 1px)); }
+        
+        /* --- CONTENT STYLING --- */
+        .content {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out 0.5s, transform 0.5s ease-out 0.5s;
+        }
+        
+        .prism-face.active .content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .content h2 {
+            font-family: var(--heading-font);
+            color: var(--heading-color);
+            font-size: 2.2rem;
+            margin: 0 0 10px 0;
+        }
+        
+        .content .handwriting {
+            font-family: var(--handwriting-font);
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+        
+        .content ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            text-align: left;
+        }
+        
+        .content li {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 22px;
+        }
+
+        .content li::before {
+            content: '✓';
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        
+        .logo {
+            max-width: 80px;
+            margin-bottom: 20px;
+        }
+
+        /* --- UI / NAVIGATION --- */
+        .nav-dots {
+            position: fixed;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: #fff;
+            border: 2px solid var(--accent-color);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: var(--accent-color);
+        }
+        
+        /* --- INSTRUCTIONS / TITLE --- */
+        .title-card {
+            position: fixed;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 10;
+        }
+        .title-card h1 {
+            font-family: var(--heading-font);
+            color: var(--heading-color);
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .title-card p {
+            margin: 5px;
+            color: var(--text-color);
+        }
+
+    </style>
+</head>
+<body>
+
+    <canvas id="ambient-canvas"></canvas>
+
+    <div class="title-card">
+        <h1>VISUAL SOFTECH</h1>
+        <p>Click & Drag or Use Side Navigation</p>
+    </div>
+
+    <div class="scene">
+        <div class="prism">
+            <!-- Face 1: Welcome -->
+            <div class="prism-face prism-face-front">
+                <div class="content">
+                    <img src="https://api.iconify.design/fluent-mdl2:verified-brand-solid.svg?color=%230057ff" alt="Logo" class="logo">
+                    <h2>Welcome</h2>
+                    <span class="handwriting">Where Dreams Meet Digital Excellence</span>
+                    <p>Born in 1991, we are dedicated to crafting software solutions that don't just meet expectations—they redefine them.</p>
+                </div>
+            </div>
+            <!-- Face 2: Legacy -->
+            <div class="prism-face prism-face-right">
+                <div class="content">
+                    <h2>Our Legacy</h2>
+                    <span class="handwriting">Built on Trust, Powered by Innovation</span>
+                    <ul>
+                        <li>33 years shaping the digital revolution.</li>
+                        <li>Evolved with technology, kept our core values.</li>
+                        <li>Battle-tested expertise across diverse industries.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Face 3: The Difference -->
+            <div class="prism-face prism-face-back">
+                <div class="content">
+                    <h2>Our Difference</h2>
+                    <span class="handwriting">We don't just code, we craft experiences</span>
+                    <ul>
+                        <li>Purposeful creativity and strategic thinking.</li>
+                        <li>A human-centric approach to all technology.</li>
+                        <li>We are solution architects, not just developers.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Face 4: Why Us -->
+            <div class="prism-face prism-face-left">
+                <div class="content">
+                    <h2>Why Choose Us</h2>
+                    <span class="handwriting">Your success is our success story</span>
+                    <ul>
+                        <li>Proven track record across three decades.</li>
+                        <li>Agile methodology for timely, quality delivery.</li>
+                        <li>Dedicated support long after project launch.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Face 5: Our Promise -->
+            <div class="prism-face prism-face-top">
+                <div class="content">
+                    <h2>Our Promise</h2>
+                    <span class="handwriting">Meticulously Crafted Solutions</span>
+                    <p>When you choose Visual Softech, you gain more than a service provider—you gain a partner invested in your vision, strategy, and flawless execution.</p>
+                </div>
+            </div>
+            <!-- Face 6: Contact -->
+            <div class="prism-face prism-face-bottom">
+                 <div class="content contact-info">
+                    <h2>Connect With Us</h2>
+                    <span class="handwriting">Let's build something extraordinary</span>
+                    <a href="tel:+918920770888">📞 +91 8920770888</a>
+                    <a href="mailto:mail@visualsoftech.com">📧 mail@visualsoftech.com</a>
+                    <p style="margin-top:15px;">📍 Kalkaji, New Delhi-19</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="nav-dots"></div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const prism = document.querySelector('.prism');
+        const faces = document.querySelectorAll('.prism-face');
+        const navContainer = document.querySelector('.nav-dots');
+        const faceCount = faces.length;
+        const anglePerFace = 360 / faceCount;
+
+        let currentFace = 0;
+        let isDragging = false;
+        let startX, currentYAngle = 0;
+
+        function setup() {
+            for (let i = 0; i < faceCount; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                dot.dataset.face = i;
+                navContainer.appendChild(dot);
+            }
+            navContainer.addEventListener('click', onDotClick);
+            updatePrism();
+            
+            document.body.addEventListener('mousedown', onDragStart);
+            document.body.addEventListener('mousemove', onDragMove);
+            document.body.addEventListener('mouseup', onDragEnd);
+            document.body.addEventListener('mouseleave', onDragEnd);
+            
+            document.body.addEventListener('touchstart', onDragStart, { passive: false });
+            document.body.addEventListener('touchmove', onDragMove, { passive: false });
+            document.body.addEventListener('touchend', onDragEnd);
+        }
+
+        function onDotClick(e) {
+            if (e.target.classList.contains('dot')) {
+                currentFace = parseInt(e.target.dataset.face, 10);
+                updatePrism();
+            }
+        }
+        
+        function updatePrism() {
+            const newAngle = -currentFace * anglePerFace;
+            prism.style.transform = `rotateY(${newAngle}deg)`;
+            currentYAngle = newAngle;
+
+            document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentFace));
+            faces.forEach((f, i) => f.classList.toggle('active', i === currentFace));
+        }
+        
+        function onDragStart(e) {
+            isDragging = true;
+            startX = e.pageX || e.touches[0].pageX;
+            prism.style.transition = 'none';
+        }
+
+        function onDragMove(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX || e.touches[0].pageX;
+            const deltaX = x - startX;
+            startX = x;
+            const rotationChange = deltaX * 0.3; // Sensitivity
+            currentYAngle += rotationChange;
+            prism.style.transform = `rotateY(${currentYAngle}deg)`;
+        }
+
+        function onDragEnd() {
+            if (!isDragging) return;
+            isDragging = false;
+            prism.style.transition = 'transform 1s cubic-bezier(0.76, 0, 0.24, 1)';
+            const faceIndex = Math.round(currentYAngle / anglePerFace);
+            currentFace = (faceCount - (faceIndex % faceCount)) % faceCount;
+            updatePrism();
+        }
+
+        const canvas = document.getElementById('ambient-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        let particles = [];
+        const particleConfig = {
+            count: 50,
+            speed: 0.1,
+            maxDist: 150,
+            color: 'rgba(0, 87, 255, 0.7)', // Updated to new accent color
+            lineColor: 'rgba(0, 87, 255, 1)' // Updated to new accent color
+        };
+
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < particleConfig.count; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * particleConfig.speed,
+                    vy: (Math.random() - 0.5) * particleConfig.speed
+                });
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+                ctx.fillStyle = particleConfig.color;
+                ctx.fill();
+            });
+
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+                    if (dist < particleConfig.maxDist) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(0, 87, 255, ${0.7 - dist / particleConfig.maxDist})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initParticles();
+        });
+
+        setup();
+        initParticles();
+        animateParticles();
+    });
+    </script>
+</body>
+</html>

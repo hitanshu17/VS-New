@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Softech | The Digital Flow ERP</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 1. CSS RESET & GLOBAL STYLES ("SUNRISE" THEME) --- */
+        :root {
+            --bg-color: #FFFBF5;
+            --text-color: #4C4646;
+            --glass-bg: rgba(255, 255, 255, 0.6);
+            --glass-border: rgba(0, 0, 0, 0.08);
+            --accent-coral: #F26659;
+            --accent-purple: #A076F9;
+            --accent-yellow: #FFD966;
+            --font-body: 'Inter', sans-serif;
+            --font-script: 'Dancing Script', cursive;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* --- 2. PRE-LOADER --- */
+        #preloader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: var(--bg-color); display: flex; justify-content: center;
+            align-items: center; z-index: 1000; transition: opacity 0.8s ease;
+        }
+        #preloader.loaded { opacity: 0; pointer-events: none; }
+        .loader-text { color: var(--accent-coral); font-family: var(--font-script); font-size: 2rem; animation: pulse 1.5s infinite ease-in-out; }
+        @keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+
+        /* --- 3. HERO SECTION & 3D CANVAS --- */
+        #three-canvas-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; }
+        .hero-section { height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; position: relative; }
+        .hero-content { max-width: 800px; padding: 20px; opacity: 0; transform: translateY(20px); animation: fadeInHero 1s ease 0.5s forwards; }
+        @keyframes fadeInHero { to { opacity: 1; transform: translateY(0); } }
+        .hero-headline { font-family: var(--font-script); font-size: clamp(3rem, 10vw, 6rem); line-height: 1.1; color: #2c2828; text-shadow: 0 0 25px rgba(242, 102, 89, 0.2); }
+        .hero-subheadline { font-size: clamp(1rem, 3vw, 1.25rem); margin-top: 1rem; max-width: 500px; margin-left: auto; margin-right: auto; color: var(--text-color); }
+        .cta-button { display: inline-block; margin-top: 2.5rem; padding: 14px 32px; background-color: var(--accent-coral); color: #FFFFFF; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: transform 0.3s ease, box-shadow 0.3s ease; transform-style: preserve-3d; }
+        .cta-button:hover { transform: scale(1.05) perspective(1000px) rotateX(10deg) rotateY(-5deg); box-shadow: 0 10px 30px rgba(242, 102, 89, 0.4); }
+        .scroll-indicator { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); width: 2px; height: 50px; background: linear-gradient(to top, var(--accent-coral), transparent); animation: scroll-pulse 2s infinite ease-in-out; }
+        @keyframes scroll-pulse { 0% { transform: translateX(-50%) scaleY(0); transform-origin: bottom; } 50% { transform: translateX(-50%) scaleY(1); transform-origin: bottom; } 100% { transform: translateX(-50%) scaleY(0); transform-origin: top; } }
+
+        /* --- 4. GENERAL CONTENT SECTION STYLING --- */
+        .content-section { padding: 100px 5%; position: relative; background-color: var(--bg-color); z-index: 2; }
+        .section-headline { font-size: clamp(2rem, 6vw, 3.5rem); text-align: center; margin-bottom: 60px; font-weight: 700; }
+        .section-headline span { color: var(--accent-purple); font-family: var(--font-script); }
+
+        /* --- 5. NEW VISUAL JOURNEY SECTION --- */
+        .visual-journey-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 5%;
+            min-height: 400vh; /* Provides ample scroll space for the journey */
+        }
+        .journey-sticky-wrapper {
+            position: sticky;
+            top: 0;
+            width: 55%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        #journey-svg {
+            width: 150%; /* Start zoomed in a bit */
+            height: 150%;
+            transition: transform 0.5s ease-out;
+        }
+        .journey-text-content {
+            width: 40%;
+            padding-top: 20vh;
+            padding-bottom: 20vh;
+        }
+        .journey-trigger {
+            min-height: 80vh;
+            padding: 20px;
+            opacity: 0.3;
+            transition: opacity 0.4s ease;
+            border-left: 3px solid transparent;
+        }
+        .journey-trigger.is-active {
+            opacity: 1;
+            border-left-color: var(--accent-coral);
+        }
+        .journey-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--accent-purple);
+        }
+        /* SVG Element Styling */
+        .svg-highlight {
+            transition: filter 0.5s ease;
+        }
+        .svg-highlight.is-active {
+            filter: drop-shadow(0px 0px 15px var(--accent-purple));
+        }
+
+        /* --- 6. SOLUTIONS SECTION (Glassmorphism) --- */
+        .solutions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .solution-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: 30px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease; transform: translateY(0); opacity: 0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .solution-card:hover { transform: translateY(-10px); border-color: var(--accent-purple); box-shadow: 0 10px 25px rgba(160, 118, 249, 0.2); }
+        .card-icon { font-size: 2.5rem; margin-bottom: 20px; color: var(--accent-purple); }
+        .card-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; color: #2c2828; }
+
+        /* --- 7. FEATURES SECTION (Scrollytelling) --- */
+        .features-section { min-height: 300vh; display: flex; justify-content: space-between; gap: 5%; }
+        .features-sticky-wrapper { position: sticky; top: 0; width: 45%; height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .mock-ui { width: 90%; height: 60%; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .mock-ui-header { text-align: center; padding-bottom: 10px; border-bottom: 1px solid var(--glass-border); }
+        .ui-module { background-color: rgba(0, 0, 0, 0.02); padding: 12px; border-radius: 6px; transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease; }
+        .ui-module.glowing { background-color: rgba(160, 118, 249, 0.2); box-shadow: 0 0 15px rgba(160, 118, 249, 0.5); color: #2c2828; }
+        .features-text-content { width: 45%; padding-top: 25vh; padding-bottom: 25vh; }
+        .feature-trigger { min-height: 90vh; padding: 20px; opacity: 0.3; transition: opacity 0.4s ease; }
+        .feature-trigger.is-active { opacity: 1; }
+        .feature-title { font-size: 2rem; font-weight: 700; margin-bottom: 15px; color: var(--accent-yellow); }
+
+        /* --- 8. TRUST & TESTIMONIALS SECTION --- */
+        .trust-section { text-align: center; }
+        .client-logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px; margin-top: 40px; }
+        .client-logo { filter: grayscale(100%) opacity(0.5); transition: filter 0.3s ease, opacity 0.3s ease; max-width: 150px; }
+        .client-logo:hover { filter: grayscale(0%); opacity: 1; }
+        .testimonial-section { padding: 100px 5%; min-height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(255, 251, 245, 0.8), rgba(255, 251, 245, 0.8)), url('https://images.unsplash.com/photo-1604328698692-f76ea9498e76?auto=format&fit=crop&q=80&w=2070') no-repeat center center; background-size: cover; background-attachment: fixed; }
+        .testimonial-quote { font-family: var(--font-script); font-size: clamp(2rem, 5vw, 3rem); max-width: 800px; line-height: 1.4; color: #2c2828; }
+
+        /* --- 9. FOOTER --- */
+        .footer { padding: 60px 5%; text-align: center; border-top: 1px solid var(--glass-border); }
+        .footer-logo { font-family: var(--font-script); font-size: 2rem; color: var(--accent-coral); margin-bottom: 20px; }
+        .footer-contact a { color: var(--text-color); text-decoration: none; margin: 0 15px; transition: color 0.3s; }
+        .footer-contact a:hover { color: var(--accent-purple); }
+        .footer-copyright { margin-top: 30px; font-size: 0.9rem; opacity: 0.6; }
+        
+        /* --- 10. RESPONSIVENESS --- */
+        @media (max-width: 900px) {
+            .features-section, .visual-journey-section { flex-direction: column; min-height: auto; }
+            .features-sticky-wrapper, .features-text-content,
+            .journey-sticky-wrapper, .journey-text-content { width: 100%; position: relative; }
+            .features-sticky-wrapper, .journey-sticky-wrapper { height: 60vh; padding: 20px 0; }
+            .feature-trigger, .journey-trigger { min-height: auto; margin-bottom: 60px; text-align: center; border-left: none; border-bottom: 3px solid transparent; }
+            .journey-trigger.is-active { border-bottom-color: var(--accent-coral); }
+            .hero-headline { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="preloader"><div class="loader-text">Visual Softech</div></div>
+
+    <div id="three-canvas-container"></div>
+
+    <main>
+        <!-- HERO SECTION (Unchanged) -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-headline">Streamline Every Step—<br>From Field to Final Invoice</h1>
+                <p class="hero-subheadline">Industry-specific ERP software built for real-world operations in agri-processing, cold storage, hotel supply, and packaging.</p>
+                <a href="#visual-journey" class="cta-button">See How It Works</a>
+            </div>
+            <div class="scroll-indicator"></div>
+        </section>
+        <div style="height: 100vh;"></div>
+
+        <!-- NEW VISUAL JOURNEY SECTION -->
+        <section id="visual-journey" class="content-section visual-journey-section">
+            <div class="journey-text-content">
+                <h2 class="section-headline" style="text-align: left; margin-bottom: 30px;">Connecting the Entire <span>Supply Chain</span></h2>
+                <div class="journey-trigger" data-target="#journey-ship">
+                    <h3 class="journey-title">The Journey Begins</h3>
+                    <p>It all starts at the port. Containers arrive via steamship lines, filled with goods ready for distribution. Our platform gets visibility the moment cargo is available.</p>
+                </div>
+                <div class="journey-trigger" data-target="#journey-importer">
+                    <h3 class="journey-title">Seamless Importer Flow</h3>
+                    <p>Goods are moved to the importer's warehouse. Our system automates intake, grading, and inventory management, providing a real-time view of all stock.</p>
+                </div>
+                 <div class="journey-trigger" data-target="#journey-trucker">
+                    <h3 class="journey-title">Efficient Trucker Coordination</h3>
+                    <p>Truckers are dispatched automatically to move containers. We optimize routes and ensure that empty miles are reduced by connecting truckers with nearby exporters who need containers.</p>
+                </div>
+                <div class="journey-trigger" data-target="#journey-exporter">
+                    <h3 class="journey-title">Empowering Exporters</h3>
+                    <p>Exporters no longer wait for empty containers. The platform notifies them of available equipment in their area, creating a fluid, circular economy and reducing operational delays.</p>
+                </div>
+            </div>
+            <div class="journey-sticky-wrapper">
+                <!-- Custom SVG Illustration -->
+                <svg id="journey-svg" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <g id="svg-map-group">
+                        <!-- Water -->
+                        <path fill="#D6E4FF" d="M0 550 H1000 V800 H0z"/>
+                        <!-- Ground -->
+                        <path fill="#F3F0E9" d="M0 0 H1000 V550 H0z"/>
+                        <!-- Roads -->
+                        <g fill="#E0DCE1">
+                            <path d="M0 450 H1000 V520 H0z"/>
+                            <path d="M450 0 H520 V550 H450z"/>
+                            <path d="M150 200 H750 V270 H150z"/>
+                        </g>
+
+                        <!-- Exporter Warehouse -->
+                        <g id="journey-exporter" class="svg-highlight">
+                            <path fill="#D6C7E8" d="M580 300 l50 -25 v100 l-50 25z"/>
+                            <path fill="#FFFFFF" d="M580 300 l150 0 l50 -25 l-150 0z"/>
+                            <path fill="#BCA9D4" d="M630 275 l150 0 v100 l-150 0z"/>
+                            <text x="660" y="420" font-family="Inter" font-weight="bold" fill="#4C4646">Exporter</text>
+                        </g>
+
+                        <!-- Importer Warehouse -->
+                        <g id="journey-importer" class="svg-highlight">
+                            <path fill="#D6C7E8" d="M120 300 l50 -25 v100 l-50 25z"/>
+                            <path fill="#FFFFFF" d="M120 300 l150 0 l50 -25 l-150 0z"/>
+                            <path fill="#BCA9D4" d="M170 275 l150 0 v100 l-150 0z"/>
+                            <text x="200" y="420" font-family="Inter" font-weight="bold" fill="#4C4646">Importer</text>
+                        </g>
+                        
+                        <!-- Trucks -->
+                        <g id="journey-trucker" class="svg-highlight">
+                            <path fill="#F26659" d="M350 470 h50 v30 h-50z l-10 -15 v-15z"/>
+                            <path fill="#4C4646" d="M360 500 h10 v5 h-10z m20 0 h10 v5 h-10z"/>
+                            <path fill="#BCA9D4" d="M600 220 h50 v30 h-50z l-10 -15 v-15z"/>
+                             <path fill="#4C4646" d="M610 250 h10 v5 h-10z m20 0 h10 v5 h-10z"/>
+                        </g>
+
+                        <!-- Ship -->
+                        <g id="journey-ship" class="svg-highlight">
+                            <path fill="#4C4646" d="M100 600 l50 -50 h600 l50 50 v100 l-50 20 h-600 l-50-20z"/>
+                            <path fill="#FFFFFF" d="M150 550 h600 v50 h-600z"/>
+                            <path fill="#F26659" d="M200 560 h50 v30 h-50z m70 0 h50 v30 h-50z m70 0 h50 v30 h-50z"/>
+                            <path fill="#A076F9" d="M500 560 h50 v30 h-50z m70 0 h50 v30 h-50z m70 0 h50 v30 h-50z"/>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </section>
+
+        <!-- SOLUTIONS SECTION (Unchanged) -->
+        <section id="solutions" class="content-section">
+            <h2 class="section-headline">One platform. <span>Multiple modules.</span></h2>
+            <div class="solutions-grid">
+                <div class="solution-card"><div class="card-icon">🍎</div><h3 class="card-title">Grading & Packing Floors</h3><p>Track stock, packing, and billing with real-time accuracy.</p></div>
+                <div class="solution-card"><div class="card-icon">🏨</div><h3 class="card-title">Hotel & Institutional Supply</h3><p>Automate rate-based tender billing and vendor entries.</p></div>
+                <div class="solution-card"><div class="card-icon">📦</div><h3 class="card-title">Corrugated Box Manufacturing</h3><p>Design boxes with GSM and dimension-based costing.</p></div>
+                <div class="solution-card"><div class="card-icon">❄️</div><h3 class="card-title">Cold Storage & Agro Exports</h3><p>Connect purchase, production, and financial accounting.</p></div>
+            </div>
+        </section>
+        
+        <!-- FEATURES SECTION (Unchanged) -->
+        <section class="content-section features-section">
+            <div class="features-text-content">
+                <div class="feature-trigger" data-module="inventory"><h3 class="feature-title">Real-Time Tracking</h3><p>Monitor every item from purchase to final dispatch. Our system connects your inventory, packing, and billing modules, eliminating manual errors and giving you a single source of truth.</p></div>
+                <div class="feature-trigger" data-module="billing"><h3 class="feature-title">Automated Billing</h3><p>Generate complex, rate-based tender bills and vendor entries automatically. Our ERP handles the calculations, so you can focus on your business. 100% GST, TDS, and e-Way Bill compliant.</p></div>
+                <div class="feature-trigger" data-module="production"><h3 class="feature-title">Integrated Production</h3><p>For manufacturers, we connect your entire workflow. Design corrugated boxes with precise GSM and dimension-based costing, and link production data directly to your financial accounting.</p></div>
+            </div>
+            <div class="features-sticky-wrapper"><div class="mock-ui"><div class="mock-ui-header">Visual Softech Dashboard</div><div class="ui-module" id="inventory">📦 Inventory & Stock</div><div class="ui-module" id="billing">📄 Billing & Invoicing</div><div class="ui-module" id="production">⚙️ Production Planning</div><div class="ui-module" id="accounting">📊 Financial Accounting</div><div class="ui-module" id="reports">📈 Reports & Analytics</div></div></div>
+        </section>
+
+        <!-- TRUST SECTION (Unchanged) -->
+        <section class="trust-section content-section">
+             <h2 class="section-headline"><span>30+ Years</span> of Expertise. Trusted by Industry Leaders.</h2>
+             <p>We don’t build generic tools. We build domain-specific modules that solve real-world problems.</p>
+             <div class="client-logos">
+                 <img src="https://logo.clearbit.com/adani.com" alt="Adani Logo" class="client-logo">
+                 <img src="https://logo.clearbit.com/reliancefresh.com" alt="Reliance Fresh Logo" class="client-logo">
+                 <img src="https://logo.clearbit.com/bigbasket.com" alt="BigBasket Logo" class="client-logo">
+                 <img src="https://logo.clearbit.com/itcportal.com" alt="ITC Logo" class="client-logo">
+                 <img src="https://logo.clearbit.com/haldirams.com" alt="Haldiram's Logo" class="client-logo">
+             </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION (Unchanged) -->
+        <section class="testimonial-section">
+            <h3 class="testimonial-quote">“We replaced 10 registers with one ERP system from Visual Softech. Packing, billing, and box tracking are now completely automated.”</h3>
+        </section>
+    </main>
+    
+    <!-- FOOTER (Unchanged) -->
+    <footer class="footer">
+        <div class="footer-logo">Visual Softech</div>
+        <p>Want a quick walkthrough of how our ERP can fit your business?</p>
+        <div class="footer-contact"><p style="margin: 20px 0;"><a href="tel:7011019957">7011019957</a> / <a href="tel:8920770888">8920770888</a> / <a href="mailto:mail@visualsoftech.com">mail@visualsoftech.com</a></p></div>
+        <div class="footer-copyright">© 2024 Visual Softech. All rights reserved.</div>
+    </footer>
+
+    <!-- JS LIBRARIES (loaded from CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const preloader = document.getElementById('preloader');
+            window.addEventListener('load', () => preloader.classList.add('loaded'));
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            // --- THREE.JS SCENE (Unchanged logic, updated colors) ---
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.getElementById('three-canvas-container').appendChild(renderer.domElement);
+            scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+            const pointLight = new THREE.PointLight(0xF26659, 1.5, 100);
+            pointLight.position.set(5, 5, 5);
+            scene.add(pointLight);
+            const pointLight2 = new THREE.PointLight(0xA076F9, 1.5, 100);
+            pointLight2.position.set(-5, -5, -2);
+            scene.add(pointLight2);
+            const coreGeometry = new THREE.IcosahedronGeometry(1, 1);
+            const coreMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 0.1, roughness: 0.5, flatShading: true });
+            const erpCore = new THREE.Mesh(coreGeometry, coreMaterial);
+            scene.add(erpCore);
+            const industryIcons = [];
+            const iconPositions = [ new THREE.Vector3(3, 2, -2), new THREE.Vector3(-3.5, -1.5, -1), new THREE.Vector3(2.5, -2.5, 0) ];
+            const iconColors = [0xF26659, 0xA076F9, 0xFFD966];
+            for (let i = 0; i < 3; i++) {
+                const icon = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.5, 0.5), new THREE.MeshStandardMaterial({ color: iconColors[i], roughness: 0.4 }));
+                icon.position.copy(iconPositions[i]); scene.add(icon); industryIcons.push(icon);
+            }
+            camera.position.z = 5;
+            let mouseX = 0, mouseY = 0;
+            document.addEventListener('mousemove', (event) => { mouseX = (event.clientX / window.innerWidth) * 2 - 1; mouseY = -(event.clientY / window.innerHeight) * 2 + 1; });
+            function animate() {
+                requestAnimationFrame(animate);
+                erpCore.rotation.x += 0.001; erpCore.rotation.y += 0.001;
+                industryIcons.forEach(icon => { icon.rotation.x += 0.005; icon.rotation.y += 0.005; });
+                camera.position.x += (mouseX * 0.5 - camera.position.x) * 0.02; camera.position.y += (mouseY * 0.5 - camera.position.y) * 0.02;
+                camera.lookAt(scene.position);
+                renderer.render(scene, camera);
+            }
+            animate();
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+
+            // --- GSAP SCROLL ANIMATIONS ---
+            ScrollTrigger.create({ trigger: ".hero-section", start: "top top", end: "bottom top", pin: true, pinSpacing: false, scrub: 1 });
+            gsap.from(".solution-card", { scrollTrigger: { trigger: ".solutions-grid", start: "top 80%", toggleActions: "play none none none" }, y: 50, opacity: 0, stagger: 0.2, duration: 0.8, ease: "power3.out" });
+
+            // --- NEW VISUAL JOURNEY ANIMATION ---
+            const journeyTriggers = document.querySelectorAll('.journey-trigger');
+            const svgMap = document.getElementById('svg-map-group');
+            
+            // GSAP Timeline to control the SVG transform
+            const journeyTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".visual-journey-section",
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 1.5,
+                }
+            });
+
+            journeyTimeline
+                .from(svgMap, { scale: 1.2, x: -100, y: -50, ease: "power1.inOut" }) // Start slightly zoomed
+                .to(svgMap, { scale: 2.5, x: 350, y: 250, ease: "power1.inOut" }) // 1. Focus on Ship
+                .to(svgMap, { scale: 2.8, x: -150, y: 100, ease: "power1.inOut" }) // 2. Pan to Importer
+                .to(svgMap, { scale: 2.5, x: 50, y: 150, ease: "power1.inOut" })   // 3. Pan to Truckers
+                .to(svgMap, { scale: 2.8, x: 250, y: 100, ease: "power1.inOut" })  // 4. Pan to Exporter
+                .to(svgMap, { scale: 1, x: 0, y: 0, ease: "power1.inOut" });     // End by zooming out
+
+            // Logic to activate text and SVG highlights
+            journeyTriggers.forEach(trigger => {
+                ScrollTrigger.create({
+                    trigger: trigger,
+                    start: 'top center',
+                    end: 'bottom center',
+                    onToggle: self => {
+                        const targetId = trigger.dataset.target;
+                        const targetElement = document.querySelector(targetId);
+                        if (self.isActive) {
+                            trigger.classList.add('is-active');
+                            if (targetElement) targetElement.classList.add('is-active');
+                        } else {
+                            trigger.classList.remove('is-active');
+                             if (targetElement) targetElement.classList.remove('is-active');
+                        }
+                    },
+                });
+            });
+
+            // Feature Section Scrollytelling (Unchanged)
+            const featureTriggers = document.querySelectorAll('.feature-trigger');
+            featureTriggers.forEach(trigger => {
+                ScrollTrigger.create({
+                    trigger: trigger,
+                    start: 'top center',
+                    end: 'bottom center',
+                    onToggle: self => {
+                        if (self.isActive) {
+                            trigger.classList.add('is-active');
+                            document.getElementById(trigger.dataset.module).classList.add('glowing');
+                        } else {
+                            trigger.classList.remove('is-active');
+                            document.getElementById(trigger.dataset.module).classList.remove('glowing');
+                        }
+                    },
+                });
+            });
+        });
+    </script>
+</body>
+</html>
